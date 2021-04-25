@@ -8,26 +8,26 @@ using System.Threading.Tasks;
 
 namespace PBL3.DAO
 {
-    class FightDAO
+    class FlightDAO
     {
-        private static FightDAO _Instance;
-        public static FightDAO Instance
+        private static FlightDAO _Instance;
+        public static FlightDAO Instance
         {
             get
             {
                 if (_Instance == null)
                 {
-                    _Instance = new FightDAO();
+                    _Instance = new FlightDAO();
                 }
                 return _Instance;
             }
             private set { }
         }
-        private FightDAO()
+        private FlightDAO()
         { }
-       public List<FightSearch> GetListFight(string trip, string from, string to, DateTime takeoff)
+       public List<FlightSearch> GetListFight(string trip, string from, string to, DateTime takeoff)
         {
-            List<FightSearch> list = new List<FightSearch>();
+            List<FlightSearch> list = new List<FlightSearch>();
 
             string query = string.Format("select AIRLINE.airline_name, PLACE.place_name, fl_takeoftime, fl_price, fl_triptype from FLIGHT, AIRLINE,PLACE where fl_triptype = {0} and AIRLINE.airline_id = FLIGHT.airline_id and PLACE.place_id = (select place_id from PLACE where place_name = N'{1}') and fl_source = (select place_id from PLACE where place_name = N'{2}') and fl_takeoff = {3}", trip, from, to, takeoff);
 
@@ -35,7 +35,7 @@ namespace PBL3.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                FightSearch fight = new FightSearch(item);
+                FlightSearch fight = new FlightSearch(item);
                 list.Add(fight);
             }
 

@@ -107,8 +107,8 @@ namespace PBL3
             string To = ((CBBItem)comboBox_From.SelectedItem).Value.ToString();
             DateTime Datetakeoff = Convert.ToDateTime(((CBBItem)comboBox_From.SelectedItem).Value);
 
-            List<FightSearch> list = FightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
-            foreach(FightSearch i in list)
+            List<FlightSearch> list = FlightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
+            foreach(FlightSearch i in list)
             {
                 populateItems(i.timetakeoff, i.timelanding, i.basiceconmy, i.maincabin, i.detalcomfort, i.firstclass, i.airlinename, i.time);
             }    

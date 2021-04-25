@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    class FightDTO
+    class FlightDTO
     {
         public int airline_id { get; set; }
         public int fl_source { get; set; }
@@ -20,7 +20,7 @@ namespace PBL3.DTO
         public string description { get; set; }
         public int status { get; set; }
     
-        public FightDTO()
+        public FlightDTO()
         {
             airline_id = 1;
             fl_source = 1;
@@ -33,7 +33,7 @@ namespace PBL3.DTO
             description = null;
             status = 0;
         }
-        public FightDTO(DataRow row)
+        public FlightDTO(DataRow row)
         {
             this.airline_id = (int)row["airline_id"];
             this.fl_source = (int)row["fl_source"];
