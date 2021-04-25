@@ -28,15 +28,33 @@ namespace PBL3.DAO
        public List<FlightSearch> GetListFight(string trip, string from, string to, DateTime takeoff)
         {
             List<FlightSearch> list = new List<FlightSearch>();
+            List<PriceDTO> list1 = new List<PriceDTO>();
+            List<AirlineDTO> list2 = new List<AirlineDTO>();
+            int tr = 0;
+            float price = 0;
+            if (trip == "Round Trip") tr = 0;
+            else tr = 1;
 
-            string query = string.Format("select AIRLINE.airline_name, PLACE.place_name, fl_takeoftime, fl_price, fl_triptype from FLIGHT, AIRLINE,PLACE where fl_triptype = {0} and AIRLINE.airline_id = FLIGHT.airline_id and PLACE.place_id = (select place_id from PLACE where place_name = N'{1}') and fl_source = (select place_id from PLACE where place_name = N'{2}') and fl_takeoff = {3}", trip, from, to, takeoff);
+            string query = string.Format("select fl_takeoftime, fl_landingtime, airline_name from FLIGHT, AIRLINE where fl_triptype = {0} and FLIGHT.airline_id = AIRLINE.airline_id", tr);
 
             DataTable data = DataProvider.Instance.GetRecord(query);
+            list1 = PriceDAO.Instance.GetListPrice();
+            list2 = AirlineDAO.Instance.GetListAirline();
 
             foreach (DataRow item in data.Rows)
             {
                 FlightSearch fight = new FlightSearch(item);
                 list.Add(fight);
+            }
+            foreach (FlightSearch k in list)
+            {
+                foreach (PriceDTO i in list1)
+                {
+                    foreach (AirlineDTO j in list2)
+                    {
+                        i.price *= j.airline_index;
+                    }
+                }
             }
 
             return list;

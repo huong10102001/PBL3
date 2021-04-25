@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    class FightSearch
+    class FlightSearch
     {
         public DateTime timetakeoff { get; set; }
         public DateTime timelanding { get; set; }
@@ -18,7 +18,7 @@ namespace PBL3.DTO
         public int firstclass { get; set; }
         public string airlinename { get; set; }
 
-        public FightSearch()
+        public FlightSearch()
         {
             timetakeoff = DateTime.Now;
             timelanding = DateTime.Now;
@@ -29,7 +29,7 @@ namespace PBL3.DTO
             firstclass = 0;
             airlinename = null;
         }
-        public FightSearch(DataRow row)
+        public FlightSearch(DataRow row)
         {
             this.timetakeoff = (DateTime)row["airline_id"];
             this.timelanding = (DateTime)row["fl_source"];
