@@ -44,7 +44,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_To = new System.Windows.Forms.ComboBox();
             this.comboBox_From = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Trip = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -198,7 +198,7 @@
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.comboBox_To);
             this.panel2.Controls.Add(this.comboBox_From);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBox_Trip);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -232,10 +232,12 @@
             this.btn_search.TabIndex = 10;
             this.btn_search.Text = "SEARCH";
             this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(694, 35);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -260,17 +262,17 @@
             this.comboBox_From.Size = new System.Drawing.Size(248, 28);
             this.comboBox_From.TabIndex = 6;
             // 
-            // comboBox1
+            // comboBox_Trip
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_Trip.FormattingEnabled = true;
+            this.comboBox_Trip.Items.AddRange(new object[] {
             "Round Trip",
             "Circle Trip"});
-            this.comboBox1.Location = new System.Drawing.Point(16, 32);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 28);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox_Trip.Location = new System.Drawing.Point(16, 32);
+            this.comboBox_Trip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_Trip.Name = "comboBox_Trip";
+            this.comboBox_Trip.Size = new System.Drawing.Size(134, 28);
+            this.comboBox_Trip.TabIndex = 5;
             // 
             // label6
             // 
@@ -467,7 +469,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox_To;
         private System.Windows.Forms.ComboBox comboBox_From;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Trip;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -24,7 +24,7 @@ namespace PBL3.DAO
         {
             List<PriceDTO> list = new List<PriceDTO>();
 
-            string query = "select * from PRICE";
+            string query = "select name, price from PRICE";
 
             DataTable data = DataProvider.Instance.GetRecord(query);
 

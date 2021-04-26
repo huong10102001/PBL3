@@ -36,5 +36,21 @@ namespace PBL3.DAO
 
             return list;
         }
+        public List<AirlineDTO> GetAirlineIndex(int trip, string from, string to, string takeoff)
+        {
+            List<AirlineDTO> list = new List<AirlineDTO>();
+
+            string query = string.Format("select airline_index from FLIGHT INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN SOURCE ON FLIGHT.fl_source = SOURCE.src_id INNER JOIN DESTINATION ON FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and fl_takeoftime = N'{3}'", from, to, trip, takeoff);
+
+            DataTable data = DataProvider.Instance.GetRecord(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                AirlineDTO place = new AirlineDTO(item);
+                list.Add(place);
+            }
+
+            return list;
+        }
     }
 }

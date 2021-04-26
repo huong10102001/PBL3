@@ -15,7 +15,7 @@ namespace PBL3.DTO
         public float basiceconmy { get; set; }
         public float maincabin { get; set; }
         public float detalcomfort { get; set; }
-        public int firstclass { get; set; }
+        public float firstclass { get; set; }
         public string airlinename { get; set; }
 
         public FlightSearch()
@@ -31,14 +31,14 @@ namespace PBL3.DTO
         }
         public FlightSearch(DataRow row)
         {
-            this.timetakeoff = (DateTime)row["airline_id"];
-            this.timelanding = (DateTime)row["fl_source"];
+            this.timetakeoff = (DateTime)row["timetakeoff"];
+            this.timelanding = (DateTime)row["timelanding"];
             this.time = (DateTime)row["time"];
-            this.basiceconmy = (int)row["takeoff"];
-            this.maincabin = (int)row["landing"];
-            this.detalcomfort = (int)row["idprice"];
-            this.firstclass = (int)row["triptype"];
-            this.airlinename = row["description"].ToString();
+            this.basiceconmy = (float)row["basiceconmy"];
+            this.maincabin = (float)row["maincabin"];
+            this.detalcomfort = (float)row["detalcomfort"];
+            this.firstclass = (float)row["firstclass"];
+            this.airlinename = row["airlinename"].ToString();
         }
     }
 }

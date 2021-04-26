@@ -64,6 +64,7 @@
     <Compile Include="DTO\AirlineDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\DestinationDTO.cs" />
+    <Compile Include="DTO\Fight.cs" />
     <Compile Include="DTO\FlightDTO.cs" />
     <Compile Include="DTO\FlightSearch.cs" />
     <Compile Include="DTO\PriceDTO.cs" />

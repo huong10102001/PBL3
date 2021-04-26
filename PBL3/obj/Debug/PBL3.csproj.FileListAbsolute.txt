@@ -20,7 +20,6 @@ D:\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
 D:\PBL3_1\PBL3\bin\Debug\PBL3.exe.config
 D:\PBL3_1\PBL3\bin\Debug\PBL3.exe
 D:\PBL3_1\PBL3\bin\Debug\PBL3.pdb
-D:\PBL3_1\PBL3\obj\Debug\PBL3.csprojAssemblyReference.cache
 D:\PBL3_1\PBL3\obj\Debug\PBL3.BookingForm.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.FlightManagement.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.FlightTicketForm.resources
@@ -36,3 +35,4 @@ D:\PBL3_1\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
 D:\PBL3_1\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 D:\PBL3_1\PBL3\obj\Debug\PBL3.exe
 D:\PBL3_1\PBL3\obj\Debug\PBL3.pdb
+D:\PBL3_1\PBL3\obj\Debug\PBL3.csprojAssemblyReference.cache
