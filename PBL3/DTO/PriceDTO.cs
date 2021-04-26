@@ -21,7 +21,7 @@ namespace PBL3.DTO
         public PriceDTO(DataRow row)
         {
             this.name = row["name"].ToString();
-            this.price = (float)row["price"];
+            this.price = Convert.ToSingle(row["price"]);
         }
     }
 }
