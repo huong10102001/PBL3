@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbbTo = new System.Windows.Forms.ComboBox();
+            this.cbbFrom = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,9 +40,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnSignup = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cbbFrom = new System.Windows.Forms.ComboBox();
-            this.cbbTo = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1119, 101);
             this.panel1.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Transparent;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.DimGray;
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(582, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(355, 33);
+            this.dateTimePicker1.TabIndex = 12;
+            // 
+            // cbbTo
+            // 
+            this.cbbTo.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTo.FormattingEnabled = true;
+            this.cbbTo.Location = new System.Drawing.Point(293, 47);
+            this.cbbTo.Name = "cbbTo";
+            this.cbbTo.Size = new System.Drawing.Size(264, 34);
+            this.cbbTo.TabIndex = 11;
+            // 
+            // cbbFrom
+            // 
+            this.cbbFrom.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbFrom.FormattingEnabled = true;
+            this.cbbFrom.Location = new System.Drawing.Point(6, 47);
+            this.cbbFrom.Name = "cbbFrom";
+            this.cbbFrom.Size = new System.Drawing.Size(264, 34);
+            this.cbbFrom.TabIndex = 10;
             // 
             // label3
             // 
@@ -177,33 +206,6 @@
             this.button3.Text = "SEARCH";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.btnSignup_Click);
-            // 
-            // cbbFrom
-            // 
-            this.cbbFrom.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbFrom.FormattingEnabled = true;
-            this.cbbFrom.Location = new System.Drawing.Point(6, 47);
-            this.cbbFrom.Name = "cbbFrom";
-            this.cbbFrom.Size = new System.Drawing.Size(264, 34);
-            this.cbbFrom.TabIndex = 10;
-            // 
-            // cbbTo
-            // 
-            this.cbbTo.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTo.FormattingEnabled = true;
-            this.cbbTo.Location = new System.Drawing.Point(293, 47);
-            this.cbbTo.Name = "cbbTo";
-            this.cbbTo.Size = new System.Drawing.Size(264, 34);
-            this.cbbTo.TabIndex = 11;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(582, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(355, 33);
-            this.dateTimePicker1.TabIndex = 12;
             // 
             // OverviewForm
             // 

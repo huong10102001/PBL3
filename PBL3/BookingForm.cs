@@ -15,6 +15,16 @@ namespace PBL3
     public partial class BookingForm : Form
     {
         private bool isCollapsed;
+        public void setname(String name)
+        {
+            button9.Text = name;
+        }
+        public void setvalue(String from, String to, String date)
+        {
+            comboBox_From.Text = from;
+            comboBox_To.Text = to;
+            dateTimePicker1.Value = Convert.ToDateTime(date).Date;
+        }
         public BookingForm()
         {
             InitializeComponent();
@@ -105,7 +115,7 @@ namespace PBL3
             string Trip = (comboBox_Trip.SelectedItem).ToString();
             string From = (comboBox_From.SelectedItem).ToString();
             string To = (comboBox_To.SelectedItem).ToString();
-            string Datetakeoff = "2021-08-03 00:00:00.000"
+            string Datetakeoff = "2021-08-03 00:00:00.000";
                 //dateTimePicker1.Value.ToShortDateString();
             //MessageBox.Show(Datetakeoff);
 

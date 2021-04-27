@@ -50,5 +50,19 @@ namespace PBL3.DAO
             return null;
         }
 
+        public string getName (string userName, string passWord)
+        {
+            string query = string.Format("SELECT * FROM USERS WHERE us_username = N'{0}' AND us_password = N'{1}'", userName, passWord);
+            DataTable data = DataProvider.Instance.GetRecord(query);
+            List<AccountDTO> list = new List<AccountDTO>();
+            foreach (DataRow item in data.Rows)
+            {
+                AccountDTO i = new AccountDTO(item);
+                list.Add(i);
+                return i.Name;
+            }
+            return null;
+        }
+
     }
 }

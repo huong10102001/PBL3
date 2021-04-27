@@ -14,6 +14,10 @@ namespace PBL3
 {
     public partial class LoginForm : Form
     {
+        public delegate void Ten(String name);
+        public Ten ten;
+        public delegate void passData(String from, String to, String date);
+        public passData data;
         string a, b, c;
         public void setvalue(String from, String to, String date)
         {
@@ -33,7 +37,6 @@ namespace PBL3
             return AccountDAO.Instance.Login(userName, passWord);
         }
 
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             txtUserName.Text = "";
@@ -42,6 +45,7 @@ namespace PBL3
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (userName == "" && passWord == "")
@@ -55,7 +59,10 @@ namespace PBL3
                     if (loginAccount.Type == 0)
                     {
                         BookingForm bkf = new BookingForm();
-                     
+                        this.data += new passData(bkf.setvalue);
+                        data(a, b, c);
+                        this.ten += new Ten(bkf.setname);
+                        ten(AccountDAO.Instance.getName(userName,passWord));
                         this.Hide();
                         bkf.ShowDialog();
                     }
@@ -84,6 +91,7 @@ namespace PBL3
         private void btnSignup_Click_1(object sender, EventArgs e)
         {
             SignUpForm f = new SignUpForm();
+           
             this.Hide();
             f.ShowDialog();
         }

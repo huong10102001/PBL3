@@ -16,11 +16,7 @@ namespace PBL3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new OverviewForm());
-=======
-            Application.Run(new BookingForm());
->>>>>>> 9afd80af6878e74b52fb0a57f3082287c952d47e
         }
     }
 }
