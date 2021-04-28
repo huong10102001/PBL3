@@ -18,8 +18,10 @@ namespace PBL3
 
         public delegate void passSTAFFIDCallBack(string USERNAME);
         public passSTAFFIDCallBack passStaffId;
-        public FlightManagement()
+        public FlightManagement(string username)
         {
+            USERNAME = username;
+
             InitializeComponent();
 
             LoadComboBox();

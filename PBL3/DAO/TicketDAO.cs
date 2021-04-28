@@ -51,7 +51,7 @@ namespace PBL3.DAO
         }
         public TicketDTO GetTicketByID(int tk_id)
         {
-            foreach (TicketDTO i in TicketList)
+            foreach (TicketDTO i in GetAllTicketList())
             {
                 if (i.ticket_id == tk_id)
                 {

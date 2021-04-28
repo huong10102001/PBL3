@@ -59,7 +59,6 @@ namespace PBL3
                 newButton.BackColor = Color.AliceBlue;
                 newButton.ForeColor = Color.Black;
 
-                
             }
         }
 

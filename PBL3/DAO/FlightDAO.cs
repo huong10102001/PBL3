@@ -26,8 +26,6 @@ namespace PBL3.DAO
         }
         public List<FlightDTO> flightList { get; set; }
         private FlightDAO()
-        { }
-       public List<FlightSearch> GetListFight(string trip, string from, string to, string takeoff) 
         {
             flightList = GetAllFlightList();
         }
@@ -56,7 +54,7 @@ namespace PBL3.DAO
 
             return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status,fl_capacity);
         }
-        public List<FlightSearch> GetListFight(string trip, string from, string to, DateTime takeoff)
+        public List<FlightSearch> GetListFight(string trip, string from, string to, string takeoff)
         {
             int tr = 1, dem = 0;
             if (trip == "Round Trip") tr = 1;
