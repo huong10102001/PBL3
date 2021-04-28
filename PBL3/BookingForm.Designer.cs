@@ -44,13 +44,15 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox_To = new System.Windows.Forms.ComboBox();
             this.comboBox_From = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Trip = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -198,7 +200,7 @@
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.comboBox_To);
             this.panel2.Controls.Add(this.comboBox_From);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBox_Trip);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -232,10 +234,12 @@
             this.btn_search.TabIndex = 10;
             this.btn_search.Text = "SEARCH";
             this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(694, 35);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -260,17 +264,17 @@
             this.comboBox_From.Size = new System.Drawing.Size(248, 28);
             this.comboBox_From.TabIndex = 6;
             // 
-            // comboBox1
+            // comboBox_Trip
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_Trip.FormattingEnabled = true;
+            this.comboBox_Trip.Items.AddRange(new object[] {
             "Round Trip",
             "Circle Trip"});
-            this.comboBox1.Location = new System.Drawing.Point(16, 32);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 28);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox_Trip.Location = new System.Drawing.Point(16, 32);
+            this.comboBox_Trip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_Trip.Name = "comboBox_Trip";
+            this.comboBox_Trip.Size = new System.Drawing.Size(134, 28);
+            this.comboBox_Trip.TabIndex = 5;
             // 
             // label6
             // 
@@ -331,6 +335,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::PBL3.Properties.Resources.Capture;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.radioButton3);
             this.panel3.Controls.Add(this.radioButton2);
@@ -342,6 +348,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1267, 144);
             this.panel3.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(314, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(208, 34);
+            this.label10.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("NSimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(313, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(282, 37);
+            this.label9.TabIndex = 10;
             // 
             // button2
             // 
@@ -361,12 +385,12 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.Color.White;
             this.radioButton3.Location = new System.Drawing.Point(910, 66);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(153, 22);
+            this.radioButton3.Size = new System.Drawing.Size(145, 29);
             this.radioButton3.TabIndex = 8;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Miles + Cash";
@@ -375,12 +399,12 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.White;
             this.radioButton2.Location = new System.Drawing.Point(804, 65);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 22);
+            this.radioButton2.Size = new System.Drawing.Size(82, 29);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Miles";
@@ -389,12 +413,12 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.Location = new System.Drawing.Point(693, 68);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 22);
+            this.radioButton1.Size = new System.Drawing.Size(86, 29);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "$VND";
@@ -403,11 +427,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(691, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.Size = new System.Drawing.Size(161, 28);
             this.label7.TabIndex = 5;
             this.label7.Text = "SHOW PRICE IN";
             // 
@@ -467,7 +491,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox_To;
         private System.Windows.Forms.ComboBox comboBox_From;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Trip;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -490,5 +514,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

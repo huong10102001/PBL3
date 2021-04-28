@@ -28,5 +28,9 @@ namespace PBL3.DTO
             this.des_id = Convert.ToInt32(row["des_id"]);
             this.des_name = row["des_name"].ToString();
         }
+        public override string ToString()
+        {
+            return des_name;
+        }
     }
 }

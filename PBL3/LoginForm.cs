@@ -14,6 +14,17 @@ namespace PBL3
 {
     public partial class LoginForm : Form
     {
+        public delegate void Ten(String name);
+        public Ten ten;
+        public delegate void passData(String from, String to, String date);
+        public passData data;
+        string a, b, c;
+        public void setvalue(String from, String to, String date)
+        {
+            a = from;
+            b = to;
+            c = date;
+        }
         
         public LoginForm()
         {
@@ -26,15 +37,6 @@ namespace PBL3
             return AccountDAO.Instance.Login(userName, passWord);
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
             txtUserName.Text = "";
@@ -43,42 +45,54 @@ namespace PBL3
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            
             string userName = txtUserName.Text;
             string passWord = txtPassword.Text;
             if (userName == "" && passWord == "")
             {
                 MessageBox.Show("Hãy nhập đầy đủ tài khoản và mật khẩu");
             }
-            AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
-            if (Login(userName, passWord))
-            {
-                if (loginAccount.Type == 0)
+            else { 
+                AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
+                if (Login(userName, passWord))
                 {
-                    BookingForm bkf = new BookingForm();
-                    this.Hide();
-                    bkf.ShowDialog();
+                    if (loginAccount.Type == 0)
+                    {
+                        BookingForm bkf = new BookingForm();
+                        this.data += new passData(bkf.setvalue);
+                        data(a, b, c);
+                        this.ten += new Ten(bkf.setname);
+                        ten(AccountDAO.Instance.getName(userName,passWord));
+                        this.Hide();
+                        bkf.ShowDialog();
+                    }
+                    else if (loginAccount.Type == 1)
+                    {
+                        FlightManagement fmf = new FlightManagement();
+                        this.Hide();
+                        fmf.ShowDialog();
+                    }
                 }
-                else if (loginAccount.Type == 1)
+                else
                 {
-                    FlightManagement fmf = new FlightManagement();
-                    this.Hide();
-                    fmf.ShowDialog();
+                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
                 }
             }
-            else
-            {
-                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
-            }
+
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            OverviewForm f = new OverviewForm();
+            this.Hide();
+            f.ShowDialog();
         }
 
         private void btnSignup_Click_1(object sender, EventArgs e)
         {
             SignUpForm f = new SignUpForm();
+           
+            this.Hide();
             f.ShowDialog();
         }
     }

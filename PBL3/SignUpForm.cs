@@ -28,7 +28,7 @@ namespace PBL3
             string phone = txtPhone.Text;
             string address = txtAddress.Text;
             if ((userName != "" || passWord != "" || passWord2 != "" || name != "" || email != "" || phone != "" || address != "") 
-                && (userName != "Username" || passWord != "Password" || passWord2 != "Password" || name != "Name" || email != "Email" || phone != "Phone" || address != "Address"))
+                || (userName != "Username" || passWord != "Password" || passWord2 != "Password" || name != "Name" || email != "Email" || phone != "Phone" || address != "Address"))
             {
 
                 if (passWord == passWord2)
@@ -56,7 +56,9 @@ namespace PBL3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            LoginForm f = new LoginForm();
+            this.Hide();
+            f.ShowDialog();
         }
 
         private void txtUserName_MouseUp(object sender, MouseEventArgs e)

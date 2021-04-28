@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3.DAO
 {
@@ -25,6 +26,8 @@ namespace PBL3.DAO
         }
         public List<FlightDTO> flightList { get; set; }
         private FlightDAO()
+        { }
+       public List<FlightSearch> GetListFight(string trip, string from, string to, string takeoff) 
         {
             flightList = GetAllFlightList();
         }
@@ -55,34 +58,27 @@ namespace PBL3.DAO
         }
         public List<FlightSearch> GetListFight(string trip, string from, string to, DateTime takeoff)
         {
+            int tr = 1, dem = 0;
+            if (trip == "Round Trip") tr = 1;
+            else tr = 0;
+
             List<FlightSearch> list = new List<FlightSearch>();
-            List<PriceDTO> list1 = new List<PriceDTO>();
-            List<AirlineDTO> list2 = new List<AirlineDTO>();
-            int tr = 0;
-            float price = 0;
-            if (trip == "Round Trip") tr = 0;
-            else tr = 1;
+            List<PriceDTO> list1 = PriceDAO.Instance.GetListPrice();
+            List<AirlineDTO> index = AirlineDAO.Instance.GetAirlineIndex(tr, from, to, takeoff);
+            List<Fight> list3 = new List<Fight>();
+            
 
-            string query = string.Format("select fl_takeoftime, fl_landingtime, airline_name from FLIGHT, AIRLINE where fl_triptype = {0} and FLIGHT.airline_id = AIRLINE.airline_id", tr);
-
+            string query = string.Format("select airline_name, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and fl_takeoftime = N'{3}'", from, to, tr, takeoff);
             DataTable data = DataProvider.Instance.GetRecord(query);
-            list1 = PriceDAO.Instance.GetListPrice();
-            list2 = AirlineDAO.Instance.GetListAirline();
+
+            FlightSearch flight = new FlightSearch();
 
             foreach (DataRow item in data.Rows)
             {
-                FlightSearch fight = new FlightSearch(item);
-                list.Add(fight);
-            }
-            foreach (FlightSearch k in list)
-            {
-                foreach (PriceDTO i in list1)
-                {
-                    foreach (AirlineDTO j in list2)
-                    {
-                        i.price *= j.airline_index;
-                    }
-                }
+                flight = new FlightSearch(item, PriceDAO.Instance.Tinh(index[dem].airline_index));
+                list.Add(flight);
+
+                dem++;
             }
 
             return list;

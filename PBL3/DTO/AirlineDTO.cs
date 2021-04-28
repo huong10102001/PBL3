@@ -32,5 +32,9 @@ namespace PBL3.DTO
             airline_name = row["airline_name"].ToString();
             airline_index = Convert.ToSingle(row["airline_index"]);
         }
+        public override string ToString()
+        {
+            return airline_index.ToString();
+        }
     }
 }

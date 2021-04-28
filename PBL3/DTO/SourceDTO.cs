@@ -28,6 +28,10 @@ namespace PBL3.DTO
             this.src_id = Convert.ToInt32(row["src_id"]);
             this.src_name = row["src_name"].ToString();
         }
+        public override string ToString()
+        {
+            return src_name;
+        }
     }
 
 
