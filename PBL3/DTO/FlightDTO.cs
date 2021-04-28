@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    class FlightDTO
+    public class FlightDTO
     {
+        public string fl_id { get; set; }
         public int airline_id { get; set; }
         public int fl_source { get; set; }
         public int fl_destination { get; set; }
@@ -16,10 +17,11 @@ namespace PBL3.DTO
         public DateTime takeoff { get; set; }
         public DateTime landing { get; set; }
         public int idprice { get; set; }
-        public string triptype { get; set; }
+        public bool triptype { get; set; }
         public string description { get; set; }
         public int status { get; set; }
-    
+        public int capacity { get; set; }
+
         public FlightDTO()
         {
             airline_id = 1;
@@ -29,7 +31,7 @@ namespace PBL3.DTO
             takeoff = DateTime.Now;
             landing = DateTime.Now;
             idprice = 0;
-            triptype = null;
+            triptype = false;
             description = null;
             status = 0;
         }
@@ -42,9 +44,23 @@ namespace PBL3.DTO
             this.takeoff = (DateTime)row["takeoff"];
             this.landing = (DateTime)row["landing"];
             this.idprice = (int)row["idprice"];
-            this.triptype = row["triptype"].ToString();
+            this.triptype = Convert.ToBoolean(row["triptype"]);
             this.description = row["description"].ToString();
             this.status = (int)row["status"];
+        }
+
+        public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status, int capacity)
+        {
+            this.fl_id = fl_id;
+            this.airline_id = airline_id;
+            this.fl_source = fl_source;
+            this.fl_destination = fl_destination;
+            this.takeoff = takeoff;
+            this.landing = landing;
+            this.triptype = triptype;
+            this.description = description;
+            this.status = status;
+            this.capacity = capacity;
         }
     }
 }

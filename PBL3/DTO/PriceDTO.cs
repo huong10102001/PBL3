@@ -12,6 +12,12 @@ namespace PBL3.DTO
         public string name { get; set; }
         public float price { get; set; }
 
+        public PriceDTO(string name, float price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
         public PriceDTO()
         {
             name = null;
@@ -21,7 +27,7 @@ namespace PBL3.DTO
         public PriceDTO(DataRow row)
         {
             this.name = row["name"].ToString();
-            this.price = (float)row["price"];
+            this.price = Convert.ToSingle(row["price"]);
         }
     }
 }

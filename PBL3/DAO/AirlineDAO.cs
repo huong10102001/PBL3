@@ -18,7 +18,11 @@ namespace PBL3.DAO
             private set { instance = value; }
         }
 
-        private AirlineDAO() { }
+        public List<AirlineDTO> AirlineList { get; set; }
+        private AirlineDAO()
+        {
+            AirlineList = GetAllAirlineList();
+        }
 
         public List<AirlineDTO> GetListAirline()
         {
@@ -35,6 +39,51 @@ namespace PBL3.DAO
             }
 
             return list;
+        }
+        List<AirlineDTO> GetAllAirlineList()
+        {
+            DataTable data = DataProvider.Instance.GetRecord("SELECT * FROM AIRLINE");
+            List<AirlineDTO> list = new List<AirlineDTO>();
+            foreach (DataRow i in data.Rows)
+            {
+                list.Add(new AirlineDTO(i));
+            }
+            return list;
+        }
+        public string GetNameByID(int id)
+        {
+            foreach (AirlineDTO i in AirlineList)
+            {
+                if (i.airline_id == id)
+                {
+                    return i.airline_name;
+                }
+            }
+            return "";
+        }
+        public int GetAirlinePosition(int id)
+        {
+            int index = 0;
+            foreach (AirlineDTO i in AirlineList)
+            {
+                if (i.airline_id == id)
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+        public float GetAirlineIndexbyID(int id)
+        {
+            foreach(AirlineDTO i in AirlineList)
+            {
+                if(i.airline_id == id)
+                {
+                    return i.airline_index;
+                }
+            }
+            return 0;
         }
     }
 }

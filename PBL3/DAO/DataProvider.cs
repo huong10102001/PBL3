@@ -18,7 +18,7 @@ namespace PBL3.DAO
             {
                 if (_Instance == null)
                 {
-                    string cnnstr = @"Data Source=DESKTOP-T31PTLC\SQLEXPRESS;Initial Catalog=FlightManagement;Integrated Security=True";
+                    string cnnstr = @"Data Source=.\sqlexpress;Initial Catalog=FlightManagement;Integrated Security=True";
                     _Instance = new DataProvider(cnnstr);
                 }
                 return _Instance;

@@ -18,7 +18,11 @@ namespace PBL3.DAO
             private set { instance = value; }
         }
 
-        private PriceDAO() { }
+        public List<PriceDTO> PriceList { get; set; }
+        private PriceDAO()
+        {
+            PriceList = GetListPrice();
+        }
 
         public List<PriceDTO> GetListPrice()
         {
