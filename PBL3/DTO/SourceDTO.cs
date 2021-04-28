@@ -19,6 +19,10 @@ namespace PBL3.DTO
         {
             this.src_name = row["src_name"].ToString();
         }
+        public override string ToString()
+        {
+            return src_name;
+        }
     }
 
 

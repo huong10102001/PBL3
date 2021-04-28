@@ -51,6 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -333,6 +335,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::PBL3.Properties.Resources.Capture;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.radioButton3);
             this.panel3.Controls.Add(this.radioButton2);
@@ -344,6 +348,24 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1267, 144);
             this.panel3.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(314, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(208, 34);
+            this.label10.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("NSimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(313, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(282, 37);
+            this.label9.TabIndex = 10;
             // 
             // button2
             // 
@@ -363,12 +385,12 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.Color.White;
             this.radioButton3.Location = new System.Drawing.Point(910, 66);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(153, 22);
+            this.radioButton3.Size = new System.Drawing.Size(145, 29);
             this.radioButton3.TabIndex = 8;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Miles + Cash";
@@ -377,12 +399,12 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.White;
             this.radioButton2.Location = new System.Drawing.Point(804, 65);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 22);
+            this.radioButton2.Size = new System.Drawing.Size(82, 29);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Miles";
@@ -391,12 +413,12 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.Location = new System.Drawing.Point(693, 68);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 22);
+            this.radioButton1.Size = new System.Drawing.Size(86, 29);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "$VND";
@@ -405,11 +427,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(691, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.Size = new System.Drawing.Size(161, 28);
             this.label7.TabIndex = 5;
             this.label7.Text = "SHOW PRICE IN";
             // 
@@ -492,5 +514,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

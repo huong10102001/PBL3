@@ -19,5 +19,9 @@ namespace PBL3.DTO
         {
             this.des_name = row["des_name"].ToString();
         }
+        public override string ToString()
+        {
+            return des_name;
+        }
     }
 }

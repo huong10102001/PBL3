@@ -59,7 +59,7 @@
     <Compile Include="DAO\FlightDAO.cs" />
     <Compile Include="DAO\PlaceDAO.cs" />
     <Compile Include="DAO\PriceDAO.cs" />
-    <Compile Include="DAO\Source.cs" />
+    <Compile Include="DAO\Soure.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\AirlineDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />

@@ -66,18 +66,18 @@
             this.panel6.Location = new System.Drawing.Point(657, 3);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(205, 240);
+            this.panel6.Size = new System.Drawing.Size(205, 208);
             this.panel6.TabIndex = 17;
             // 
             // MainCabin
             // 
             this.MainCabin.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainCabin.ForeColor = System.Drawing.Color.SteelBlue;
-            this.MainCabin.Location = new System.Drawing.Point(4, 76);
+            this.MainCabin.Location = new System.Drawing.Point(4, 72);
             this.MainCabin.Name = "MainCabin";
             this.MainCabin.Size = new System.Drawing.Size(196, 77);
             this.MainCabin.TabIndex = 2;
-            this.MainCabin.Text = "label2";
+            this.MainCabin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox6
             // 
@@ -100,18 +100,18 @@
             this.panel7.Location = new System.Drawing.Point(864, 3);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(205, 240);
+            this.panel7.Size = new System.Drawing.Size(205, 208);
             this.panel7.TabIndex = 18;
             // 
             // DetalComfort
             // 
             this.DetalComfort.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetalComfort.ForeColor = System.Drawing.Color.SteelBlue;
-            this.DetalComfort.Location = new System.Drawing.Point(5, 76);
+            this.DetalComfort.Location = new System.Drawing.Point(5, 72);
             this.DetalComfort.Name = "DetalComfort";
             this.DetalComfort.Size = new System.Drawing.Size(197, 77);
             this.DetalComfort.TabIndex = 3;
-            this.DetalComfort.Text = "label3";
+            this.DetalComfort.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox7
             // 
@@ -119,10 +119,11 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.textBox7.Location = new System.Drawing.Point(44, 16);
+            this.textBox7.Location = new System.Drawing.Point(33, 16);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(130, 21);
+            this.textBox7.Size = new System.Drawing.Size(141, 26);
             this.textBox7.TabIndex = 2;
             this.textBox7.Text = "Detal Comfort";
             // 
@@ -134,18 +135,18 @@
             this.panel8.Location = new System.Drawing.Point(1071, 3);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 240);
+            this.panel8.Size = new System.Drawing.Size(200, 208);
             this.panel8.TabIndex = 19;
             // 
             // FirstClass
             // 
             this.FirstClass.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstClass.ForeColor = System.Drawing.Color.SteelBlue;
-            this.FirstClass.Location = new System.Drawing.Point(4, 71);
+            this.FirstClass.Location = new System.Drawing.Point(4, 69);
             this.FirstClass.Name = "FirstClass";
             this.FirstClass.Size = new System.Drawing.Size(193, 77);
             this.FirstClass.TabIndex = 4;
-            this.FirstClass.Text = "label4";
+            this.FirstClass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox8
             // 
@@ -168,18 +169,18 @@
             this.panel5.Location = new System.Drawing.Point(450, 3);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(205, 240);
+            this.panel5.Size = new System.Drawing.Size(205, 208);
             this.panel5.TabIndex = 16;
             // 
             // BasicEconmy
             // 
             this.BasicEconmy.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BasicEconmy.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BasicEconmy.Location = new System.Drawing.Point(4, 76);
+            this.BasicEconmy.Location = new System.Drawing.Point(4, 72);
             this.BasicEconmy.Name = "BasicEconmy";
             this.BasicEconmy.Size = new System.Drawing.Size(197, 77);
             this.BasicEconmy.TabIndex = 1;
-            this.BasicEconmy.Text = "label1";
+            this.BasicEconmy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox5
             // 
@@ -208,18 +209,17 @@
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(446, 240);
+            this.panel4.Size = new System.Drawing.Size(446, 208);
             this.panel4.TabIndex = 15;
             // 
             // Time
             // 
             this.Time.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Time.Location = new System.Drawing.Point(335, 16);
+            this.Time.Location = new System.Drawing.Point(315, 16);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(107, 28);
             this.Time.TabIndex = 11;
-            this.Time.Text = "label2";
             // 
             // AirlineName
             // 
@@ -229,27 +229,24 @@
             this.AirlineName.Name = "AirlineName";
             this.AirlineName.Size = new System.Drawing.Size(125, 28);
             this.AirlineName.TabIndex = 10;
-            this.AirlineName.Text = "label1";
             // 
             // Timelanding
             // 
-            this.Timelanding.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timelanding.Font = new System.Drawing.Font("NSimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Timelanding.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Timelanding.Location = new System.Drawing.Point(289, 76);
+            this.Timelanding.Location = new System.Drawing.Point(281, 78);
             this.Timelanding.Name = "Timelanding";
-            this.Timelanding.Size = new System.Drawing.Size(125, 72);
+            this.Timelanding.Size = new System.Drawing.Size(152, 51);
             this.Timelanding.TabIndex = 9;
-            this.Timelanding.Text = "label2";
             // 
             // Timetakeoff
             // 
-            this.Timetakeoff.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timetakeoff.Font = new System.Drawing.Font("NSimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Timetakeoff.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Timetakeoff.Location = new System.Drawing.Point(33, 76);
+            this.Timetakeoff.Location = new System.Drawing.Point(29, 78);
             this.Timetakeoff.Name = "Timetakeoff";
-            this.Timetakeoff.Size = new System.Drawing.Size(125, 72);
+            this.Timetakeoff.Size = new System.Drawing.Size(155, 51);
             this.Timetakeoff.TabIndex = 8;
-            this.Timetakeoff.Text = "label1";
             // 
             // button4
             // 
@@ -258,7 +255,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button4.Location = new System.Drawing.Point(114, 194);
+            this.button4.Location = new System.Drawing.Point(114, 169);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 32);
@@ -273,7 +270,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button3.Location = new System.Drawing.Point(27, 194);
+            this.button3.Location = new System.Drawing.Point(27, 169);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 32);
@@ -284,7 +281,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PBL3.Properties.Resources.Capture2;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 161);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 136);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(407, 16);
@@ -295,7 +292,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PBL3.Properties.Resources._5;
-            this.pictureBox1.Location = new System.Drawing.Point(197, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 82);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 32);
@@ -314,7 +311,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Name = "ListFight";
-            this.Size = new System.Drawing.Size(1274, 246);
+            this.Size = new System.Drawing.Size(1274, 227);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);

@@ -19,7 +19,11 @@ namespace PBL3.DTO
         public AirlineDTO(DataRow row)
         {
             airline_name = row["airline_name"].ToString();
-            airline_index = (float)row["airline_index"];
+            airline_index = Convert.ToSingle(row["airline_index"]);
+        }
+        public override string ToString()
+        {
+            return airline_index.ToString();
         }
     }
 }

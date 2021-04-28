@@ -39,11 +39,13 @@ namespace PBL3.DAO
         public DataTable GetRecord(string query)
         {
             DataTable data = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             cnn.Open();
             da.Fill(data);
             cnn.Close();
             return data;
+            //chay thu
         }
         /*private static DataProvider instance; 
 
