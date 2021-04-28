@@ -15,6 +15,16 @@ namespace PBL3
     public partial class BookingForm : Form
     {
         private bool isCollapsed;
+        public void setname(String name)
+        {
+            button9.Text = name;
+        }
+        public void setvalue(String from, String to, String date)
+        {
+            comboBox_From.Text = from;
+            comboBox_To.Text = to;
+            dateTimePicker1.Value = Convert.ToDateTime(date).Date;
+        }
         public BookingForm()
         {
             InitializeComponent();
