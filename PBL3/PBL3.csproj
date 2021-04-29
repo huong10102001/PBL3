@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_FeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_FeedbackForm.Designer.cs">
+      <DependentUpon>Admin_FeedbackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,9 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\AirlineDAO.cs" />
+    <Compile Include="DAO\BILL_KHDAO.cs" />
+    <Compile Include="DAO\FeedbackDAO.cs" />
+    <Compile Include="DTO\BILL_KHDTO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DestinationDAO.cs" />
     <Compile Include="DAO\FlightDAO.cs" />
@@ -63,6 +78,7 @@
     <Compile Include="DTO\AirlineDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\DestinationDTO.cs" />
+    <Compile Include="DTO\FeedbackDTO.cs" />
     <Compile Include="DTO\Fight.cs" />
     <Compile Include="DTO\FlightDTO.cs" />
     <Compile Include="DTO\FlightSearch.cs" />
@@ -74,6 +90,11 @@
     </Compile>
     <Compile Include="FlightManagement.Designer.cs">
       <DependentUpon>FlightManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlightManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlightManagementDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FlightTicketForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +134,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +152,12 @@
     <Compile Include="UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_FeedbackForm.resx">
+      <DependentUpon>Admin_FeedbackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bill.resx">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,12 +187,26 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FlightManagementDataSet.xsc">
+      <DependentUpon>FlightManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FlightManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FlightManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FlightManagementDataSet.xss">
+      <DependentUpon>FlightManagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -194,6 +241,11 @@
     <None Include="Resources\PngItem_1468479.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Capture3.PNG" />
+    <None Include="Resources\Capture2.PNG" />
+    <None Include="Resources\Capture1.PNG" />
+    <None Include="Resources\Lufthansa_747-8-aircraft-600x400.jpg" />
+    <None Include="Resources\clouds32.jpg" />
     <None Include="Resources\Capture.PNG" />
     <None Include="Resources\Capture51.JPG" />
     <None Include="Resources\Capture41.JPG" />
@@ -207,6 +259,9 @@
     <None Include="Resources\960x0.jpg" />
     <None Include="Resources\abc.png" />
     <None Include="Resources\abc1.png" />
+    <None Include="Resources\0fc087a2d2615402d5d128b93a83b315.jpg" />
+    <None Include="Resources\8844c32d781c49dbbfa039b2227ec8c8.jpg" />
+    <None Include="Resources\6e9b4572231b7a1e056ffc1bb0d2b08f.jpg" />
     <Content Include="Resources\bca02e625cb0205f6035b8c1391204b5.jpg" />
     <None Include="Resources\bca02e625cb0205f6035b8c1391204b51.jpg" />
     <None Include="icon\findicon.png" />

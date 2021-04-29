@@ -17,3 +17,6 @@ C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.ca
 C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.exe
 C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.pdb
 C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.Bill.resources
+C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.ReportForm.resources
+C:\Users\Admin\Desktop\PBL3\PBL3\PBL3\obj\Debug\PBL3.Admin_FeedbackForm.resources

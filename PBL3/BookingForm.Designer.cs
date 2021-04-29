@@ -94,6 +94,7 @@
             this.panel9.Controls.Add(this.btnBookTicket);
             this.panel9.Controls.Add(this.btnProfile);
             this.panel9.Controls.Add(this.button9);
+            this.panel9.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel9.Location = new System.Drawing.Point(1000, 34);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.MaximumSize = new System.Drawing.Size(287, 246);
@@ -125,7 +126,7 @@
             this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedback.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeedback.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnFeedback.Location = new System.Drawing.Point(1, 149);
+            this.btnFeedback.Location = new System.Drawing.Point(1, 150);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(284, 46);
@@ -141,7 +142,7 @@
             this.btnBookTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookTicket.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookTicket.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnBookTicket.Location = new System.Drawing.Point(1, 101);
+            this.btnBookTicket.Location = new System.Drawing.Point(1, 102);
             this.btnBookTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBookTicket.Name = "btnBookTicket";
             this.btnBookTicket.Size = new System.Drawing.Size(284, 46);
@@ -171,7 +172,7 @@
             this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("NSimSun", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = global::PBL3.Properties.Resources.Capture5;
             this.button9.Location = new System.Drawing.Point(0, 4);

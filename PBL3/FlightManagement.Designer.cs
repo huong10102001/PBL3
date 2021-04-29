@@ -210,7 +210,7 @@ namespace PBL3
             // 
             this.pictureBoxEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEdit.Image = global::PBL3.Properties.Resources.iconfinder_icon_136_document_edit_314724;
-            this.pictureBoxEdit.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxEdit.Location = new System.Drawing.Point(7, 4);
             this.pictureBoxEdit.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxEdit.Name = "pictureBoxEdit";
             this.pictureBoxEdit.Size = new System.Drawing.Size(45, 46);
@@ -246,10 +246,10 @@ namespace PBL3
             // 
             this.pictureBoxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDelete.Image = global::PBL3.Properties.Resources.remove;
-            this.pictureBoxDelete.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxDelete.Location = new System.Drawing.Point(11, 3);
             this.pictureBoxDelete.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxDelete.Name = "pictureBoxDelete";
-            this.pictureBoxDelete.Size = new System.Drawing.Size(45, 46);
+            this.pictureBoxDelete.Size = new System.Drawing.Size(38, 46);
             this.pictureBoxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDelete.TabIndex = 2;
             this.pictureBoxDelete.TabStop = false;
@@ -260,7 +260,7 @@ namespace PBL3
             this.pn4.Controls.Add(this.labelView);
             this.pn4.Controls.Add(this.pictureBoxView);
             this.pn4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pn4.Location = new System.Drawing.Point(408, 2);
+            this.pn4.Location = new System.Drawing.Point(412, 2);
             this.pn4.Margin = new System.Windows.Forms.Padding(4);
             this.pn4.Name = "pn4";
             this.pn4.Size = new System.Drawing.Size(145, 54);
@@ -285,7 +285,7 @@ namespace PBL3
             this.pictureBoxView.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxView.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxView.Name = "pictureBoxView";
-            this.pictureBoxView.Size = new System.Drawing.Size(45, 46);
+            this.pictureBoxView.Size = new System.Drawing.Size(46, 46);
             this.pictureBoxView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxView.TabIndex = 2;
             this.pictureBoxView.TabStop = false;
@@ -352,7 +352,7 @@ namespace PBL3
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(36, 9);
+            this.label6.Location = new System.Drawing.Point(36, 3);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 45);
@@ -375,7 +375,7 @@ namespace PBL3
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(36, 9);
+            this.label7.Location = new System.Drawing.Point(36, 3);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 45);
@@ -418,7 +418,7 @@ namespace PBL3
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(36, 9);
+            this.label8.Location = new System.Drawing.Point(36, 3);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(182, 45);
@@ -461,7 +461,7 @@ namespace PBL3
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(36, 9);
+            this.label9.Location = new System.Drawing.Point(36, 4);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 45);
@@ -494,7 +494,7 @@ namespace PBL3
             this.label10.BackColor = System.Drawing.Color.SteelBlue;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(28, 29);
+            this.label10.Location = new System.Drawing.Point(28, 20);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(93, 28);
