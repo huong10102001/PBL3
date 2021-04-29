@@ -44,7 +44,7 @@ namespace PBL3.DAO
         {
             List<AirlineDTO> list = new List<AirlineDTO>();
 
-            string query = string.Format("select airline_index, airline_name from FLIGHT INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN SOURCE ON FLIGHT.fl_source = SOURCE.src_id INNER JOIN DESTINATION ON FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and fl_takeoftime = N'{3}'", from, to, trip, takeoff);
+            string query = string.Format("select FLIGHT.airline_id, airline_index, airline_name from FLIGHT INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN SOURCE ON FLIGHT.fl_source = SOURCE.src_id INNER JOIN DESTINATION ON FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, trip, takeoff);
             
             DataTable data = DataProvider.Instance.GetRecord(query);
 

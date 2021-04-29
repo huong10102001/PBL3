@@ -118,7 +118,7 @@ namespace PBL3
             this.lbAdd.Location = new System.Drawing.Point(38, 3);
             this.lbAdd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAdd.Name = "lbAdd";
-            this.lbAdd.Size = new System.Drawing.Size(46, 25);
+            this.lbAdd.Size = new System.Drawing.Size(58, 32);
             this.lbAdd.TabIndex = 2;
             this.lbAdd.Text = "Add";
             // 
@@ -154,7 +154,7 @@ namespace PBL3
             this.labelEdit.Location = new System.Drawing.Point(38, 3);
             this.labelEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEdit.Name = "labelEdit";
-            this.labelEdit.Size = new System.Drawing.Size(44, 25);
+            this.labelEdit.Size = new System.Drawing.Size(55, 32);
             this.labelEdit.TabIndex = 2;
             this.labelEdit.Text = "Edit";
             // 
@@ -190,7 +190,7 @@ namespace PBL3
             this.labelDelete.Location = new System.Drawing.Point(38, 3);
             this.labelDelete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDelete.Name = "labelDelete";
-            this.labelDelete.Size = new System.Drawing.Size(66, 25);
+            this.labelDelete.Size = new System.Drawing.Size(85, 32);
             this.labelDelete.TabIndex = 2;
             this.labelDelete.Text = "Delete";
             // 
@@ -226,7 +226,7 @@ namespace PBL3
             this.labelView.Location = new System.Drawing.Point(38, 3);
             this.labelView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelView.Name = "labelView";
-            this.labelView.Size = new System.Drawing.Size(53, 25);
+            this.labelView.Size = new System.Drawing.Size(66, 32);
             this.labelView.TabIndex = 2;
             this.labelView.Text = "View";
             // 
@@ -262,7 +262,7 @@ namespace PBL3
             this.ckbxID.Location = new System.Drawing.Point(4, 23);
             this.ckbxID.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxID.Name = "ckbxID";
-            this.ckbxID.Size = new System.Drawing.Size(15, 14);
+            this.ckbxID.Size = new System.Drawing.Size(18, 17);
             this.ckbxID.TabIndex = 7;
             this.ckbxID.UseVisualStyleBackColor = true;
             // 
@@ -282,7 +282,7 @@ namespace PBL3
             this.txbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbID.Location = new System.Drawing.Point(0, 44);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(199, 25);
+            this.txbID.Size = new System.Drawing.Size(199, 29);
             this.txbID.TabIndex = 10;
             // 
             // label6
@@ -293,7 +293,7 @@ namespace PBL3
             this.label6.Location = new System.Drawing.Point(36, 7);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 30);
+            this.label6.Size = new System.Drawing.Size(117, 37);
             this.label6.TabIndex = 9;
             this.label6.Text = "Flight ID";
             // 
@@ -316,7 +316,7 @@ namespace PBL3
             this.label7.Location = new System.Drawing.Point(36, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 30);
+            this.label7.Size = new System.Drawing.Size(136, 37);
             this.label7.TabIndex = 9;
             this.label7.Text = "Departure";
             // 
@@ -328,7 +328,7 @@ namespace PBL3
             this.cbbDeparture.Location = new System.Drawing.Point(4, 48);
             this.cbbDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.cbbDeparture.Name = "cbbDeparture";
-            this.cbbDeparture.Size = new System.Drawing.Size(199, 25);
+            this.cbbDeparture.Size = new System.Drawing.Size(199, 29);
             this.cbbDeparture.TabIndex = 8;
             // 
             // ckbxDepart
@@ -337,7 +337,7 @@ namespace PBL3
             this.ckbxDepart.Location = new System.Drawing.Point(4, 23);
             this.ckbxDepart.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDepart.Name = "ckbxDepart";
-            this.ckbxDepart.Size = new System.Drawing.Size(15, 14);
+            this.ckbxDepart.Size = new System.Drawing.Size(18, 17);
             this.ckbxDepart.TabIndex = 7;
             this.ckbxDepart.UseVisualStyleBackColor = true;
             // 
@@ -360,7 +360,7 @@ namespace PBL3
             this.label8.Location = new System.Drawing.Point(36, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 30);
+            this.label8.Size = new System.Drawing.Size(153, 37);
             this.label8.TabIndex = 9;
             this.label8.Text = "Destination";
             // 
@@ -372,7 +372,7 @@ namespace PBL3
             this.cbbDestination.Location = new System.Drawing.Point(4, 48);
             this.cbbDestination.Margin = new System.Windows.Forms.Padding(4);
             this.cbbDestination.Name = "cbbDestination";
-            this.cbbDestination.Size = new System.Drawing.Size(199, 25);
+            this.cbbDestination.Size = new System.Drawing.Size(199, 29);
             this.cbbDestination.TabIndex = 8;
             // 
             // ckbxDesti
@@ -381,7 +381,7 @@ namespace PBL3
             this.ckbxDesti.Location = new System.Drawing.Point(4, 23);
             this.ckbxDesti.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDesti.Name = "ckbxDesti";
-            this.ckbxDesti.Size = new System.Drawing.Size(15, 14);
+            this.ckbxDesti.Size = new System.Drawing.Size(18, 17);
             this.ckbxDesti.TabIndex = 7;
             this.ckbxDesti.UseVisualStyleBackColor = true;
             // 
@@ -394,7 +394,7 @@ namespace PBL3
             this.lblText.Location = new System.Drawing.Point(26, 16);
             this.lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(74, 21);
+            this.lblText.Size = new System.Drawing.Size(93, 28);
             this.lblText.TabIndex = 11;
             this.lblText.Text = "Welcome";
             // 
@@ -564,10 +564,12 @@ namespace PBL3
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(4, 44);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(199, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 29);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // label1
@@ -578,7 +580,7 @@ namespace PBL3
             this.label1.Location = new System.Drawing.Point(36, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 30);
+            this.label1.Size = new System.Drawing.Size(158, 37);
             this.label1.TabIndex = 9;
             this.label1.Text = "Take off day";
             // 
@@ -588,7 +590,7 @@ namespace PBL3
             this.ckbxDay.Location = new System.Drawing.Point(4, 23);
             this.ckbxDay.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDay.Name = "ckbxDay";
-            this.ckbxDay.Size = new System.Drawing.Size(15, 14);
+            this.ckbxDay.Size = new System.Drawing.Size(18, 17);
             this.ckbxDay.TabIndex = 7;
             this.ckbxDay.UseVisualStyleBackColor = true;
             // 
@@ -611,7 +613,7 @@ namespace PBL3
             this.label2.Location = new System.Drawing.Point(36, 7);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 30);
+            this.label2.Size = new System.Drawing.Size(104, 37);
             this.label2.TabIndex = 9;
             this.label2.Text = "Airlines";
             // 
@@ -623,7 +625,7 @@ namespace PBL3
             this.cbbAirline.Location = new System.Drawing.Point(0, 45);
             this.cbbAirline.Margin = new System.Windows.Forms.Padding(4);
             this.cbbAirline.Name = "cbbAirline";
-            this.cbbAirline.Size = new System.Drawing.Size(199, 25);
+            this.cbbAirline.Size = new System.Drawing.Size(199, 29);
             this.cbbAirline.TabIndex = 8;
             // 
             // ckbxAirline
@@ -632,7 +634,7 @@ namespace PBL3
             this.ckbxAirline.Location = new System.Drawing.Point(4, 23);
             this.ckbxAirline.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxAirline.Name = "ckbxAirline";
-            this.ckbxAirline.Size = new System.Drawing.Size(15, 14);
+            this.ckbxAirline.Size = new System.Drawing.Size(18, 17);
             this.ckbxAirline.TabIndex = 7;
             this.ckbxAirline.UseVisualStyleBackColor = true;
             // 

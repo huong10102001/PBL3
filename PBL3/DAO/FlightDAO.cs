@@ -54,6 +54,22 @@ namespace PBL3.DAO
 
             return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status,fl_capacity);
         }
+        public List<FlightSearch> GetAllFight()
+        {
+            List<FlightSearch> list = new List<FlightSearch>();
+            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where fl_status = 0");
+            DataTable data = DataProvider.Instance.GetRecord(query);
+
+            FlightSearch flight = new FlightSearch();
+
+            foreach (DataRow item in data.Rows)
+            {
+                flight = new FlightSearch(item);
+                list.Add(flight);
+            }
+
+            return list;
+        }
         public List<FlightSearch> GetListFight(string trip, string from, string to, string takeoff)
         {
             int tr = 1, dem = 0;
@@ -66,14 +82,14 @@ namespace PBL3.DAO
             List<Fight> list3 = new List<Fight>();
             
 
-            string query = string.Format("select airline_name, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and fl_takeoftime = N'{3}'", from, to, tr, takeoff);
+            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, tr, takeoff);
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightSearch flight = new FlightSearch();
 
             foreach (DataRow item in data.Rows)
             {
-                flight = new FlightSearch(item, PriceDAO.Instance.Tinh(index[dem].airline_index));
+                flight = new FlightSearch(item);
                 list.Add(flight);
 
                 dem++;
