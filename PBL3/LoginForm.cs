@@ -15,7 +15,9 @@ namespace PBL3
     public partial class LoginForm : Form
     {
         public delegate void Ten(String name);
+        public delegate void UserId(string UserId);
         public Ten ten;
+        public UserId userId;
 
         public delegate void UserName(String username);
         public UserName user;
@@ -66,11 +68,13 @@ namespace PBL3
                         data(a, b, c);
 
                         this.ten += new Ten(bkf.setname);
+                        this.userId += new UserId(bkf.setUserID);
                         ten(AccountDAO.Instance.getName(userName,passWord));
 
                         this.user += new UserName(bkf.setUserName);
                         user(userName);
 
+                        userId(AccountDAO.Instance.GetAccountByUserName(userName).UserName);
                         this.Hide();
                         bkf.ShowDialog();
                     }

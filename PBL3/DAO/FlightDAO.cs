@@ -11,6 +11,7 @@ namespace PBL3.DAO
 {
     class FlightDAO
     {
+        public delegate bool Compare(object o1, object o2);
         private static FlightDAO _Instance;
         public static FlightDAO Instance
         {
@@ -57,7 +58,7 @@ namespace PBL3.DAO
         public List<FlightSearch> GetAllFight()
         {
             List<FlightSearch> list = new List<FlightSearch>();
-            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where fl_status = 0");
+            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime, fl_id from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where fl_status = 0");
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightSearch flight = new FlightSearch();
@@ -82,7 +83,7 @@ namespace PBL3.DAO
             List<Fight> list3 = new List<Fight>();
             
 
-            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, tr, takeoff);
+            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime, fl_id from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, tr, takeoff);
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightSearch flight = new FlightSearch();
@@ -180,6 +181,49 @@ namespace PBL3.DAO
                 index++;
             }
             return -1;
+        }
+        public int Status(string fl_id)
+        {
+            int status = 0;
+            string query = "select * from FLIGHT where fl_id = " + fl_id;
+            DataTable data = DataProvider.Instance.GetRecord(query);
+
+            FlightDTO flight = new FlightDTO();
+
+            foreach (DataRow item in data.Rows)
+            {
+                flight = new FlightDTO(item);
+                status = flight.status;
+            }
+
+            return status;
+        }
+
+        public void Sort(List<FlightSearch> flights, Compare cmp)
+        {
+            for (int i = 0; i < flights.Count - 1; i++)
+            {
+                for (int j = i + 1; j < flights.Count; j++)
+                {
+                    if (cmp(flights[i], flights[j]))
+                    {
+                        FlightSearch temp = flights[i];
+                        flights[i] = flights[j];
+                        flights[j] = temp;
+                    }
+                }
+            }
+        }
+        public void SortBLL(List<FlightSearch> flights, string sort)
+        {
+            if (sort == "$VND")
+            {
+                Sort(flights, FlightSearch.CompareByPrice);
+            }
+            else if (sort == "Time")
+                Sort(flights, FlightSearch.CompareByTime);
+            else
+                Sort(flights, FlightSearch.CompareByTimeCash);
         }
         public void AddFlighttoDatabase(FlightDTO f)
         {

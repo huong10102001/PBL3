@@ -196,11 +196,6 @@
             0,
             0,
             0});
-            this.numeCapacity.Minimum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
             this.numeCapacity.Name = "numeCapacity";
             this.numeCapacity.Size = new System.Drawing.Size(370, 37);
             this.numeCapacity.TabIndex = 37;
@@ -476,7 +471,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lbText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UpdateForm";
