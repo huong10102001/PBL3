@@ -20,12 +20,12 @@ namespace PBL3
         public FlightId flightId;
         
         private bool isCollapsed;
-        string user = null;
+        string user1 = null;
         List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
 
         public void setUserID(string User)
         {
-            user = User;
+            user1 = User;
            
         }
 
@@ -136,7 +136,7 @@ namespace PBL3
         {
             InfoForm f = new InfoForm();
             this.customerId += new CustomerId(f.Form);
-            customerId(user);
+            customerId(user1);
             f.ShowDialog();
         }
 
@@ -144,7 +144,7 @@ namespace PBL3
         {
             FlightTicketForm f = new FlightTicketForm();
             this.customerId += new CustomerId(f.setUserId);
-            customerId(user);
+            customerId(user1);
             f.ShowDialog();
         }
 
