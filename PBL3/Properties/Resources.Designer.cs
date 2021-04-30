@@ -63,6 +63,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0fc087a2d2615402d5d128b93a83b315 {
+            get {
+                object obj = ResourceManager.GetObject("0fc087a2d2615402d5d128b93a83b315", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1d3d9e1fe0eb189c81ccd03cf3b09d2a {
             get {
                 object obj = ResourceManager.GetObject("1d3d9e1fe0eb189c81ccd03cf3b09d2a", resourceCulture);
@@ -96,6 +106,26 @@ namespace PBL3.Properties {
         internal static System.Drawing.Bitmap _5 {
             get {
                 object obj = ResourceManager.GetObject("5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6e9b4572231b7a1e056ffc1bb0d2b08f {
+            get {
+                object obj = ResourceManager.GetObject("6e9b4572231b7a1e056ffc1bb0d2b08f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8844c32d781c49dbbfa039b2227ec8c8 {
+            get {
+                object obj = ResourceManager.GetObject("8844c32d781c49dbbfa039b2227ec8c8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +213,16 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Capture3 {
+            get {
+                object obj = ResourceManager.GetObject("Capture3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Capture4 {
             get {
                 object obj = ResourceManager.GetObject("Capture4", resourceCulture);
@@ -203,9 +243,39 @@ namespace PBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Capture6 {
+            get {
+                object obj = ResourceManager.GetObject("Capture6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Capture7 {
+            get {
+                object obj = ResourceManager.GetObject("Capture7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipart1797699 {
             get {
                 object obj = ResourceManager.GetObject("clipart1797699", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clouds32 {
+            get {
+                object obj = ResourceManager.GetObject("clouds32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +316,16 @@ namespace PBL3.Properties {
         internal static System.Drawing.Bitmap iconfinder_icon_136_document_edit_314724 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_icon-136-document-edit_314724", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lufthansa_747_8_aircraft_600x400 {
+            get {
+                object obj = ResourceManager.GetObject("Lufthansa_747-8-aircraft-600x400", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

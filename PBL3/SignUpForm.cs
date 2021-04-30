@@ -35,10 +35,18 @@ namespace PBL3
                 {
                     if (checkBox1.Checked == true)
                     {
-                        AccountDAO.Instance.Signup(userName, passWord, name, email, phone, address);
-                        MessageBox.Show("Đăng kí thành công");
-                        LoginForm lm = new LoginForm();
-                        this.Hide();
+                        try
+                        { 
+                            AccountDAO.Instance.Signup(userName, passWord, name, email, phone, address);
+                            MessageBox.Show("Đăng kí thành công");
+                            LoginForm lm = new LoginForm();
+                            this.Hide();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Trùng tên tài khoản");
+                        }
+
                     }
                     else
                     {
@@ -96,6 +104,6 @@ namespace PBL3
                 txtAddress.Text = "";
         }
 
-       
+    
     }
 }

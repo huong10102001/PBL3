@@ -14,10 +14,11 @@ namespace PBL3
 {
     public partial class FlightManagement : Form
     {
-        private string USERNAME = "dotuan46";
+        private string USERNAME;
 
         public delegate void passSTAFFIDCallBack(string USERNAME);
         public passSTAFFIDCallBack passStaffId;
+        public FlightManagement() { }
         public FlightManagement(string username)
         {
             USERNAME = username;
@@ -250,6 +251,14 @@ namespace PBL3
             {
                 //do nothing
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Admin_FeedbackForm f = new Admin_FeedbackForm();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

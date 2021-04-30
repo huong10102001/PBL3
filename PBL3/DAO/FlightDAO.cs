@@ -11,6 +11,7 @@ namespace PBL3.DAO
 {
     class FlightDAO
     {
+        public delegate bool Compare(object o1, object o2);
         private static FlightDAO _Instance;
         public static FlightDAO Instance
         {
@@ -179,6 +180,49 @@ namespace PBL3.DAO
                 index++;
             }
             return -1;
+        }
+        public int Status(string fl_id)
+        {
+            int status = 0;
+            string query = "select * from FLIGHT where fl_id = " + fl_id;
+            DataTable data = DataProvider.Instance.GetRecord(query);
+
+            FlightDTO flight = new FlightDTO();
+
+            foreach (DataRow item in data.Rows)
+            {
+                flight = new FlightDTO(item);
+                status = flight.status;
+            }
+
+            return status;
+        }
+
+        public void Sort(List<FlightSearch> flights, Compare cmp)
+        {
+            for (int i = 0; i < flights.Count - 1; i++)
+            {
+                for (int j = i + 1; j < flights.Count; j++)
+                {
+                    if (cmp(flights[i], flights[j]))
+                    {
+                        FlightSearch temp = flights[i];
+                        flights[i] = flights[j];
+                        flights[j] = temp;
+                    }
+                }
+            }
+        }
+        public void SortBLL(List<FlightSearch> flights, string sort)
+        {
+            if (sort == "$VND")
+            {
+                Sort(flights, FlightSearch.CompareByPrice);
+            }
+            else if (sort == "Time")
+                Sort(flights, FlightSearch.CompareByTime);
+            else
+                Sort(flights, FlightSearch.CompareByTimeCash);
         }
         public void AddFlighttoDatabase(FlightDTO f)
         {

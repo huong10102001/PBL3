@@ -13,6 +13,7 @@ namespace PBL3.DTO
         public DateTime timelanding { get; set; }
         public TimeSpan time { get; set; }
         public string fl_id { get; set; }
+        public string id { get; set; }
         public float index { get; set; }
         public float basiceconmy { get; set; }
         public float maincabin { get; set; }
@@ -22,6 +23,7 @@ namespace PBL3.DTO
 
         public FlightSearch()
         {
+            id = null;
             fl_id = "";
             index = 0;
             timetakeoff = DateTime.Now;
@@ -35,6 +37,7 @@ namespace PBL3.DTO
         }
         public FlightSearch(DataRow row)
         {
+            this.id = row["fl_id"].ToString();
             this.fl_id = row["fl_id"].ToString();
             this.timetakeoff = (DateTime)row["fl_takeoftime"];
             this.timelanding = (DateTime)row["fl_landingtime"];
@@ -45,6 +48,30 @@ namespace PBL3.DTO
             this.maincabin = 0;
             this.detalcomfort = 0;
             this.firstclass = 0;
+        }
+        public static Boolean CompareByPrice(object o1, object o2)
+        {
+            if (((FlightSearch)o1).basiceconmy > ((FlightSearch)o2).basiceconmy)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static Boolean CompareByTime(object o1, object o2)
+        {
+            if (((FlightSearch)o1).time > ((FlightSearch)o2).time)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static Boolean CompareByTimeCash(object o1, object o2)
+        {
+            if (((FlightSearch)o1).time > ((FlightSearch)o2).time && ((FlightSearch)o1).basiceconmy > ((FlightSearch)o2).basiceconmy)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

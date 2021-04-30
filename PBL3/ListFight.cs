@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3.DTO;
+using PBL3.DAO;
 
 namespace PBL3
 {
@@ -20,6 +22,7 @@ namespace PBL3
 
         public string username;
         public string flightID;
+        public string id;
         public string timetakeoff;
         public string timelanding;
         public float basiceconmy;
@@ -28,6 +31,10 @@ namespace PBL3
         public float firstclass;
         public string airlinename;
         public string time;
+        public string _id
+        {
+            get { return id;  }
+            set { id = value; }
 
 
         public string _flightID
@@ -101,6 +108,15 @@ namespace PBL3
             FirstClass.Text = firstclass.ToString();
             AirlineName.Text = airlinename;
             Time.Text = time;
+        }
+        public void Des(string FLIGHT_ID)
+        {
+            FlightDTO des = FlightDAO.Instance.GetFlightByID(FLIGHT_ID);
+            MessageBox.Show(des.description);
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Des(id);
         }
 
         private void button4_Click(object sender, EventArgs e)

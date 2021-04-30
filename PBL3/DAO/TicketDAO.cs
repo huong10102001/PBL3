@@ -72,7 +72,29 @@ namespace PBL3.DAO
             }
             return null;
         }
-        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address, int seat_number, int price_id)
+        public List<TicketDTO> GetTicketByUserName(string Username, int status)
+        {
+            List<TicketDTO> t = new List<TicketDTO>();
+            List<TicketDTO> t1 = new List<TicketDTO>();
+
+            foreach (TicketDTO i in GetAllTicketList())
+            {
+                if (i.us_username == Username)
+                {
+                    t.Add(i);
+                }
+            }
+            foreach(TicketDTO j in t)
+            {
+                if(FlightDAO.Instance.Status(j.fl_id) == status)
+                {
+                    t1.Add(j);
+                }
+
+            }
+            return t1;
+        }
+        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address)
         {
             string query = String.Format("insert into TICKET values(N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}', {6}, {7})", fl_id, username, name, gender.ToString(), phone, address, seat_number, price_id);
             DataProvider.Instance.ExecuteDB(query);
