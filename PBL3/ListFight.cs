@@ -33,9 +33,9 @@ namespace PBL3
         public string time;
         public string _id
         {
-            get { return id;  }
+            get { return id; }
             set { id = value; }
-
+        }
 
         public string _flightID
         {

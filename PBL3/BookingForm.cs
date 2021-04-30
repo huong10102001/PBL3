@@ -64,7 +64,7 @@ namespace PBL3
         {
             u = username;
         }
-        public BookingForm(string username)
+        public BookingForm(string username = null)
         {
             USERNAME = username;
             InitializeComponent();

@@ -94,7 +94,7 @@ namespace PBL3.DAO
             }
             return t1;
         }
-        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address)
+        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address, int seat_number, int price_id)
         {
             string query = String.Format("insert into TICKET values(N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}', {6}, {7})", fl_id, username, name, gender.ToString(), phone, address, seat_number, price_id);
             DataProvider.Instance.ExecuteDB(query);
