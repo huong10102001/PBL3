@@ -20,9 +20,9 @@ namespace PBL3.DAO
 
         private BILL_KHDAO() { }
 
-        public BILL_KHDTO Checkout(string userName)
+        public BILL_KHDTO Checkout(string userName, double totalprice)
         {
-            string query = string.Format("USP_InsertBill N'{0}'", userName);
+            string query = string.Format("InsertBill N'{0}', N'{1}'", userName, totalprice);
             DataTable data = DataProvider.Instance.GetRecord(query);
             foreach (DataRow item in data.Rows)
             {
@@ -30,16 +30,12 @@ namespace PBL3.DAO
             }
             return null;
         }
-        public BILL_KHDTO GetBillListByDate(DateTime checkIn, DateTime checkOut)
+        public DataTable GetBillListByDate(string checkIn, string checkOut)
         {
-            string query = string.Format("exec USP_GetListBillByDate @checkIn , @checkOut", checkIn, checkOut);
+            //string query = string.Format("GetList_BillByDate '" + checkIn + "' , '"+  checkOut + "'");
+            string query = string.Format("SELECT u.us_name AS [Customer Name], u.us_email AS [Email], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateOne AS [Date In], b.DateTwo AS [Date Out] FROM dbo.BILL_KH AS b, dbo.USERS AS u WHERE DateOne >= {0} AND DateTwo <= {1} AND b.us_username = u.us_username", checkIn, checkOut);
             DataTable data = DataProvider.Instance.GetRecord(query);
-            foreach (DataRow item in data.Rows)
-            {
-                return new BILL_KHDTO(item);
-            }
-            return null;
+            return data;
         }
-
     }
 }

@@ -68,6 +68,8 @@
     <Compile Include="DAO\AirlineDAO.cs" />
     <Compile Include="DAO\BILL_KHDAO.cs" />
     <Compile Include="DAO\FeedbackDAO.cs" />
+    <Compile Include="DAO\SourceDAO.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\BILL_KHDTO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DestinationDAO.cs" />
@@ -153,6 +155,12 @@
     <Compile Include="UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewFlightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewFlightForm.Designer.cs">
+      <DependentUpon>ViewFlightForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin_FeedbackForm.resx">
       <DependentUpon>Admin_FeedbackForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewFlightForm.resx">
+      <DependentUpon>ViewFlightForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FlightManagementDataSet.xsc">
       <DependentUpon>FlightManagementDataSet.xsd</DependentUpon>

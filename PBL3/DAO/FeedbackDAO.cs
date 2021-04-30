@@ -34,7 +34,6 @@ namespace PBL3.DAO
 
         public DataTable GetFeedback()
         {
-
             string query = string.Format("SELECT FEEDBACK.us_username as [Username], us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username");
             return DataProvider.Instance.GetRecord(query);
             

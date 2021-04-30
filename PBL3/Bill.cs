@@ -18,18 +18,19 @@ namespace PBL3
             InitializeComponent();
         }
 
-        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        void LoadListBillByDate(string checkIn, string checkOut)
         {
             dataGridView1.DataSource = BILL_KHDAO.Instance.GetBillListByDate(checkIn, checkOut);
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadListBillByDate(dtpk_From_1.Value, dtpk_From_2.Value);
+            LoadListBillByDate(dtpk_From_1.Value.ToShortDateString(), dtpk_From_2.Value.ToShortDateString());
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
