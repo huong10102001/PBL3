@@ -14,7 +14,20 @@ namespace PBL3
 {
     public partial class BookingForm : Form
     {
+        public delegate void CustomerId(string USERNAME);
+        public CustomerId customerId;
+        public delegate void FlightId(string FlightId);
+        public FlightId flightId;
+        
         private bool isCollapsed;
+        string user = null;
+        List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
+
+        public void setUserID(string User)
+        {
+            user = User;
+           
+        }
         public void setname(String name)
         {
             button9.Text = name;
@@ -38,6 +51,7 @@ namespace PBL3
             InitializeComponent();
             LoadFlightListAvailable();
             SetCBB();
+           // this.flightId += new FlightId
         }
         public void SetLabel(string from, string to, string dateoff)
         {
@@ -103,12 +117,16 @@ namespace PBL3
         private void btnProfile_Click(object sender, EventArgs e)
         {
             InfoForm f = new InfoForm();
+            this.customerId += new CustomerId(f.Form);
+            customerId(user);
             f.ShowDialog();
         }
 
         private void btnBookTicket_Click(object sender, EventArgs e)
         {
             FlightTicketForm f = new FlightTicketForm();
+            this.customerId += new CustomerId(f.setUserId);
+            customerId(user);
             f.ShowDialog();
         }
 
@@ -128,7 +146,7 @@ namespace PBL3
         {
             List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
 
-            List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
+           // List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
 
             ListFight[] listFights = new ListFight[list.Count];
 
@@ -139,6 +157,7 @@ namespace PBL3
                 {
 
                     listFights[j] = new ListFight();
+                    listFights[j].id = i.id;
                     listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                     listFights[j].timelanding = i.timelanding.ToShortTimeString();
                     listFights[j].basiceconmy = priceList[0].price * i.index;
@@ -170,19 +189,21 @@ namespace PBL3
                 string Datetakeoff = dateTimePicker1.Value.ToShortDateString();
 
                 SetLabel(From, To, Datetakeoff);
-                List<FlightSearch> list = FlightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
+                List<FlightSearch> listfight = FlightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
+                list = listfight;
 
-                ListFight[] listFights = new ListFight[list.Count];
+                ListFight[] listFights = new ListFight[listfight.Count];
 
                 List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
 
-                foreach (FlightSearch i in list)
+                foreach (FlightSearch i in listfight)
                 {
                     int s = 0;
                     for (int j = 0; j < listFights.Length; j++)
                     {
                         
                         listFights[j] = new ListFight();
+                        listFights[j].id = i.id;
                         listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                         listFights[j].timelanding = i.timelanding.ToShortTimeString();
                         listFights[j].basiceconmy = priceList[0].price * i.index;
@@ -201,6 +222,59 @@ namespace PBL3
 
             }
 
+        }
+        public void SortBy(string sort)
+        {
+            List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
+            
+            foreach (FlightSearch f in list)
+            {
+                f.basiceconmy = priceList[0].price * f.index;
+                f.maincabin = priceList[1].price * f.index;
+                f.detalcomfort = priceList[2].price * f.index;
+                f.firstclass = priceList[3].price * f.index;
+            }
+            FlightDAO.Instance.SortBLL(list, sort);
+
+            ListFight[] listFights = new ListFight[list.Count];
+            flowLayoutPanel1.Controls.Clear();
+            foreach (FlightSearch i in list)
+            {
+                int s = 0;
+                for (int j = 0; j < listFights.Length; j++)
+                {
+
+                    listFights[j] = new ListFight();
+                    listFights[j].id = i.id;
+                    listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
+                    listFights[j].timelanding = i.timelanding.ToShortTimeString();
+                    listFights[j].basiceconmy = i.basiceconmy;
+                    listFights[j].maincabin = i.maincabin;
+                    listFights[j].detalcomfort = i.detalcomfort;
+                    listFights[j].firstclass = i.firstclass;
+                    listFights[j].airlinename = i.airlinename;
+                    listFights[j].time = i.time.ToString();
+                    listFights[j].SetLabel();
+
+                }
+                flowLayoutPanel1.Controls.Add(listFights[s]);
+                s++;
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                SortBy(radioButton1.Text);
+            }
+            else if(radioButton2.Checked)
+            {
+                SortBy(radioButton2.Text);
+            }
+            else
+            {
+                SortBy(radioButton3.Text);
+            }
         }
     }
 }

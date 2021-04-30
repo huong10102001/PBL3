@@ -14,6 +14,7 @@ namespace PBL3
 {
     public partial class InfoForm : Form
     {
+        private string customer_id;
         private string staff_id;
         public InfoForm()
         {
@@ -24,6 +25,16 @@ namespace PBL3
         {
             this.staff_id = STAFF_ID;
             AccountDTO acc = AccountDAO.Instance.GetAccountByUserName(STAFF_ID);
+            txbID.Text = acc.UserName;
+            txbName.Text = acc.Name;
+            txbAddress.Text = acc.Address;
+            txbEmail.Text = acc.Email;
+            txbPhone.Text = acc.Phone;
+        }
+        public void Form(string CUSTOMER_ID)
+        {
+            this.customer_id = CUSTOMER_ID;
+            AccountDTO acc = AccountDAO.Instance.GetAccountByUserName(CUSTOMER_ID);
             txbID.Text = acc.UserName;
             txbName.Text = acc.Name;
             txbAddress.Text = acc.Address;
