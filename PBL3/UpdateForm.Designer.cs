@@ -31,11 +31,10 @@
             this.lbText = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.dpkLanding = new System.Windows.Forms.DateTimePicker();
             this.numLandingMin = new System.Windows.Forms.NumericUpDown();
             this.numTakeoffMin = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numeCapacity = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.cbbTriptype = new System.Windows.Forms.ComboBox();
@@ -58,11 +57,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLandingMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTakeoffMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLandingHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTakeoffHour)).BeginInit();
             this.SuspendLayout();
@@ -93,8 +90,6 @@
             this.panel2.Controls.Add(this.dpkLanding);
             this.panel2.Controls.Add(this.numLandingMin);
             this.panel2.Controls.Add(this.numTakeoffMin);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.numeCapacity);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.cbbStatus);
             this.panel2.Controls.Add(this.cbbTriptype);
@@ -121,6 +116,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 465);
             this.panel2.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label8.Location = new System.Drawing.Point(454, 148);
+            this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 25);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Day";
             // 
             // dpkLanding
             // 
@@ -162,49 +169,12 @@
             this.numTakeoffMin.Size = new System.Drawing.Size(75, 27);
             this.numTakeoffMin.TabIndex = 39;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label16.Location = new System.Drawing.Point(420, 103);
-            this.label16.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 25);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Capacity";
-            // 
-            // numeCapacity
-            // 
-            this.numeCapacity.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.numeCapacity.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeCapacity.Location = new System.Drawing.Point(519, 105);
-            this.numeCapacity.Margin = new System.Windows.Forms.Padding(2);
-            this.numeCapacity.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.numeCapacity.Minimum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.numeCapacity.Name = "numeCapacity";
-            this.numeCapacity.Size = new System.Drawing.Size(247, 27);
-            this.numeCapacity.TabIndex = 37;
-            this.numeCapacity.Value = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label15.Location = new System.Drawing.Point(442, 235);
+            this.label15.Location = new System.Drawing.Point(436, 103);
             this.label15.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 25);
@@ -216,7 +186,7 @@
             this.cbbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbStatus.FormattingEnabled = true;
-            this.cbbStatus.Location = new System.Drawing.Point(518, 236);
+            this.cbbStatus.Location = new System.Drawing.Point(518, 105);
             this.cbbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cbbStatus.Name = "cbbStatus";
             this.cbbStatus.Size = new System.Drawing.Size(248, 28);
@@ -276,7 +246,7 @@
             // 
             this.txbDescrip.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txbDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDescrip.Location = new System.Drawing.Point(159, 290);
+            this.txbDescrip.Location = new System.Drawing.Point(159, 260);
             this.txbDescrip.Margin = new System.Windows.Forms.Padding(2);
             this.txbDescrip.Multiline = true;
             this.txbDescrip.Name = "txbDescrip";
@@ -288,7 +258,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(28, 284);
+            this.label11.Location = new System.Drawing.Point(32, 260);
             this.label11.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 25);
@@ -466,18 +436,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Flight ID";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(454, 149);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 25);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "Day";
-            // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,7 +453,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLandingMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTakeoffMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLandingHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTakeoffHour)).EndInit();
             this.ResumeLayout(false);
@@ -510,8 +467,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NumericUpDown numLandingMin;
         private System.Windows.Forms.NumericUpDown numTakeoffMin;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numeCapacity;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbbStatus;
         private System.Windows.Forms.ComboBox cbbTriptype;

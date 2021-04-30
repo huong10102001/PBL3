@@ -14,6 +14,8 @@ namespace PBL3
 {
     public partial class BookingForm : Form
     {
+
+        private string USERNAME;
         private bool isCollapsed;
         public void setname(String name)
         {
@@ -33,8 +35,9 @@ namespace PBL3
                 dateTimePicker1.Value = Convert.ToDateTime(date).Date;
             }         
         }
-        public BookingForm()
+        public BookingForm(string username)
         {
+            USERNAME = username;
             InitializeComponent();
             LoadFlightListAvailable();
             SetCBB();
@@ -139,6 +142,8 @@ namespace PBL3
                 {
 
                     listFights[j] = new ListFight();
+                    listFights[j].flightID = i.fl_id;
+                    listFights[j].username = USERNAME;
                     listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                     listFights[j].timelanding = i.timelanding.ToShortTimeString();
                     listFights[j].basiceconmy = priceList[0].price * i.index;
@@ -176,13 +181,16 @@ namespace PBL3
 
                 List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
 
+                int s = 0;
                 foreach (FlightSearch i in list)
                 {
-                    int s = 0;
+                    
                     for (int j = 0; j < listFights.Length; j++)
                     {
                         
                         listFights[j] = new ListFight();
+                        listFights[j].username = USERNAME;
+                        listFights[j].flightID = i.fl_id;
                         listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                         listFights[j].timelanding = i.timelanding.ToShortTimeString();
                         listFights[j].basiceconmy = priceList[0].price * i.index;

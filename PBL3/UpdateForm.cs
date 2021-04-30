@@ -43,7 +43,6 @@ namespace PBL3
                 cbbTo.SelectedIndex = DestinationDAO.Instance.GetDestinationIndex(flight.fl_destination);
                 dpkTakeoff.Value = flight.takeoff;
                 dpkLanding.Value = flight.landing;
-                numeCapacity.Value = flight.capacity;
                 numTakeoffHour.Value = flight.takeoff.Hour;
                 numTakeoffMin.Value = flight.takeoff.Minute;
                 numLandingHour.Value = flight.landing.Hour;
@@ -138,7 +137,6 @@ namespace PBL3
                 triptype = Convert.ToBoolean(((CBBItem)cbbTriptype.SelectedItem).Value),
                 description = txbDescrip.Text,
                 status = ((CBBItem)cbbStatus.SelectedItem).Value,
-                capacity = Convert.ToInt32(numeCapacity.Value)
             };
         }
 

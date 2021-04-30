@@ -58,7 +58,7 @@ namespace PBL3
                 {
                     if (loginAccount.Type == 0)
                     {
-                        BookingForm bkf = new BookingForm();
+                        BookingForm bkf = new BookingForm(txtUserName.Text);
                         this.data += new passData(bkf.setvalue);
                         data(a, b, c);
                         this.ten += new Ten(bkf.setname);

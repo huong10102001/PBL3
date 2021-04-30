@@ -1,4 +1,4 @@
-
+﻿
 select airline_name, fl_takeoftime, fl_price, fl_triptype, fl_description, PLACE.place_name, PLACE.place_name_to from FLIGHT, AIRLINE, PLACE where AIRLINE.airline_id = FLIGHT.airline_id and fl_triptype = 'circle trip' 
 
 use FlightManagement
@@ -48,7 +48,6 @@ create table FLIGHT
 	fl_triptype bit not null,
 	fl_description nvarchar(50) not null,
 	fl_status int default 0 not null,
-	fl_capacity int not null,
 
 	foreign key (airline_id) references dbo.AIRLINE(airline_id),
 	foreign key (fl_source) references dbo.SOURCE(src_id),
@@ -63,9 +62,12 @@ create table TICKET
 	ticket_gender bit not null,
 	ticket_mobile nvarchar(20) not null,
 	ticket_address nvarchar(20) not null,
+	seat_number int not null,
+	price_id int not null,
 
 	foreign key (fl_id) references dbo.FLIGHT(fl_id),
-	foreign key (us_username) references dbo.USERS(us_username)
+	foreign key (us_username) references dbo.USERS(us_username),
+	foreign key (price_id) references dbo.PRICE(id)
 )
 GO
 
@@ -111,6 +113,21 @@ AS
 		@phone ,
 		@address 
 	)
+
+
+	-- UPDATE CSDL ĐỂ BOOKING GHẾ (TUẤN)
+alter table TICKET
+add seat_number int
+
+alter table TICKET
+add price_id int
+
+alter table TICKET
+add foreign key (price_id) references dbo.PRICE(id)
+
+alter table FLIGHT
+drop column fl_capacity
+
 
 
 
