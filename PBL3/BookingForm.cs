@@ -28,6 +28,16 @@ namespace PBL3
             user = User;
            
         }
+
+        public delegate void UserName2(String username);
+        public UserName2 user;
+
+        public delegate void passFlight(String Des1, String Des2, String Des3, String date1, String date2, String date3, String date4);
+        public passFlight pass; 
+
+        public delegate void Ten2(String name);
+        public Ten2 ten2;
+
         public void setname(String name)
         {
             button9.Text = name;
@@ -46,6 +56,14 @@ namespace PBL3
                 dateTimePicker1.Value = Convert.ToDateTime(date).Date;
             }         
         }
+
+        string u;
+        public void setUserName(String username)
+        {
+            u = username;
+        }
+
+        
         public BookingForm()
         {
             InitializeComponent();

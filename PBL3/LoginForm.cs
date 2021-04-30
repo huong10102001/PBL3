@@ -18,6 +18,10 @@ namespace PBL3
         public delegate void UserId(string UserId);
         public Ten ten;
         public UserId userId;
+
+        public delegate void UserName(String username);
+        public UserName user;
+
         public delegate void passData(String from, String to, String date);
         public passData data;
         string a, b, c;
@@ -33,7 +37,6 @@ namespace PBL3
             InitializeComponent();
         }
       
-
         bool Login(string userName, string passWord)
         {
             return AccountDAO.Instance.Login(userName, passWord);
@@ -63,9 +66,14 @@ namespace PBL3
                         BookingForm bkf = new BookingForm();
                         this.data += new passData(bkf.setvalue);
                         data(a, b, c);
+
                         this.ten += new Ten(bkf.setname);
                         this.userId += new UserId(bkf.setUserID);
                         ten(AccountDAO.Instance.getName(userName,passWord));
+
+                        this.user += new UserName(bkf.setUserName);
+                        user(userName);
+
                         userId(AccountDAO.Instance.GetAccountByUserName(userName).UserName);
                         this.Hide();
                         bkf.ShowDialog();

@@ -69,6 +69,42 @@ create table TICKET
 )
 GO
 
+CREATE TABLE BILL_KH
+(
+	bill_id int primary key identity not null,
+	DateOne date ,
+	DateTwo date ,
+	us_username nvarchar (20) not null
+
+	foreign key (us_username) references dbo.USERS(us_username)
+)
+
+alter table dbo.BILL_KH add totalprice float
+
+CREATE TABLE FEEDBACK
+(
+	feedback_id int primary key identity not null,
+	DateFB date ,
+	us_username nvarchar (20) not null,
+	content nvarchar (200)
+
+	foreign key (us_username) references dbo.USERS(us_username)
+)
+
+alter table dbo.FEEDBACK add content nvarchar(1000)
+
+alter table dbo.BILL_KH add totalprice float
+
+CREATE TABLE BILL_FL
+(
+	bill_id_fl int primary key identity not null,
+	DateOne_fl date,
+	DateTwo_fl date,
+	fl_id nvarchar(20) 
+
+	foreign key (fl_id) references dbo.FLIGHT(fl_id)
+)
+
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
 AS 
@@ -113,7 +149,67 @@ AS
 	)
 
 
+CREATE PROC _InsertFeedback
+@us_username nvarchar(20),
+@content nvarchar (1000)
+AS
+BEGIN
+	INSERT dbo.FEEDBACK 
+	        ( DateFB ,
+	          us_username,
+	          content
+	        )
+	VALUES  ( GETDATE() , 
+	          @us_username , 
+	          @content  
+	        )
+END
+GO
 
+CREATE PROC USP_InsertBill
+@us_username INT
+AS
+BEGIN
+	INSERT INTO dbo.BILL_KH 
+	        ( DateOne ,
+	          DateTwo ,
+	          us_username
+  
+	        )
+	VALUES  ( GETDATE() , 
+	          NULL , 
+	          @us_username 
+	        )
+END
+GO
+
+CREATE PROC USP_GetListBillByDate
+@checkIn date, @checkOut date
+AS 
+BEGIN
+	SELECT u.us_name AS [Tên khách hàng], b.totalPrice AS [T?ng ti?n], DateOne AS [Ngày vào], DateTwo AS [Ngày ra]
+	FROM dbo.BILL_KH AS b,dbo.USERS AS u
+	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
+	AND b.us_username = u.us_username
+END
+GO
+
+--CREATE TRIGGER UTG_UpdateBillKH
+--ON dbo.BILL_KH FOR UPDATE
+--AS
+--BEGIN
+--	DECLARE @idBill INT
+	
+--	SELECT @idBill = bill_id FROM Inserted	
+	
+--	DECLARE @us_username INT
+	
+--	SELECT @us_username = us_username FROM dbo.BILL_KH WHERE bill_id = @idBill
+--	END
+--
+--GO
+SELECT us_name, us_email, content, dateFB FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username
+SELECT FEEDBACK.us_username, us_name  as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE FEEDBACK.us_username = 'huong'
 
 
 
