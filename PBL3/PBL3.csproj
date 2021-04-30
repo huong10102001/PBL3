@@ -59,7 +59,9 @@
     <Compile Include="DAO\FlightDAO.cs" />
     <Compile Include="DAO\PlaceDAO.cs" />
     <Compile Include="DAO\PriceDAO.cs" />
+    <Compile Include="DAO\SourceDAO.cs" />
     <Compile Include="DAO\Soure.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\AirlineDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />
@@ -126,6 +128,12 @@
     <Compile Include="UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewFlightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewFlightForm.Designer.cs">
+      <DependentUpon>ViewFlightForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewFlightForm.resx">
+      <DependentUpon>ViewFlightForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
