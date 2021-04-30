@@ -49,6 +49,16 @@ namespace PBL3.DAO
             }
             return null;
         }
+        public void UpdateAccount(string name, string email, string phone, string address, string username)
+        {
+            string query = string.Format("UPDATE USERS SET us_name = N'{0}', us_email = N'{1}', us_phone = N'{2}', us_address = N'{3}' WHERE us_username = N'{4}'",name, email, phone, address, username);
+            DataProvider.Instance.ExecuteDB(query);
+        }
+        public void ChangePassword(string password, string username)
+        {
+            string query = string.Format("UPDATE USERS SET us_password = N'{0}' WHERE us_username = N'{1}'", password, username);
+            DataProvider.Instance.ExecuteDB(query);
+        }
 
         public string getName (string userName, string passWord)
         {

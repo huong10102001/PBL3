@@ -29,6 +29,20 @@ namespace PBL3
         {
             button9.Text = name;
         }
+        public void setvalue(String from, String to, String date )
+        {
+            if(from == null || to == null || date == null)
+            {
+                comboBox_From.SelectedItem = null;
+                comboBox_To.SelectedItem = null;
+            }
+            else
+            {
+                comboBox_From.Text = from;
+                comboBox_To.Text = to;
+                dateTimePicker1.Value = Convert.ToDateTime(date).Date;
+            }         
+        }
 
         string u;
         public void setUserName(String username)
@@ -36,16 +50,18 @@ namespace PBL3
             u = username;
         }
 
-        public void setvalue(String from, String to, String date)
-        {
-            comboBox_From.Text = from;
-            comboBox_To.Text = to;
-            dateTimePicker1.Value = Convert.ToDateTime(date).Date;
-        }
+        
         public BookingForm()
         {
             InitializeComponent();
+            LoadFlightListAvailable();
             SetCBB();
+        }
+        public void SetLabel(string from, string to, string dateoff)
+        {
+            string str = from + " to " + to;
+            label9.Text = str;
+            label10.Text = dateoff;
         }
         public void SetCBB()
         {
@@ -70,7 +86,6 @@ namespace PBL3
                 newButton.BackColor = Color.AliceBlue;
                 newButton.ForeColor = Color.Black;
 
-                
             }
         }
 
@@ -127,56 +142,83 @@ namespace PBL3
             Dispose();
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        public void LoadFlightListAvailable()
         {
-            
-            string Trip = (comboBox_Trip.SelectedItem).ToString();
-            string From = (comboBox_From.SelectedItem).ToString();
-            string To = (comboBox_To.SelectedItem).ToString();
-            string Datetakeoff = "2021-08-03 00:00:00.000";
-                //dateTimePicker1.Value.ToShortDateString();
-            //MessageBox.Show(Datetakeoff);
+            List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
 
-            List<FlightSearch> list = FlightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
-            //if (list.Count <= 0) MessageBox.Show("khong co gi ca");
+            List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
 
-            foreach(FlightSearch i in list)
+            ListFight[] listFights = new ListFight[list.Count];
+
+            foreach (FlightSearch i in list)
             {
-                ListFight[] listFights = new ListFight[list.Count];
+                int s = 0;
                 for (int j = 0; j < listFights.Length; j++)
                 {
+
                     listFights[j] = new ListFight();
                     listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                     listFights[j].timelanding = i.timelanding.ToShortTimeString();
-                    listFights[j].basiceconmy = i.basiceconmy;
-                    listFights[j].maincabin = i.maincabin;
-                    listFights[j].detalcomfort = i.detalcomfort;
-                    listFights[j].firstclass = i.firstclass;
+                    listFights[j].basiceconmy = priceList[0].price * i.index;
+                    listFights[j].maincabin = priceList[1].price * i.index;
+                    listFights[j].detalcomfort = priceList[2].price * i.index;
+                    listFights[j].firstclass = priceList[3].price * i.index;
                     listFights[j].airlinename = i.airlinename;
-                    listFights[j].time = i.time.ToShortTimeString();
-                    flowLayoutPanel1.Controls.Add(listFights[j]);
-                }
-            }    
-            
-        }
+                    listFights[j].time = i.time.ToString();
+                    listFights[j].SetLabel();
 
-     
-        /*public void populateItems(FlightSearch i)
-{
-   ListFight[] listFights = new ListFight[20];
-   for(int i = 0; i < listFights.Length; i++)
-   {
-       listFights[i] = new ListFight();
-       listFights[i].timetakeoff = takeoff.ToShortTimeString();
-       listFights[i].timelanding = landing.ToShortTimeString();
-       listFights[i].basiceconmy = basiceconmy;
-       listFights[i].maincabin = maincabin;
-       listFights[i].detalcomfort = detalcomfort;
-       listFights[i].firstclass = firstclass;
-       listFights[i].airlinename = airlinename;
-       listFights[i].time = time.ToShortTimeString();
-       flowLayoutPanel1.Controls.Add(listFights[i]);
-   }
-}*/
+                }
+                flowLayoutPanel1.Controls.Add(listFights[s]);
+                s++;
+            }
+        }
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            if(comboBox_From.SelectedItem == null || comboBox_To.SelectedItem == null || comboBox_Trip.SelectedItem == null)
+            {
+                MessageBox.Show("Vui long chon day du thong tin!");
+            }
+            else
+            {
+                string Trip = (comboBox_Trip.SelectedItem).ToString();
+                string From = (comboBox_From.SelectedItem).ToString();
+                string To = (comboBox_To.SelectedItem).ToString();
+                string Datetakeoff = dateTimePicker1.Value.ToShortDateString();
+
+                SetLabel(From, To, Datetakeoff);
+                List<FlightSearch> list = FlightDAO.Instance.GetListFight(Trip, From, To, Datetakeoff);
+
+                ListFight[] listFights = new ListFight[list.Count];
+
+                List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
+
+                foreach (FlightSearch i in list)
+                {
+                    int s = 0;
+                    for (int j = 0; j < listFights.Length; j++)
+                    {
+                        
+                        listFights[j] = new ListFight();
+                        listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
+                        listFights[j].timelanding = i.timelanding.ToShortTimeString();
+                        listFights[j].basiceconmy = priceList[0].price * i.index;
+                        listFights[j].maincabin = priceList[1].price * i.index;
+                        listFights[j].detalcomfort = priceList[2].price * i.index;
+                        listFights[j].firstclass = priceList[3].price * i.index;
+                        listFights[j].airlinename = i.airlinename;
+                        listFights[j].time = i.time.ToString();
+                        listFights[j].SetLabel();
+
+                    }
+                    flowLayoutPanel1.Controls.Add(listFights[s]);
+                    s++;
+                }
+            
+
+            }
+
+        }
     }
 }

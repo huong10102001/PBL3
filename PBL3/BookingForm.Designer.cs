@@ -51,6 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -70,10 +72,10 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(19, 26);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(13, 17);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(975, 65);
+            this.panel1.Size = new System.Drawing.Size(650, 42);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -81,9 +83,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("NSimSun", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 40);
+            this.label1.Size = new System.Drawing.Size(177, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "BOOK A TRIP";
             // 
@@ -94,13 +97,12 @@
             this.panel9.Controls.Add(this.btnBookTicket);
             this.panel9.Controls.Add(this.btnProfile);
             this.panel9.Controls.Add(this.button9);
-            this.panel9.Font = new System.Drawing.Font("Cambria", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel9.Location = new System.Drawing.Point(1000, 34);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel9.MaximumSize = new System.Drawing.Size(287, 246);
-            this.panel9.MinimumSize = new System.Drawing.Size(287, 52);
+            this.panel9.Location = new System.Drawing.Point(696, 23);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.MaximumSize = new System.Drawing.Size(191, 160);
+            this.panel9.MinimumSize = new System.Drawing.Size(191, 34);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(287, 52);
+            this.panel9.Size = new System.Drawing.Size(191, 34);
             this.panel9.TabIndex = 3;
             // 
             // btnLogout
@@ -110,10 +112,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLogout.Location = new System.Drawing.Point(1, 198);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Location = new System.Drawing.Point(1, 128);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(284, 46);
+            this.btnLogout.Size = new System.Drawing.Size(189, 30);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -126,10 +128,10 @@
             this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedback.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFeedback.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnFeedback.Location = new System.Drawing.Point(1, 150);
-            this.btnFeedback.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFeedback.Location = new System.Drawing.Point(1, 97);
+            this.btnFeedback.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Size = new System.Drawing.Size(284, 46);
+            this.btnFeedback.Size = new System.Drawing.Size(189, 30);
             this.btnFeedback.TabIndex = 7;
             this.btnFeedback.Text = "Give feedback";
             this.btnFeedback.UseVisualStyleBackColor = false;
@@ -142,10 +144,10 @@
             this.btnBookTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookTicket.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookTicket.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnBookTicket.Location = new System.Drawing.Point(1, 102);
-            this.btnBookTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBookTicket.Location = new System.Drawing.Point(1, 66);
+            this.btnBookTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBookTicket.Name = "btnBookTicket";
-            this.btnBookTicket.Size = new System.Drawing.Size(284, 46);
+            this.btnBookTicket.Size = new System.Drawing.Size(189, 30);
             this.btnBookTicket.TabIndex = 6;
             this.btnBookTicket.Text = "Book Ticket";
             this.btnBookTicket.UseVisualStyleBackColor = false;
@@ -158,10 +160,10 @@
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnProfile.Location = new System.Drawing.Point(1, 54);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProfile.Location = new System.Drawing.Point(1, 35);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(284, 46);
+            this.btnProfile.Size = new System.Drawing.Size(189, 30);
             this.btnProfile.TabIndex = 5;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
@@ -175,10 +177,10 @@
             this.button9.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = global::PBL3.Properties.Resources.Capture5;
-            this.button9.Location = new System.Drawing.Point(0, 4);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Location = new System.Drawing.Point(0, 1);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(284, 41);
+            this.button9.Size = new System.Drawing.Size(189, 27);
             this.button9.TabIndex = 4;
             this.button9.Text = "button9";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -205,18 +207,19 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(19, 98);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(13, 63);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1267, 92);
+            this.panel2.Size = new System.Drawing.Size(874, 60);
             this.panel2.TabIndex = 1;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Hexadecimal = true;
-            this.numericUpDown1.Location = new System.Drawing.Point(981, 34);
+            this.numericUpDown1.Location = new System.Drawing.Point(672, 22);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(139, 26);
+            this.numericUpDown1.Size = new System.Drawing.Size(109, 20);
             this.numericUpDown1.TabIndex = 11;
             // 
             // btn_search
@@ -226,10 +229,10 @@
             this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Location = new System.Drawing.Point(1138, 24);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_search.Location = new System.Drawing.Point(789, 16);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(110, 45);
+            this.btn_search.Size = new System.Drawing.Size(74, 29);
             this.btn_search.TabIndex = 10;
             this.btn_search.Text = "SEARCH";
             this.btn_search.UseVisualStyleBackColor = false;
@@ -239,28 +242,28 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(694, 35);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(462, 22);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // comboBox_To
             // 
             this.comboBox_To.FormattingEnabled = true;
-            this.comboBox_To.Location = new System.Drawing.Point(435, 32);
-            this.comboBox_To.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_To.Location = new System.Drawing.Point(290, 21);
+            this.comboBox_To.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_To.Name = "comboBox_To";
-            this.comboBox_To.Size = new System.Drawing.Size(240, 28);
+            this.comboBox_To.Size = new System.Drawing.Size(162, 21);
             this.comboBox_To.TabIndex = 7;
             // 
             // comboBox_From
             // 
             this.comboBox_From.FormattingEnabled = true;
-            this.comboBox_From.Location = new System.Drawing.Point(168, 32);
-            this.comboBox_From.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_From.Location = new System.Drawing.Point(112, 21);
+            this.comboBox_From.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_From.Name = "comboBox_From";
-            this.comboBox_From.Size = new System.Drawing.Size(248, 28);
+            this.comboBox_From.Size = new System.Drawing.Size(167, 21);
             this.comboBox_From.TabIndex = 6;
             // 
             // comboBox_Trip
@@ -269,10 +272,10 @@
             this.comboBox_Trip.Items.AddRange(new object[] {
             "Round Trip",
             "Circle Trip"});
-            this.comboBox_Trip.Location = new System.Drawing.Point(16, 32);
-            this.comboBox_Trip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_Trip.Location = new System.Drawing.Point(10, 21);
+            this.comboBox_Trip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Trip.Name = "comboBox_Trip";
-            this.comboBox_Trip.Size = new System.Drawing.Size(134, 28);
+            this.comboBox_Trip.Size = new System.Drawing.Size(91, 21);
             this.comboBox_Trip.TabIndex = 5;
             // 
             // label6
@@ -280,9 +283,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(984, 11);
+            this.label6.Location = new System.Drawing.Point(670, 7);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 16);
+            this.label6.Size = new System.Drawing.Size(75, 11);
             this.label6.TabIndex = 4;
             this.label6.Text = "PASSENGERS";
             // 
@@ -291,9 +295,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(691, 11);
+            this.label5.Location = new System.Drawing.Point(460, 7);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.Size = new System.Drawing.Size(33, 11);
             this.label5.TabIndex = 3;
             this.label5.Text = "DATE";
             // 
@@ -302,9 +307,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(434, 11);
+            this.label4.Location = new System.Drawing.Point(290, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 16);
+            this.label4.Size = new System.Drawing.Size(19, 11);
             this.label4.TabIndex = 2;
             this.label4.Text = "TO";
             // 
@@ -313,9 +319,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(166, 11);
+            this.label3.Location = new System.Drawing.Point(111, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(33, 11);
             this.label3.TabIndex = 1;
             this.label3.Text = "FROM";
             // 
@@ -324,9 +331,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("NSimSun", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Location = new System.Drawing.Point(10, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 16);
+            this.label2.Size = new System.Drawing.Size(68, 11);
             this.label2.TabIndex = 0;
             this.label2.Text = "TRIP TYPE";
             // 
@@ -334,17 +342,39 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::PBL3.Properties.Resources.Capture;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.radioButton3);
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(19, 191);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(13, 124);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1267, 144);
+            this.panel3.Size = new System.Drawing.Size(874, 93);
             this.panel3.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(209, 41);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 22);
+            this.label10.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("NSimSun", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(208, 15);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(188, 24);
+            this.label9.TabIndex = 10;
             // 
             // button2
             // 
@@ -353,10 +383,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(1096, 54);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(775, 32);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 48);
+            this.button2.Size = new System.Drawing.Size(88, 31);
             this.button2.TabIndex = 9;
             this.button2.Text = "FILTER";
             this.button2.UseVisualStyleBackColor = false;
@@ -364,12 +394,12 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(910, 66);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton3.Location = new System.Drawing.Point(652, 40);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(153, 22);
+            this.radioButton3.Size = new System.Drawing.Size(93, 19);
             this.radioButton3.TabIndex = 8;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Miles + Cash";
@@ -378,12 +408,12 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(804, 65);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton2.Location = new System.Drawing.Point(581, 39);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 22);
+            this.radioButton2.Size = new System.Drawing.Size(54, 19);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Miles";
@@ -392,12 +422,12 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(693, 68);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton1.Location = new System.Drawing.Point(507, 41);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 22);
+            this.radioButton1.Size = new System.Drawing.Size(58, 19);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "$VND";
@@ -406,11 +436,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("NSimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(691, 35);
+            this.label7.Location = new System.Drawing.Point(505, 20);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 18);
+            this.label7.Size = new System.Drawing.Size(114, 19);
             this.label7.TabIndex = 5;
             this.label7.Text = "SHOW PRICE IN";
             // 
@@ -419,9 +450,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("NSimSun", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(14, 22);
+            this.label8.Location = new System.Drawing.Point(9, 15);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(287, 33);
+            this.label8.Size = new System.Drawing.Size(202, 22);
             this.label8.TabIndex = 3;
             this.label8.Text = "Select Outbound:";
             // 
@@ -429,24 +461,25 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 355);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 231);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1279, 355);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(877, 527);
             this.flowLayoutPanel1.TabIndex = 15;
             // 
             // BookingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1310, 908);
+            this.ClientSize = new System.Drawing.Size(898, 769);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -493,5 +526,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

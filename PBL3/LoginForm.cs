@@ -76,9 +76,10 @@ namespace PBL3
                     }
                     else if (loginAccount.Type == 1)
                     {
-                        FlightManagement fmf = new FlightManagement();
+                        FlightManagement fmf = new FlightManagement(txtUserName.Text);
                         this.Hide();
                         fmf.ShowDialog();
+                        this.Show();
                     }
                 }
                 else

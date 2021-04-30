@@ -15,6 +15,7 @@ namespace PBL3
         public ListFight()
         {
             InitializeComponent();
+            SetLabel();
         }
 
         public string timetakeoff;
@@ -75,5 +76,17 @@ namespace PBL3
             set { time = value; Time.Text = value; }
 
         }
+        public void SetLabel()
+        {
+            Timetakeoff.Text = timetakeoff;
+            Timelanding.Text = timelanding;
+            BasicEconmy.Text = basiceconmy.ToString();
+            MainCabin.Text = maincabin.ToString();
+            DetalComfort.Text = detalcomfort.ToString();
+            FirstClass.Text = firstclass.ToString();
+            AirlineName.Text = airlinename;
+            Time.Text = time;
+        }
+        
     }
 }

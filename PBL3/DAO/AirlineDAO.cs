@@ -18,13 +18,17 @@ namespace PBL3.DAO
             private set { instance = value; }
         }
 
-        private AirlineDAO() { }
+        public List<AirlineDTO> AirlineList { get; set; }
+        private AirlineDAO()
+        {
+            AirlineList = GetAllAirlineList();
+        }
 
         public List<AirlineDTO> GetListAirline()
         {
             List<AirlineDTO> list = new List<AirlineDTO>();
 
-            string query = "select * from AIRLINE where airline_name = {0}";
+            string query = "select airline_name, airline_index from AIRLINE where airline_name = {0}";
 
             DataTable data = DataProvider.Instance.GetRecord(query);
 
@@ -40,8 +44,8 @@ namespace PBL3.DAO
         {
             List<AirlineDTO> list = new List<AirlineDTO>();
 
-            string query = string.Format("select airline_index from FLIGHT INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN SOURCE ON FLIGHT.fl_source = SOURCE.src_id INNER JOIN DESTINATION ON FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and fl_takeoftime = N'{3}'", from, to, trip, takeoff);
-
+            string query = string.Format("select FLIGHT.airline_id, airline_index, airline_name from FLIGHT INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN SOURCE ON FLIGHT.fl_source = SOURCE.src_id INNER JOIN DESTINATION ON FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, trip, takeoff);
+            
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             foreach (DataRow item in data.Rows)
@@ -51,6 +55,53 @@ namespace PBL3.DAO
             }
 
             return list;
+        }
+        
+
+        List<AirlineDTO> GetAllAirlineList()
+        {
+            DataTable data = DataProvider.Instance.GetRecord("SELECT * FROM AIRLINE");
+            List<AirlineDTO> list = new List<AirlineDTO>();
+            foreach (DataRow i in data.Rows)
+            {
+                list.Add(new AirlineDTO(i));
+            }
+            return list;
+        }
+        public string GetNameByID(int id)
+        {
+            foreach (AirlineDTO i in AirlineList)
+            {
+                if (i.airline_id == id)
+                {
+                    return i.airline_name;
+                }
+            }
+            return "";
+        }
+        public int GetAirlinePosition(int id)
+        {
+            int index = 0;
+            foreach (AirlineDTO i in AirlineList)
+            {
+                if (i.airline_id == id)
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+        public float GetAirlineIndexbyID(int id)
+        {
+            foreach(AirlineDTO i in AirlineList)
+            {
+                if(i.airline_id == id)
+                {
+                    return i.airline_index;
+                }
+            }
+            return 0;
         }
     }
 }

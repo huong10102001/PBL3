@@ -30,14 +30,6 @@ namespace PBL3
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pn1 = new System.Windows.Forms.Panel();
             this.lbAdd = new System.Windows.Forms.Label();
             this.pictureBoxAdd = new System.Windows.Forms.PictureBox();
@@ -51,10 +43,9 @@ namespace PBL3
             this.labelView = new System.Windows.Forms.Label();
             this.pictureBoxView = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ckbxAirline = new System.Windows.Forms.CheckBox();
-            this.cbbAirline = new System.Windows.Forms.ComboBox();
+            this.ckbxID = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,14 +55,34 @@ namespace PBL3
             this.label8 = new System.Windows.Forms.Label();
             this.cbbDestination = new System.Windows.Forms.ComboBox();
             this.ckbxDesti = new System.Windows.Forms.CheckBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbbSortPrice = new System.Windows.Forms.ComboBox();
-            this.ckbxPrice = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.pictureboxFind = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ckbxDay = new System.Windows.Forms.CheckBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbbAirline = new System.Windows.Forms.ComboBox();
+            this.ckbxAirline = new System.Windows.Forms.CheckBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pn1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
             this.pn2.SuspendLayout();
@@ -85,77 +96,18 @@ namespace PBL3
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureboxFind)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.AllowColumnReorder = true;
-            this.listView1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(324, 66);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1168, 703);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID Flight";
-            this.columnHeader1.Width = 153;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Airline";
-            this.columnHeader2.Width = 202;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "From";
-            this.columnHeader3.Width = 184;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "To";
-            this.columnHeader4.Width = 177;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Day";
-            this.columnHeader5.Width = 161;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Takeoff time";
-            this.columnHeader6.Width = 183;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Price";
-            this.columnHeader7.Width = 182;
             // 
             // pn1
             // 
             this.pn1.Controls.Add(this.lbAdd);
             this.pn1.Controls.Add(this.pictureBoxAdd);
             this.pn1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pn1.Location = new System.Drawing.Point(19, 2);
+            this.pn1.Location = new System.Drawing.Point(13, 4);
             this.pn1.Margin = new System.Windows.Forms.Padding(4);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(132, 54);
+            this.pn1.Size = new System.Drawing.Size(89, 36);
             this.pn1.TabIndex = 1;
             // 
             // lbAdd
@@ -163,10 +115,10 @@ namespace PBL3
             this.lbAdd.AutoSize = true;
             this.lbAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAdd.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbAdd.Location = new System.Drawing.Point(57, 8);
+            this.lbAdd.Location = new System.Drawing.Point(38, 3);
             this.lbAdd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAdd.Name = "lbAdd";
-            this.lbAdd.Size = new System.Drawing.Size(70, 40);
+            this.lbAdd.Size = new System.Drawing.Size(58, 32);
             this.lbAdd.TabIndex = 2;
             this.lbAdd.Text = "Add";
             // 
@@ -174,10 +126,10 @@ namespace PBL3
             // 
             this.pictureBoxAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxAdd.Image = global::PBL3.Properties.Resources.icon;
-            this.pictureBoxAdd.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxAdd.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxAdd.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxAdd.Name = "pictureBoxAdd";
-            this.pictureBoxAdd.Size = new System.Drawing.Size(45, 46);
+            this.pictureBoxAdd.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAdd.TabIndex = 2;
             this.pictureBoxAdd.TabStop = false;
@@ -188,10 +140,10 @@ namespace PBL3
             this.pn2.Controls.Add(this.labelEdit);
             this.pn2.Controls.Add(this.pictureBoxEdit);
             this.pn2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pn2.Location = new System.Drawing.Point(140, 2);
+            this.pn2.Location = new System.Drawing.Point(110, 4);
             this.pn2.Margin = new System.Windows.Forms.Padding(4);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(132, 54);
+            this.pn2.Size = new System.Drawing.Size(87, 36);
             this.pn2.TabIndex = 3;
             // 
             // labelEdit
@@ -199,10 +151,10 @@ namespace PBL3
             this.labelEdit.AutoSize = true;
             this.labelEdit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEdit.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.labelEdit.Location = new System.Drawing.Point(57, 8);
+            this.labelEdit.Location = new System.Drawing.Point(38, 3);
             this.labelEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEdit.Name = "labelEdit";
-            this.labelEdit.Size = new System.Drawing.Size(66, 40);
+            this.labelEdit.Size = new System.Drawing.Size(55, 32);
             this.labelEdit.TabIndex = 2;
             this.labelEdit.Text = "Edit";
             // 
@@ -210,10 +162,10 @@ namespace PBL3
             // 
             this.pictureBoxEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxEdit.Image = global::PBL3.Properties.Resources.iconfinder_icon_136_document_edit_314724;
-            this.pictureBoxEdit.Location = new System.Drawing.Point(7, 4);
+            this.pictureBoxEdit.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxEdit.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxEdit.Name = "pictureBoxEdit";
-            this.pictureBoxEdit.Size = new System.Drawing.Size(45, 46);
+            this.pictureBoxEdit.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEdit.TabIndex = 2;
             this.pictureBoxEdit.TabStop = false;
@@ -224,10 +176,10 @@ namespace PBL3
             this.pn3.Controls.Add(this.labelDelete);
             this.pn3.Controls.Add(this.pictureBoxDelete);
             this.pn3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pn3.Location = new System.Drawing.Point(261, 2);
+            this.pn3.Location = new System.Drawing.Point(205, 4);
             this.pn3.Margin = new System.Windows.Forms.Padding(4);
             this.pn3.Name = "pn3";
-            this.pn3.Size = new System.Drawing.Size(166, 54);
+            this.pn3.Size = new System.Drawing.Size(113, 36);
             this.pn3.TabIndex = 4;
             // 
             // labelDelete
@@ -235,10 +187,10 @@ namespace PBL3
             this.labelDelete.AutoSize = true;
             this.labelDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDelete.ForeColor = System.Drawing.Color.Tomato;
-            this.labelDelete.Location = new System.Drawing.Point(57, 8);
+            this.labelDelete.Location = new System.Drawing.Point(38, 3);
             this.labelDelete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDelete.Name = "labelDelete";
-            this.labelDelete.Size = new System.Drawing.Size(99, 40);
+            this.labelDelete.Size = new System.Drawing.Size(85, 32);
             this.labelDelete.TabIndex = 2;
             this.labelDelete.Text = "Delete";
             // 
@@ -246,10 +198,10 @@ namespace PBL3
             // 
             this.pictureBoxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDelete.Image = global::PBL3.Properties.Resources.remove;
-            this.pictureBoxDelete.Location = new System.Drawing.Point(11, 3);
+            this.pictureBoxDelete.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxDelete.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxDelete.Name = "pictureBoxDelete";
-            this.pictureBoxDelete.Size = new System.Drawing.Size(38, 46);
+            this.pictureBoxDelete.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDelete.TabIndex = 2;
             this.pictureBoxDelete.TabStop = false;
@@ -260,10 +212,10 @@ namespace PBL3
             this.pn4.Controls.Add(this.labelView);
             this.pn4.Controls.Add(this.pictureBoxView);
             this.pn4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pn4.Location = new System.Drawing.Point(412, 2);
+            this.pn4.Location = new System.Drawing.Point(326, 4);
             this.pn4.Margin = new System.Windows.Forms.Padding(4);
             this.pn4.Name = "pn4";
-            this.pn4.Size = new System.Drawing.Size(145, 54);
+            this.pn4.Size = new System.Drawing.Size(94, 36);
             this.pn4.TabIndex = 3;
             // 
             // labelView
@@ -271,10 +223,10 @@ namespace PBL3
             this.labelView.AutoSize = true;
             this.labelView.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelView.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.labelView.Location = new System.Drawing.Point(58, 8);
+            this.labelView.Location = new System.Drawing.Point(38, 3);
             this.labelView.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelView.Name = "labelView";
-            this.labelView.Size = new System.Drawing.Size(78, 40);
+            this.labelView.Size = new System.Drawing.Size(66, 32);
             this.labelView.TabIndex = 2;
             this.labelView.Text = "View";
             // 
@@ -282,10 +234,10 @@ namespace PBL3
             // 
             this.pictureBoxView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxView.Image = global::PBL3.Properties.Resources.clipart1797699;
-            this.pictureBoxView.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxView.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxView.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxView.Name = "pictureBoxView";
-            this.pictureBoxView.Size = new System.Drawing.Size(46, 46);
+            this.pictureBoxView.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxView.TabIndex = 2;
             this.pictureBoxView.TabStop = false;
@@ -298,76 +250,62 @@ namespace PBL3
             this.panel5.Controls.Add(this.pn4);
             this.panel5.Controls.Add(this.pn2);
             this.panel5.Controls.Add(this.pn3);
-            this.panel5.Location = new System.Drawing.Point(327, 6);
+            this.panel5.Location = new System.Drawing.Point(236, 16);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(590, 61);
+            this.panel5.Size = new System.Drawing.Size(424, 40);
             this.panel5.TabIndex = 5;
             // 
-            // label5
+            // ckbxID
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(22, 135);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(229, 55);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Find Flight";
-            // 
-            // ckbxAirline
-            // 
-            this.ckbxAirline.AutoSize = true;
-            this.ckbxAirline.Location = new System.Drawing.Point(4, 23);
-            this.ckbxAirline.Margin = new System.Windows.Forms.Padding(4);
-            this.ckbxAirline.Name = "ckbxAirline";
-            this.ckbxAirline.Size = new System.Drawing.Size(22, 21);
-            this.ckbxAirline.TabIndex = 7;
-            this.ckbxAirline.UseVisualStyleBackColor = true;
-            // 
-            // cbbAirline
-            // 
-            this.cbbAirline.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbAirline.FormattingEnabled = true;
-            this.cbbAirline.Location = new System.Drawing.Point(4, 48);
-            this.cbbAirline.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbAirline.Name = "cbbAirline";
-            this.cbbAirline.Size = new System.Drawing.Size(247, 48);
-            this.cbbAirline.TabIndex = 8;
+            this.ckbxID.AutoSize = true;
+            this.ckbxID.Location = new System.Drawing.Point(4, 23);
+            this.ckbxID.Margin = new System.Windows.Forms.Padding(4);
+            this.ckbxID.Name = "ckbxID";
+            this.ckbxID.Size = new System.Drawing.Size(18, 17);
+            this.ckbxID.TabIndex = 7;
+            this.ckbxID.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txbID);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.cbbAirline);
-            this.panel1.Controls.Add(this.ckbxAirline);
-            this.panel1.Location = new System.Drawing.Point(5, 209);
+            this.panel1.Controls.Add(this.ckbxID);
+            this.panel1.Location = new System.Drawing.Point(17, 159);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(292, 129);
+            this.panel1.Size = new System.Drawing.Size(203, 85);
             this.panel1.TabIndex = 9;
+            // 
+            // txbID
+            // 
+            this.txbID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbID.Location = new System.Drawing.Point(0, 44);
+            this.txbID.Name = "txbID";
+            this.txbID.Size = new System.Drawing.Size(199, 29);
+            this.txbID.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(36, 3);
+            this.label6.Location = new System.Drawing.Point(36, 7);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 45);
+            this.label6.Size = new System.Drawing.Size(117, 37);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Airlines";
+            this.label6.Text = "Flight ID";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cbbDeparture);
             this.panel2.Controls.Add(this.ckbxDepart);
-            this.panel2.Location = new System.Drawing.Point(5, 319);
+            this.panel2.Location = new System.Drawing.Point(17, 345);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 129);
+            this.panel2.Size = new System.Drawing.Size(203, 94);
             this.panel2.TabIndex = 10;
             // 
             // label7
@@ -375,21 +313,22 @@ namespace PBL3
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(36, 3);
+            this.label7.Location = new System.Drawing.Point(36, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 45);
+            this.label7.Size = new System.Drawing.Size(136, 37);
             this.label7.TabIndex = 9;
             this.label7.Text = "Departure";
             // 
             // cbbDeparture
             // 
-            this.cbbDeparture.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDeparture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDeparture.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDeparture.FormattingEnabled = true;
             this.cbbDeparture.Location = new System.Drawing.Point(4, 48);
             this.cbbDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.cbbDeparture.Name = "cbbDeparture";
-            this.cbbDeparture.Size = new System.Drawing.Size(247, 48);
+            this.cbbDeparture.Size = new System.Drawing.Size(199, 29);
             this.cbbDeparture.TabIndex = 8;
             // 
             // ckbxDepart
@@ -398,7 +337,7 @@ namespace PBL3
             this.ckbxDepart.Location = new System.Drawing.Point(4, 23);
             this.ckbxDepart.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDepart.Name = "ckbxDepart";
-            this.ckbxDepart.Size = new System.Drawing.Size(22, 21);
+            this.ckbxDepart.Size = new System.Drawing.Size(18, 17);
             this.ckbxDepart.TabIndex = 7;
             this.ckbxDepart.UseVisualStyleBackColor = true;
             // 
@@ -407,10 +346,10 @@ namespace PBL3
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.cbbDestination);
             this.panel3.Controls.Add(this.ckbxDesti);
-            this.panel3.Location = new System.Drawing.Point(5, 430);
+            this.panel3.Location = new System.Drawing.Point(17, 447);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(292, 129);
+            this.panel3.Size = new System.Drawing.Size(203, 89);
             this.panel3.TabIndex = 10;
             // 
             // label8
@@ -421,18 +360,19 @@ namespace PBL3
             this.label8.Location = new System.Drawing.Point(36, 3);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 45);
+            this.label8.Size = new System.Drawing.Size(153, 37);
             this.label8.TabIndex = 9;
             this.label8.Text = "Destination";
             // 
             // cbbDestination
             // 
-            this.cbbDestination.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDestination.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDestination.FormattingEnabled = true;
             this.cbbDestination.Location = new System.Drawing.Point(4, 48);
             this.cbbDestination.Margin = new System.Windows.Forms.Padding(4);
             this.cbbDestination.Name = "cbbDestination";
-            this.cbbDestination.Size = new System.Drawing.Size(247, 48);
+            this.cbbDestination.Size = new System.Drawing.Size(199, 29);
             this.cbbDestination.TabIndex = 8;
             // 
             // ckbxDesti
@@ -441,77 +381,34 @@ namespace PBL3
             this.ckbxDesti.Location = new System.Drawing.Point(4, 23);
             this.ckbxDesti.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDesti.Name = "ckbxDesti";
-            this.ckbxDesti.Size = new System.Drawing.Size(22, 21);
+            this.ckbxDesti.Size = new System.Drawing.Size(18, 17);
             this.ckbxDesti.TabIndex = 7;
             this.ckbxDesti.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // lblText
             // 
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.cbbSortPrice);
-            this.panel4.Controls.Add(this.ckbxPrice);
-            this.panel4.Location = new System.Drawing.Point(5, 541);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(292, 129);
-            this.panel4.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(36, 4);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 45);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Prices";
-            // 
-            // cbbSortPrice
-            // 
-            this.cbbSortPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbSortPrice.FormattingEnabled = true;
-            this.cbbSortPrice.Location = new System.Drawing.Point(4, 48);
-            this.cbbSortPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbSortPrice.Name = "cbbSortPrice";
-            this.cbbSortPrice.Size = new System.Drawing.Size(247, 48);
-            this.cbbSortPrice.TabIndex = 8;
-            // 
-            // ckbxPrice
-            // 
-            this.ckbxPrice.AutoSize = true;
-            this.ckbxPrice.Location = new System.Drawing.Point(4, 23);
-            this.ckbxPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.ckbxPrice.Name = "ckbxPrice";
-            this.ckbxPrice.Size = new System.Drawing.Size(22, 21);
-            this.ckbxPrice.TabIndex = 7;
-            this.ckbxPrice.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.SteelBlue;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(28, 20);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 28);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Welcome";
+            this.lblText.AutoSize = true;
+            this.lblText.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.ForeColor = System.Drawing.Color.White;
+            this.lblText.Location = new System.Drawing.Point(26, 16);
+            this.lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(93, 28);
+            this.lblText.TabIndex = 11;
+            this.lblText.Text = "Welcome";
             // 
             // btnProfile
             // 
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.Location = new System.Drawing.Point(16, 46);
+            this.btnProfile.Location = new System.Drawing.Point(17, 41);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(303, 51);
+            this.btnProfile.Size = new System.Drawing.Size(199, 51);
             this.btnProfile.TabIndex = 13;
             this.btnProfile.Text = "Do Thanh Tuan";
             this.btnProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -525,43 +422,247 @@ namespace PBL3
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1373, 8);
+            this.btnLogout.Location = new System.Drawing.Point(1262, 12);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(134, 59);
+            this.btnLogout.Size = new System.Drawing.Size(134, 36);
             this.btnLogout.TabIndex = 14;
             this.btnLogout.Text = "Log out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // pictureboxFind
+            // button1
             // 
-            this.pictureboxFind.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureboxFind.Image = global::PBL3.Properties.Resources.findicon;
-            this.pictureboxFind.Location = new System.Drawing.Point(236, 108);
-            this.pictureboxFind.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureboxFind.Name = "pictureboxFind";
-            this.pictureboxFind.Size = new System.Drawing.Size(45, 46);
-            this.pictureboxFind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureboxFind.TabIndex = 15;
-            this.pictureboxFind.TabStop = false;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(13, 100);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(203, 51);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Search Flight";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Search);
+            // 
+            // listView1
+            // 
+            this.listView1.AllowColumnReorder = true;
+            this.listView1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader8,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(236, 59);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1160, 689);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID Flight";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Airline";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "From";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "To";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Day";
+            this.columnHeader5.Width = 120;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Takeoff time";
+            this.columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Landing Time";
+            this.columnHeader7.Width = 120;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Status";
+            this.columnHeader9.Width = 120;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Base Economic Price";
+            this.columnHeader10.Width = 120;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Main Cabin Price";
+            this.columnHeader11.Width = 120;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Delta Comfort Price";
+            this.columnHeader8.Width = 120;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "First Class Price";
+            this.columnHeader12.Width = 120;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Trip Type";
+            this.columnHeader13.Width = 120;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Capacity";
+            this.columnHeader14.Width = 120;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.ckbxDay);
+            this.panel4.Location = new System.Drawing.Point(17, 544);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(203, 89);
+            this.panel4.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(4, 44);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 29);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(36, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 37);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Take off day";
+            // 
+            // ckbxDay
+            // 
+            this.ckbxDay.AutoSize = true;
+            this.ckbxDay.Location = new System.Drawing.Point(4, 23);
+            this.ckbxDay.Margin = new System.Windows.Forms.Padding(4);
+            this.ckbxDay.Name = "ckbxDay";
+            this.ckbxDay.Size = new System.Drawing.Size(18, 17);
+            this.ckbxDay.TabIndex = 7;
+            this.ckbxDay.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.cbbAirline);
+            this.panel6.Controls.Add(this.ckbxAirline);
+            this.panel6.Location = new System.Drawing.Point(17, 252);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(203, 85);
+            this.panel6.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(36, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 37);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Airlines";
+            // 
+            // cbbAirline
+            // 
+            this.cbbAirline.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbAirline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbAirline.FormattingEnabled = true;
+            this.cbbAirline.Location = new System.Drawing.Point(0, 45);
+            this.cbbAirline.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbAirline.Name = "cbbAirline";
+            this.cbbAirline.Size = new System.Drawing.Size(199, 29);
+            this.cbbAirline.TabIndex = 8;
+            // 
+            // ckbxAirline
+            // 
+            this.ckbxAirline.AutoSize = true;
+            this.ckbxAirline.Location = new System.Drawing.Point(4, 23);
+            this.ckbxAirline.Margin = new System.Windows.Forms.Padding(4);
+            this.ckbxAirline.Name = "ckbxAirline";
+            this.ckbxAirline.Size = new System.Drawing.Size(18, 17);
+            this.ckbxAirline.TabIndex = 7;
+            this.ckbxAirline.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(56)))), ((int)(((byte)(100)))));
+            this.panel7.Location = new System.Drawing.Point(236, 51);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1161, 5);
+            this.panel7.TabIndex = 19;
             // 
             // FlightManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1505, 782);
-            this.Controls.Add(this.pictureboxFind);
+            this.ClientSize = new System.Drawing.Size(1421, 782);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.lblText);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.listView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FlightManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -587,15 +688,14 @@ namespace PBL3
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureboxFind)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel pn1;
         private System.Windows.Forms.Label lbAdd;
         private System.Windows.Forms.PictureBox pictureBoxAdd;
@@ -609,9 +709,7 @@ namespace PBL3
         private System.Windows.Forms.Label labelView;
         private System.Windows.Forms.PictureBox pictureBoxView;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox ckbxAirline;
-        private System.Windows.Forms.ComboBox cbbAirline;
+        private System.Windows.Forms.CheckBox ckbxID;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
@@ -622,21 +720,35 @@ namespace PBL3
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbbDestination;
         private System.Windows.Forms.CheckBox ckbxDesti;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbbSortPrice;
-        private System.Windows.Forms.CheckBox ckbxPrice;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private Button button1;
+        private ListView listView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
-        private PictureBox pictureboxFind;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
+        private ColumnHeader columnHeader11;
+        private TextBox txbID;
+        private Panel panel4;
+        private Label label1;
+        private CheckBox ckbxDay;
+        private Panel panel6;
+        private Label label2;
+        private ComboBox cbbAirline;
+        private CheckBox ckbxAirline;
+        private DateTimePicker dateTimePicker1;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader12;
+        private ColumnHeader columnHeader13;
+        private ColumnHeader columnHeader14;
+        private Panel panel7;
     }
 }
 

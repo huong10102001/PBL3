@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL3.DAO
 {
@@ -18,7 +19,11 @@ namespace PBL3.DAO
             private set { instance = value; }
         }
 
-        private PriceDAO() { }
+        public List<PriceDTO> PriceList { get; set; }
+        private PriceDAO()
+        {
+            PriceList = GetListPrice();
+        }
 
         public List<PriceDTO> GetListPrice()
         {
@@ -34,6 +39,17 @@ namespace PBL3.DAO
                 list.Add(place);
             }
 
+            return list;
+        }
+        public List<PriceDTO> Tinh(float index)
+        {
+           
+            List<PriceDTO> list = GetListPrice();
+            
+            foreach(PriceDTO i in list)
+            {
+                i.price *= index;
+            }
             return list;
         }
     }

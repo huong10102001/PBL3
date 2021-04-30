@@ -12,6 +12,12 @@ namespace PBL3.DTO
         public string name { get; set; }
         public float price { get; set; }
 
+        public PriceDTO(string name, float price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
         public PriceDTO()
         {
             name = null;
