@@ -23,7 +23,7 @@ namespace PBL3.DAO
         
         public FeedbackDTO Feedback( string username, string content )
         {
-            string query = string.Format("USP_Insert_FeedBack N'{0}',N'{1}'", username, content);
+            string query = string.Format("_InsertFeedBack N'{0}',N'{1}'", username, content);
             DataTable data = DataProvider.Instance.GetRecord(query);
             foreach (DataRow item in data.Rows)
             {
@@ -35,7 +35,7 @@ namespace PBL3.DAO
         public DataTable GetFeedback()
         {
 
-            string query = string.Format("SELECT us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username");
+            string query = string.Format("SELECT FEEDBACK.us_username as [Username], us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username");
             return DataProvider.Instance.GetRecord(query);
             
         }

@@ -85,7 +85,8 @@ CREATE TABLE FEEDBACK
 (
 	feedback_id int primary key identity not null,
 	DateFB date ,
-	us_username nvarchar (20) not null
+	us_username nvarchar (20) not null,
+	content nvarchar (200)
 
 	foreign key (us_username) references dbo.USERS(us_username)
 )
@@ -148,9 +149,9 @@ AS
 	)
 
 
-CREATE PROC USP_Insert_Feedback
+CREATE PROC _InsertFeedback
 @us_username nvarchar(20),
-@content nvarchar (1000),
+@content nvarchar (1000)
 AS
 BEGIN
 	INSERT dbo.FEEDBACK 
@@ -208,7 +209,7 @@ GO
 --
 --GO
 SELECT us_name, us_email, content, dateFB FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username
-SELECT us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE us_name= 'Thu H??ng'
+SELECT FEEDBACK.us_username, us_name  as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE FEEDBACK.us_username = 'huong'
 
 
 

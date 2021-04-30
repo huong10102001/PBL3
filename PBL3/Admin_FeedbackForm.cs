@@ -35,5 +35,10 @@ namespace PBL3
         {
             dataGridView1.DataSource = FeedbackDAO.Instance.GetFeedback();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

@@ -42,6 +42,11 @@ namespace PBL3
             FeedbackDAO.Instance.Feedback("nhi", content);
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BookingForm f = new BookingForm();
+            this.Hide();
+            f.ShowDialog();
+        }
     }
 }
