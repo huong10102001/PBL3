@@ -76,7 +76,9 @@
     <Compile Include="DAO\FlightDAO.cs" />
     <Compile Include="DAO\PlaceDAO.cs" />
     <Compile Include="DAO\PriceDAO.cs" />
+    <Compile Include="DAO\SourceDAO.cs" />
     <Compile Include="DAO\Soure.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\AirlineDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />
@@ -93,11 +95,6 @@
     </Compile>
     <Compile Include="FlightManagement.Designer.cs">
       <DependentUpon>FlightManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FlightManagementDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FlightManagementDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FlightTicketForm.cs">
       <SubType>Form</SubType>
@@ -196,9 +193,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportForm.resx">
-      <DependentUpon>ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,9 +265,6 @@
     <None Include="Resources\960x0.jpg" />
     <None Include="Resources\abc.png" />
     <None Include="Resources\abc1.png" />
-    <None Include="Resources\0fc087a2d2615402d5d128b93a83b315.jpg" />
-    <None Include="Resources\8844c32d781c49dbbfa039b2227ec8c8.jpg" />
-    <None Include="Resources\6e9b4572231b7a1e056ffc1bb0d2b08f.jpg" />
     <Content Include="Resources\bca02e625cb0205f6035b8c1391204b5.jpg" />
     <None Include="Resources\bca02e625cb0205f6035b8c1391204b51.jpg" />
     <None Include="icon\findicon.png" />

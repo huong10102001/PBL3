@@ -30,10 +30,11 @@ namespace PBL3.DAO
             }
             return null;
         }
-        public DataTable GetBillListByDate(string checkIn, string checkOut)
+        public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
-            //string query = string.Format("GetList_BillByDate '" + checkIn + "' , '"+  checkOut + "'");
-            string query = string.Format("SELECT u.us_name AS [Customer Name], u.us_email AS [Email], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateOne AS [Date In], b.DateTwo AS [Date Out] FROM dbo.BILL_KH AS b, dbo.USERS AS u WHERE DateOne >= {0} AND DateTwo <= {1} AND b.us_username = u.us_username", checkIn, checkOut);
+            string intime = checkIn.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string outtime = checkOut.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string query = string.Format("SELECT u.us_name AS [Customer Name], u.us_email AS [Email], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateTwo AS [Date] FROM dbo.BILL_KH AS b, dbo.USERS AS u WHERE DateOne >= '{0}' AND DateTwo <= '{1}' AND b.us_username = u.us_username", intime, outtime);
             DataTable data = DataProvider.Instance.GetRecord(query);
             return data;
         }

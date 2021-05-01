@@ -197,3 +197,12 @@ BEGIN
 END
 GO
 
+CREATE PROC GetBillFlight
+@checkIn datetime, @checkOut datetime
+BEGIN
+	SELECT t.fl_id AS [Flight ID], COUNT (t.seat) AS [Number of seats], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateOne AS [Date In], b.DateTwo AS [Date Out]
+	FROM dbo.TICKET AS t,dbo.USERS AS u
+	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
+	AND b.us_username = u.us_username
+END
+GO
