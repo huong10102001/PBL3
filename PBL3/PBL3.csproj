@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_FeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_FeedbackForm.Designer.cs">
+      <DependentUpon>Admin_FeedbackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,8 +60,10 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\AirlineDAO.cs" />
+    <Compile Include="DAO\BILL_KHDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DestinationDAO.cs" />
+    <Compile Include="DAO\FeedbackDAO.cs" />
     <Compile Include="DAO\FlightDAO.cs" />
     <Compile Include="DAO\PlaceDAO.cs" />
     <Compile Include="DAO\PriceDAO.cs" />
@@ -64,8 +72,10 @@
     <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\AirlineDTO.cs" />
+    <Compile Include="DTO\BILL_KHDTO.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\DestinationDTO.cs" />
+    <Compile Include="DTO\FeedbackDTO.cs" />
     <Compile Include="DTO\Fight.cs" />
     <Compile Include="DTO\FlightDTO.cs" />
     <Compile Include="DTO\FlightSearch.cs" />
@@ -140,6 +150,9 @@
     <Compile Include="ViewFlightForm.Designer.cs">
       <DependentUpon>ViewFlightForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_FeedbackForm.resx">
+      <DependentUpon>Admin_FeedbackForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
