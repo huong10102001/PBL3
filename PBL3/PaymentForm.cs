@@ -50,5 +50,30 @@ namespace PBL3
             this.Hide();
             f.ShowDialog();
         }
+        public void LoadInformation()
+        {
+            List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
+
+            List<FlightDTO> list = FlightDTO.Instance.GetAllFight();
+
+            Information[] information  = new Information[list.Count];
+
+            foreach (FlightDTO i in list)
+            {
+                int s = 0;
+                for (int j = 0; j < information.Length; j++)
+                {
+
+                    information[j] = new ListFight();
+                    information[j].price = i;
+                    information[j].time = i.takeoff.ToString();
+                    information[j].places = i.fl_source.ToString();
+                    information[j].SetLabel();
+
+                }
+                flowLayoutPanel1.Controls.Add(information[s]);
+                s++;
+            }
+        }
     }
 }

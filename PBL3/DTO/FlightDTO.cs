@@ -21,9 +21,11 @@ namespace PBL3.DTO
         public string description { get; set; }
         public int status { get; set; }
         public int capacity { get; set; }
+        public string id_roundtrip { get; set; }
 
         public FlightDTO()
         {
+            id_roundtrip = null;
             airline_id = 1;
             fl_source = 1;
             fl_destination = 1;
@@ -37,6 +39,7 @@ namespace PBL3.DTO
         }
         public FlightDTO(DataRow row)
         {
+            this.id_roundtrip = row["id_roundtrip"].ToString();
             this.airline_id = (int)row["airline_id"];
             this.fl_source = (int)row["fl_source"];
             this.fl_destination = (int)row["fl_source"];
