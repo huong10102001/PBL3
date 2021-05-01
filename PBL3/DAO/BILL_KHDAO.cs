@@ -38,5 +38,14 @@ namespace PBL3.DAO
             DataTable data = DataProvider.Instance.GetRecord(query);
             return data;
         }
+
+        public DataTable GetBillListByFlight(DateTime checkIn, DateTime checkOut)
+        {
+            string intime = checkIn.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string outtime = checkOut.Date.ToString("yyyy-MM-dd HH:mm:ss");
+            string query = string.Format("SELECT FLIGHT.fl_id AS 'FLight ID', COUNT(ticket_id) AS 'Number of Sold Tickets', SUM(price * airline_index) AS 'Totalprice', fl_takeoftime as 'Date' FROM FLIGHT INNER JOIN TICKET ON FLIGHT.fl_id = TICKET.fl_id INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN PRICE ON TICKET.price_id = PRICE.id WHERE fl_takeoftime >= '{0}' AND fl_landingtime <= '{1}' GROUP BY FLIGHT.fl_id, fl_takeoftime", intime, outtime);
+            DataTable data = DataProvider.Instance.GetRecord(query);
+            return data;
+        }
     }
 }

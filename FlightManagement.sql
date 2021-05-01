@@ -195,15 +195,19 @@ BEGIN
 	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
 	AND b.us_username = u.us_username
 END
-GO
+GO, 
 
+alter table TICKET
+add seat_number int
 
-CREATE PROC GetBillFlight
-@checkIn datetime, @checkOut datetime
-BEGIN
-	SELECT t.fl_id AS [Flight ID], COUNT (t.seat) AS [Number of seats], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateOne AS [Date In], b.DateTwo AS [Date Out]
-	FROM dbo.TICKET AS t,dbo.USERS AS u
-	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
-	AND b.us_username = u.us_username
-END
-GO
+alter table TICKET
+add price_id int
+
+alter table TICKET
+add foreign key (price_id) references dbo.PRICE(id)
+
+alter table FLIGHT
+drop column fl_capacity
+
+SELECT TICKET.fl_id, COUNT(ticket_id) AS 'Number of Sold Tickets', SUM(price*airline_index) AS 'Totalprice', fl_takeoftime as 'Date'
+FROM FLIGHT INNER JOIN TICKET ON FLIGHT.fl_id = TICKET.fl_id INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN PRICE ON TICKET.price_id = PRICE.id

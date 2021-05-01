@@ -140,6 +140,12 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeatsBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatsBooking.Designer.cs">
+      <DependentUpon>SeatsBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
