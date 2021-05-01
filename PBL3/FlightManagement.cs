@@ -83,7 +83,7 @@ namespace PBL3
                 lvsItem.SubItems[1].ForeColor = Color.DarkBlue;
                 listView1.Items.Add(lvsItem);
             }
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 
         }
         public void LoadComboBox()
@@ -124,7 +124,7 @@ namespace PBL3
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một chuyến bay!");
+                MessageBox.Show("Please choose a flight! / Vui lòng chọn một chuyến bay!");
             }
         }
         private void BtnDelete(object o, EventArgs e) //delete
@@ -132,7 +132,7 @@ namespace PBL3
             if (listView1.FocusedItem != null)
             {
                 string fl_id = listView1.FocusedItem.SubItems[0].Text;
-                string text = "Vui lòng xác nhận xóa chuyến bay " + fl_id+"!";
+                string text = "Please confirm deleting flight / Vui lòng xác nhận xóa chuyến bay " + fl_id+"!";
 
                 DialogResult dialogResult = MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo);
 
@@ -149,7 +149,7 @@ namespace PBL3
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một chuyến bay!");
+                MessageBox.Show("Please choose a flight! / Vui lòng chọn một chuyến bay!");
             }
         }
         private void BtnView(object o, EventArgs e) // view
@@ -162,7 +162,7 @@ namespace PBL3
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một chuyến bay!");
+                MessageBox.Show("Please choose a flight! / Vui lòng chọn một chuyến bay!");
             }
         }
 
@@ -189,7 +189,7 @@ namespace PBL3
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                    MessageBox.Show("Please choose all information! / Vui lòng chọn đầy đủ thông tin!");
                     return;
                 }
 
@@ -203,7 +203,7 @@ namespace PBL3
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                    MessageBox.Show("Please choose all information! / Vui lòng chọn đầy đủ thông tin!");
                     return;
                 }
             }
@@ -216,7 +216,7 @@ namespace PBL3
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                    MessageBox.Show("Please choose all information! / Vui lòng chọn đầy đủ thông tin!");
                     return;
                 }
             }
@@ -229,7 +229,7 @@ namespace PBL3
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                    MessageBox.Show("Please choose all information! / Vui lòng chọn đầy đủ thông tin!");
                     return;
                 }
             }
@@ -242,7 +242,7 @@ namespace PBL3
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn thật sự muốn thoát?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit? / Bạn thật sự muốn thoát?", "Thông báo / Announce", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Dispose();

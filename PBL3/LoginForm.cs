@@ -55,7 +55,7 @@ namespace PBL3
             string passWord = txtPassword.Text;
             if (userName == "" && passWord == "")
             {
-                MessageBox.Show("Hãy nhập đầy đủ tài khoản và mật khẩu");
+                MessageBox.Show("Please enter your full account and password! / Hãy nhập đầy đủ tài khoản và mật khẩu!");
             }
             else { 
                 AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
@@ -88,7 +88,7 @@ namespace PBL3
                 }
                 else
                 {
-                    MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+                    MessageBox.Show("Wrong username or password! / Sai tên tài khoản hoặc mật khẩu!");
                 }
             }
 

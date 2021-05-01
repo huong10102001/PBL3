@@ -28,7 +28,7 @@ namespace PBL3
             string phone = txtPhone.Text;
             string address = txtAddress.Text;
             if ((userName != "" || passWord != "" || passWord2 != "" || name != "" || email != "" || phone != "" || address != "") 
-                || (userName != "Username" || passWord != "Password" || passWord2 != "Password" || name != "Name" || email != "Email" || phone != "Phone" || address != "Address"))
+                && (userName != "Username" || passWord != "Password" || passWord2 != "Password" || name != "Name" || email != "Email" || phone != "Phone" || address != "Address"))
             {
 
                 if (passWord == passWord2)
@@ -38,28 +38,28 @@ namespace PBL3
                         try
                         { 
                             AccountDAO.Instance.Signup(userName, passWord, name, email, phone, address);
-                            MessageBox.Show("Đăng kí thành công");
+                            MessageBox.Show("Sign Up Success! / Đăng kí thành công!");
                             LoginForm lm = new LoginForm();
                             this.Hide();
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("Trùng tên tài khoản");
+                            MessageBox.Show("Duplicate Username! / Trùng tên tài khoản!");
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng đồng ý với các điều khoản của dịch vụ");
+                        MessageBox.Show("Please agree to the terms of service! / Vui lòng đồng ý với các điều khoản của dịch vụ!");
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu chưa trùng khớp");
+                    MessageBox.Show("Password not match! / Mật khẩu chưa trùng khớp!");
                 }
             }
-            else MessageBox.Show("Hãy nhập đầy đủ thông tin");
+            else MessageBox.Show("Please enter all information! / Hãy nhập đầy đủ thông tin!");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -104,6 +104,6 @@ namespace PBL3
                 txtAddress.Text = "";
         }
 
-    
+        
     }
 }

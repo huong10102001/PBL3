@@ -151,7 +151,13 @@ namespace PBL3
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            
+            ReportForm f = new ReportForm();
+            this.customerId += new CustomerId(f.setUserId);
+            customerId(user1);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -200,7 +206,7 @@ namespace PBL3
 
             if(comboBox_From.SelectedItem == null || comboBox_To.SelectedItem == null || comboBox_Trip.SelectedItem == null)
             {
-                MessageBox.Show("Vui long chon day du thong tin!");
+                MessageBox.Show("Please choose all information! / Vui lòng chọn đầy đủ thông tin!");
             }
             else
             {

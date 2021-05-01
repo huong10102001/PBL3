@@ -60,3 +60,6 @@ E:\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.pd
 E:\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.SeatsBooking.resources
 C:\Users\ACER\Onedrive DUT 2021\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.SeatsBooking.resources
 E:\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.Admin_FeedbackForm.resources
+C:\Users\ACER\Onedrive DUT 2021\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.Admin_FeedbackForm.resources
+C:\Users\ACER\Onedrive DUT 2021\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.Bill.resources
+C:\Users\ACER\Onedrive DUT 2021\OneDrive - The University of Technology\PBL final\PBL3\PBL3\obj\Debug\PBL3.ReportForm.resources

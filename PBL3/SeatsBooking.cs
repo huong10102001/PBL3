@@ -21,13 +21,32 @@ namespace PBL3
         private int TICKET_ID;
         private int BTN_WIDTH = 40;
         private int BTN_HEIGHT = 40;
+        private int COUNT = 0;
+        private List<TicketDTO> PassList;
+        private List<TicketDTO> TempList;
+        Color color1 = Color.FromArgb(34, 228, 172);
+        Color color2 = Color.FromArgb(27, 215, 187);
+        Color color3 = Color.FromArgb(20, 201, 203);
+        Color color4 = Color.FromArgb(15, 190, 216);
         public SeatsBooking(string fl_id, string username, string type, int ticket_id = -1)
         {
             ID_FLIGHT = fl_id;
             USERNAME = username;
+            PassList = new List<TicketDTO>();
+            TempList = new List<TicketDTO>();
+            COUNT = TicketDAO.Instance.GetListTicketPerFlight(fl_id).Count;
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlight(fl_id))
+            {
+                TempList.Add(i);
+            }
+
+
             InitializeComponent();
             LoadSeats(ticket_id);
+            LoadListView();
             LoadCBB();
+
+           
             switch (type)
             {
                 case "ADMIN_ADD":
@@ -52,7 +71,7 @@ namespace PBL3
             TicketDTO ticket = TicketDAO.Instance.GetTicketByID(ticket_id);
 
             string lastWord = ticket.ticket_name.Split(' ').Last();
-            lblMode.Text = "Edit "+lastWord+"'s ticket";
+            lblMode.Text = "Edit " + lastWord + "'s ticket";
 
             if (ticket.price_id == PriceDAO.Instance.PriceList[0].id)
             {
@@ -82,9 +101,13 @@ namespace PBL3
             txbAddress.Text = ticket.ticket_address;
             cbbGender.SelectedIndex = (ticket.ticket_gender) ? 0 : 1;
         }
-        public void LoadSeats(int ticket_id)
+        public void LoadSeats(int ticket_id = -1)
         {
-            for(int i = 1; i <= 6; i++)
+            flpFirst.Controls.Clear();
+            flpDelta.Controls.Clear();
+            flpMain.Controls.Clear();
+            flpBase.Controls.Clear();
+            for (int i = 1; i <= 6; i++)
             {
                 Button btn = new Button();
                 btn.Tag = i;
@@ -93,19 +116,21 @@ namespace PBL3
                 btn.Height = BTN_HEIGHT;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.BackColor = Color.FromArgb(34, 228, 172);
+                btn.BackColor = color1;
                 btn.Click += new EventHandler(FirstButton);
+                btn.GotFocus += new EventHandler(BtnFocus);
+                btn.LostFocus += new EventHandler(LostFirst);
                 if (isFirstAvalaible(i))
                 {
                     btn.BackColor = Color.Pink;
                     btn.Enabled = false;
                 }
-                if(ticket_id != -1)
+                if (ticket_id != -1)
                 {
                     TicketDTO ticket = TicketDAO.Instance.GetTicketByID(ticket_id);
-                    if(i == ticket.seat_number && ticket.price_id == PriceDAO.Instance.PriceList[0].id)
+                    if (i == ticket.seat_number && ticket.price_id == PriceDAO.Instance.PriceList[0].id)
                     {
-                        btn.BackColor = Color.Tomato;
+                        btn.BackColor = Color.DarkGray;
                     }
                 }
 
@@ -120,8 +145,10 @@ namespace PBL3
                 btn.Height = BTN_HEIGHT;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.BackColor = Color.FromArgb(27, 215, 187);
+                btn.BackColor = color2;
                 btn.Click += new EventHandler(DeltatButton);
+                btn.GotFocus += new EventHandler(BtnFocus);
+                btn.LostFocus += new EventHandler(LostDelta);
 
                 if (isDeltaAvalaible(i))
                 {
@@ -134,7 +161,7 @@ namespace PBL3
                     TicketDTO ticket = TicketDAO.Instance.GetTicketByID(ticket_id);
                     if (i == ticket.seat_number && ticket.price_id == PriceDAO.Instance.PriceList[1].id)
                     {
-                        btn.BackColor = Color.Tomato;
+                        btn.BackColor = Color.DarkGray;
                     }
                 }
 
@@ -149,8 +176,10 @@ namespace PBL3
                 btn.Height = BTN_HEIGHT;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.BackColor = Color.FromArgb(20, 201, 203);
+                btn.BackColor = color3;
                 btn.Click += new EventHandler(MainButton);
+                btn.GotFocus += new EventHandler(BtnFocus);
+                btn.LostFocus += new EventHandler(LostMain);
 
                 if (isMainAvalaible(i))
                 {
@@ -163,7 +192,7 @@ namespace PBL3
                     TicketDTO ticket = TicketDAO.Instance.GetTicketByID(ticket_id);
                     if (i == ticket.seat_number && ticket.price_id == PriceDAO.Instance.PriceList[2].id)
                     {
-                        btn.BackColor = Color.Tomato;
+                        btn.BackColor = Color.DarkGray;
                     }
                 }
 
@@ -178,8 +207,10 @@ namespace PBL3
                 btn.Height = BTN_HEIGHT;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.BackColor = Color.FromArgb(15, 190, 216);
+                btn.BackColor = color4;
                 btn.Click += new EventHandler(BaseButton);
+                btn.GotFocus += new EventHandler(BtnFocus);
+                btn.LostFocus += new EventHandler(LostBase);
 
                 if (isBaseAvalaible(i))
                 {
@@ -192,7 +223,7 @@ namespace PBL3
                     TicketDTO ticket = TicketDAO.Instance.GetTicketByID(ticket_id);
                     if (i == ticket.seat_number && ticket.price_id == PriceDAO.Instance.PriceList[3].id)
                     {
-                        btn.BackColor = Color.Tomato;
+                        btn.BackColor = Color.DarkGray;
                     }
                 }
 
@@ -232,9 +263,34 @@ namespace PBL3
             SEAT_NAME = Convert.ToInt32(btn.Tag);
             PRICE_ID = PriceDAO.Instance.PriceList[3].id;
         }
+        public void BtnFocus(object o, EventArgs e)
+        {
+            Button btn = (Button)o;
+            btn.BackColor = Color.Tomato;
+        }
+        public void LostFirst(object o, EventArgs e)
+        {
+            Button btn = (Button)o;
+            btn.BackColor = color1;
+        }
+        public void LostDelta(object o, EventArgs e)
+        {
+            Button btn = (Button)o;
+            btn.BackColor = color2;
+        }
+        public void LostMain(object o, EventArgs e)
+        {
+            Button btn = (Button)o;
+            btn.BackColor = color3;
+        }
+        public void LostBase(object o, EventArgs e)
+        {
+            Button btn = (Button)o;
+            btn.BackColor = color4;
+        }
         public bool isFirstAvalaible(int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(ID_FLIGHT, PriceDAO.Instance.PriceList[0].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[0].id))
             {
                 if(i.seat_number == seat_number)
                 {
@@ -245,7 +301,7 @@ namespace PBL3
         }
         public bool isDeltaAvalaible(int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(ID_FLIGHT, PriceDAO.Instance.PriceList[1].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList,  PriceDAO.Instance.PriceList[1].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -256,7 +312,7 @@ namespace PBL3
         }
         public bool isMainAvalaible(int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(ID_FLIGHT, PriceDAO.Instance.PriceList[2].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[2].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -267,7 +323,7 @@ namespace PBL3
         }
         public bool isBaseAvalaible(int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(ID_FLIGHT, PriceDAO.Instance.PriceList[3].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[3].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -286,7 +342,21 @@ namespace PBL3
             else
             {
                 TicketDTO ticket = new TicketDTO(ID_FLIGHT, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0)?true:false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
-                MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
+                //MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
+
+                PassList.Add(ticket);
+                TempList.Add(ticket);
+
+                txbAddress.Text = "";
+                txbName.Text = "";
+                txbPhone.Text = "";
+                lblSeatName.Text = "Choose an available seat!";
+
+                SEAT_NAME = 0;
+                PRICE_ID = 0;
+
+                LoadSeats();
+                LoadListView();
             }
         }
         public void AddTicket(object o, EventArgs e) // for admin
@@ -338,9 +408,90 @@ namespace PBL3
             cbbGender.DisplayMember = "Text";
         }
 
+        public void LoadListView()
+        {
+            listView1.Items.Clear();
+            foreach (TicketDTO i in PassList)
+            {
+                ListViewItem lvsItem = new ListViewItem(i.ticket_name);
+                lvsItem.SubItems.Add((i.ticket_gender)?"Male":"Female");
+                lvsItem.SubItems.Add(i.ticket_mobile);
+                lvsItem.SubItems.Add(i.ticket_address);
+
+                List<PriceDTO> PriceList = PriceDAO.Instance.PriceList;
+                int first = PriceList[0].id;
+                int delta = PriceList[1].id;
+                int main = PriceList[2].id;
+                int econo = PriceList[3].id;
+
+                if (i.price_id == first)
+                {
+                    string txt = "F" + i.seat_number;
+                    lvsItem.SubItems.Add(txt);
+
+                    //string price = "" + PriceDAO.Instance.PriceList[0].price * AirlineDAO.Instance.GetAirlineIndexbyID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id);
+                    //lvsItem.SubItems.Add(price);
+                }
+                else if (i.price_id == delta)
+                {
+                    string txt = "D" + i.seat_number;
+                    lvsItem.SubItems.Add(txt);
+
+                    //string price = "" + PriceDAO.Instance.PriceList[1].price * AirlineDAO.Instance.GetAirlineIndexbyID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id);
+                    //lvsItem.SubItems.Add(price);
+                }
+                else if (i.price_id == main)
+                {
+                    string txt = "M" + i.seat_number;
+                    lvsItem.SubItems.Add(txt);
+
+                    //string price = "" + PriceDAO.Instance.PriceList[2].price * AirlineDAO.Instance.GetAirlineIndexbyID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id);
+                    //lvsItem.SubItems.Add(price);
+                }
+                else if (i.price_id == econo)
+                {
+                    string txt = "B" + i.seat_number;
+                    lvsItem.SubItems.Add(txt);
+
+                    //string price = "" + PriceDAO.Instance.PriceList[3].price * AirlineDAO.Instance.GetAirlineIndexbyID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id);
+                    //lvsItem.SubItems.Add(price);
+                }
+                listView1.Items.Add(lvsItem);
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PaymentForm f = new PaymentForm();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int index = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                PassList.RemoveAt(index);
+                TempList.RemoveAt(COUNT + index);
+
+                LoadListView();
+                LoadSeats();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hành khách!");
+            }
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(""+PassList.Count);
         }
     }
 }
