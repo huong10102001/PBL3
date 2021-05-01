@@ -16,6 +16,8 @@ namespace PBL3.DTO
         public bool ticket_gender { get; set; }
         public string ticket_mobile { get; set; }
         public string ticket_address { get; set; }
+        public int seat_number { get; set; }
+        public int price_id { get; set; }
 
         public TicketDTO()
         {
@@ -26,15 +28,16 @@ namespace PBL3.DTO
             ticket_address = null;
         }
 
-        public TicketDTO(int ticket_id, string fl_id, string us_id, string ticket_name, bool ticket_gender, string ticket_mobile, string ticket_address)
+        public TicketDTO(string fl_id, string us_id, string ticket_name, bool ticket_gender, string ticket_mobile, string ticket_address, int seat_number, int price_id)
         {
-            this.ticket_id = ticket_id;
             this.fl_id = fl_id;
             this.us_username = us_id;
             this.ticket_name = ticket_name;
             this.ticket_gender = ticket_gender;
             this.ticket_mobile = ticket_mobile;
             this.ticket_address = ticket_address;
+            this.seat_number = seat_number;
+            this.price_id = price_id;
         }
 
         public TicketDTO(DataRow row)
@@ -46,6 +49,8 @@ namespace PBL3.DTO
             this.ticket_gender = Convert.ToBoolean(row["ticket_gender"]);
             this.ticket_mobile = row["ticket_mobile"].ToString();
             this.ticket_address = row["ticket_address"].ToString();
+            this.seat_number = Convert.ToInt32(row["seat_number"]);
+            this.price_id = Convert.ToInt32(row["price_id"]);
         }
     }
 }

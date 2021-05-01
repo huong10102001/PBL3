@@ -20,7 +20,6 @@ namespace PBL3.DTO
         public bool triptype { get; set; }
         public string description { get; set; }
         public int status { get; set; }
-        public int capacity { get; set; }
 
         public FlightDTO()
         {
@@ -49,7 +48,7 @@ namespace PBL3.DTO
             this.status = (int)row["status"];
         }
 
-        public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status, int capacity)
+        public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status)
         {
             this.fl_id = fl_id;
             this.airline_id = airline_id;
@@ -60,7 +59,6 @@ namespace PBL3.DTO
             this.triptype = triptype;
             this.description = description;
             this.status = status;
-            this.capacity = capacity;
         }
     }
 }

@@ -197,6 +197,7 @@ BEGIN
 END
 GO
 
+
 CREATE PROC GetBillFlight
 @checkIn datetime, @checkOut datetime
 BEGIN

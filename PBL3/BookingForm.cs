@@ -19,6 +19,8 @@ namespace PBL3
         public delegate void FlightId(string FlightId);
         public FlightId flightId;
         
+
+        private string USERNAME;
         private bool isCollapsed;
         string user1 = null;
         List<FlightSearch> list = FlightDAO.Instance.GetAllFight();
@@ -62,10 +64,9 @@ namespace PBL3
         {
             u = username;
         }
-
-        
-        public BookingForm()
+        public BookingForm(string username = null)
         {
+            USERNAME = username;
             InitializeComponent();
             LoadFlightListAvailable();
             SetCBB();
@@ -176,6 +177,8 @@ namespace PBL3
 
                     listFights[j] = new ListFight();
                     listFights[j].id = i.id;
+                    listFights[j].flightID = i.fl_id;
+                    listFights[j].username = USERNAME;
                     listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                     listFights[j].timelanding = i.timelanding.ToShortTimeString();
                     listFights[j].basiceconmy = priceList[0].price * i.index;
@@ -222,6 +225,8 @@ namespace PBL3
                         
                         listFights[j] = new ListFight();
                         listFights[j].id = i.id;
+                        listFights[j].username = USERNAME;
+                        listFights[j].flightID = i.fl_id;
                         listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                         listFights[j].timelanding = i.timelanding.ToShortTimeString();
                         listFights[j].basiceconmy = priceList[0].price * i.index;

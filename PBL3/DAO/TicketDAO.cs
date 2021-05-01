@@ -37,6 +37,18 @@ namespace PBL3.DAO
             }
             return list;
         }
+        public List<TicketDTO> GetListTicketPerFlightbyIdPrice(string fl_id, int price_id)
+        {
+            List<TicketDTO> list = new List<TicketDTO>();
+            foreach (TicketDTO i in GetListTicketPerFlight(fl_id))
+            {
+                if(i.price_id == price_id)
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
+        }
         public List<TicketDTO> GetListTicketPerFlight(string fl_id)
         {
             List<TicketDTO> list = new List<TicketDTO>();
@@ -82,14 +94,14 @@ namespace PBL3.DAO
             }
             return t1;
         }
-        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address)
+        public void AddTicketToDataBase(string fl_id, string username,string name, bool gender, string phone, string address, int seat_number, int price_id)
         {
-            string query = String.Format("insert into TICKET values(N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')", fl_id, username, name, gender.ToString(), phone, address);
+            string query = String.Format("insert into TICKET values(N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}', {6}, {7})", fl_id, username, name, gender.ToString(), phone, address, seat_number, price_id);
             DataProvider.Instance.ExecuteDB(query);
         }
-        public void EditTicketToDataBase(int tk_id, string name, bool gender, string phone, string address)
+        public void EditTicketToDataBase(int tk_id, string name, bool gender, string phone, string address, int seat_number, int price_id)
         {
-            string query = String.Format("update TICKET set ticket_name = N'{0}',ticket_gender = N'{1}',ticket_mobile = N'{2}',ticket_address = N'{3}' where ticket_id = N'{4}'", name, gender.ToString(), phone, address, tk_id);
+            string query = String.Format("update TICKET set ticket_name = N'{0}',ticket_gender = N'{1}',ticket_mobile = N'{2}',ticket_address = N'{3}', seat_number = {4}, price_id = {5} where ticket_id = N'{6}'", name, gender.ToString(), phone, address, seat_number, price_id, tk_id);
             DataProvider.Instance.ExecuteDB(query);
         }
         public void DeleteTicketFromDataBase(int ticket_id)

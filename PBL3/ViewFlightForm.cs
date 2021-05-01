@@ -24,11 +24,16 @@ namespace PBL3
             USERNAME = username;
             InitializeComponent();
             ListViewLoad();
-            LoadCBB();
+            //LoadCBB();
         }
         public void ListViewLoad()
         {
             listView1.Items.Clear();
+            List<PriceDTO> PriceList = PriceDAO.Instance.PriceList;
+            int first = PriceList[0].id;
+            int delta = PriceList[1].id;
+            int main = PriceList[2].id;
+            int econo = PriceList[3].id;
             foreach (TicketDTO item in TicketDAO.Instance.GetListTicketPerFlight(FLIGHT_ID))
             {
                 ListViewItem lvsItem = new ListViewItem(item.ticket_id.ToString());
@@ -45,54 +50,53 @@ namespace PBL3
                 }
                 lvsItem.SubItems.Add(item.ticket_mobile.ToString());
                 lvsItem.SubItems.Add(item.ticket_address.ToString());
+                if(item.price_id == first)
+                {
+                    string txt = "F" + item.seat_number;
+                    lvsItem.SubItems.Add(txt);
+                }
+                else if (item.price_id == delta)
+                {
+                    string txt = "D" + item.seat_number;
+                    lvsItem.SubItems.Add(txt);
+                }
+                else if (item.price_id == main)
+                {
+                    string txt = "M" + item.seat_number;
+                    lvsItem.SubItems.Add(txt);
+                }
+                else if(item.price_id == econo)
+                {
+                    string txt = "B" + item.seat_number;
+                    lvsItem.SubItems.Add(txt);
+                }
+
                 listView1.Items.Add(lvsItem);
             }
             listView1.Columns[0].Width = 0;
         }
-        public void LoadCBB()
-        {
-            cbbGender.Items.Add(new CBBItem(1, "Male"));
-            cbbGender.Items.Add(new CBBItem(0, "Female"));
-            cbbGender.DisplayMember = "Text";
-        }
 
         private void pictureBoxAdd_Click(object sender, EventArgs e) //add
         {
-            panel.Visible = true;
-            lblMode.Text = "Add A Ticket";
-            btnAddEdit.Text = "ADD";
-
-            txbName.Text = "";
-            txbAddress.Text = "";
-            txbPhone.Text = "";
-            cbbGender.SelectedItem = null;
-
-            BUTTON_MODE = "add";
+            SeatsBooking f = new SeatsBooking(FLIGHT_ID, USERNAME, "ADMIN_ADD");
+            f.ShowDialog();
+            ListViewLoad();
         }
 
         private void pictureBoxEdit_Click(object sender, EventArgs e) //edit
         {
             if(listView1.FocusedItem != null)
             {
-                panel.Visible = true;
-                btnAddEdit.Text = "EDIT";
                 int ticket_id = Convert.ToInt32(listView1.FocusedItem.SubItems[0].Text);
-                TICKET_ID = ticket_id;
-                TicketDTO tk = TicketDAO.Instance.GetTicketByID(ticket_id);
-                var names = tk.ticket_name.Split(' ');
-                lblMode.Text = "Edit "+names[names.Length - 1]+"'s Ticket?";
-
-                txbName.Text = tk.ticket_name;
-                txbAddress.Text = tk.ticket_address;
-                txbPhone.Text = tk.ticket_mobile;
-                cbbGender.SelectedIndex = (tk.ticket_gender) ? 0 : 1;
-
-                BUTTON_MODE = "edit";
+                SeatsBooking f = new SeatsBooking(FLIGHT_ID, USERNAME, "ADMIN_EDIT", ticket_id);
+                f.ShowDialog();
+                ListViewLoad();
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một hành khách");
             }
+            
         }
 
         private void pictureBoxDelete_Click(object sender, EventArgs e) //delete
@@ -123,60 +127,6 @@ namespace PBL3
         private void ShowFlightForm_Load(object sender, EventArgs e)
         {
             lbText.Text = FLIGHT_ID + "'s Passengers";
-            panel.Visible = false;
-        }
-
-        private void btnAddEdit_Click(object sender, EventArgs e)
-        {
-            if(BUTTON_MODE == "add")
-            {
-                AddTicket();
-            }
-            else
-            {
-                EditTicket();
-            }
-        }
-        public void AddTicket()
-        {
-            if(txbName.Text == "" || txbAddress.Text == "" || txbPhone.Text == "" || cbbGender.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Xác nhận cập nhập dữ liệu hệ thống", "Thông báo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    TicketDAO.Instance.AddTicketToDataBase(FLIGHT_ID, USERNAME, txbName.Text, Convert.ToBoolean(((CBBItem)cbbGender.SelectedItem).Value), txbPhone.Text, txbAddress.Text);
-                    ListViewLoad();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do nothing
-                }
-                
-            }
-        }
-        public void EditTicket()
-        {
-            if (txbName.Text == "" || txbAddress.Text == "" || txbPhone.Text == "" || cbbGender.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Xác nhận cập nhập dữ liệu hệ thống", "Thông báo", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    TicketDAO.Instance.EditTicketToDataBase(TICKET_ID, txbName.Text, Convert.ToBoolean(((CBBItem)cbbGender.SelectedItem).Value), txbPhone.Text, txbAddress.Text);
-                    ListViewLoad();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do nothing
-                }   
-            }
         }
     }
 }

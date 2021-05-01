@@ -19,6 +19,9 @@ namespace PBL3
             InitializeComponent();
             SetLabel();
         }
+
+        public string username;
+        public string flightID;
         public string id;
         public string timetakeoff;
         public string timelanding;
@@ -30,10 +33,22 @@ namespace PBL3
         public string time;
         public string _id
         {
-            get { return id;  }
+            get { return id; }
             set { id = value; }
-
         }
+
+        public string _flightID
+        {
+            get { return flightID; }
+            set { flightID = value; }
+        }
+
+        public string _username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
         public string _timetakeoff
         {
             get { return timetakeoff; }
@@ -102,6 +117,12 @@ namespace PBL3
         private void button3_Click(object sender, EventArgs e)
         {
             Des(id);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SeatsBooking f = new SeatsBooking(flightID , username, "USER_ADD");
+            f.ShowDialog();
         }
     }
 }
