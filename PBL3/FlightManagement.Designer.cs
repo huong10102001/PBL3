@@ -84,6 +84,7 @@ namespace PBL3
             this.ckbxAirline = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pn1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
             this.pn2.SuspendLayout();
@@ -382,7 +383,7 @@ namespace PBL3
             this.ckbxDesti.Location = new System.Drawing.Point(4, 23);
             this.ckbxDesti.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDesti.Name = "ckbxDesti";
-            this.ckbxDesti.Size = new System.Drawing.Size(15, 14);
+            this.ckbxDesti.Size = new System.Drawing.Size(22, 21);
             this.ckbxDesti.TabIndex = 7;
             this.ckbxDesti.UseVisualStyleBackColor = true;
             // 
@@ -596,7 +597,7 @@ namespace PBL3
             this.ckbxDay.Location = new System.Drawing.Point(4, 23);
             this.ckbxDay.Margin = new System.Windows.Forms.Padding(4);
             this.ckbxDay.Name = "ckbxDay";
-            this.ckbxDay.Size = new System.Drawing.Size(15, 14);
+            this.ckbxDay.Size = new System.Drawing.Size(22, 21);
             this.ckbxDay.TabIndex = 7;
             this.ckbxDay.UseVisualStyleBackColor = true;
             // 
@@ -667,11 +668,27 @@ namespace PBL3
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(975, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 33);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Revenue";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // FlightManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1421, 782);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -772,6 +789,7 @@ namespace PBL3
         private ColumnHeader columnHeader14;
         private Panel panel7;
         private Button button2;
+        private Button button3;
     }
 }
 

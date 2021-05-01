@@ -1,4 +1,4 @@
-﻿
+
 select airline_name, fl_takeoftime, fl_price, fl_triptype, fl_description, PLACE.place_name, PLACE.place_name_to from FLIGHT, AIRLINE, PLACE where AIRLINE.airline_id = FLIGHT.airline_id and fl_triptype = 'circle trip' 
 
 use FlightManagement
@@ -48,6 +48,7 @@ create table FLIGHT
 	fl_triptype bit not null,
 	fl_description nvarchar(50) not null,
 	fl_status int default 0 not null,
+	fl_capacity int not null,
 
 	foreign key (airline_id) references dbo.AIRLINE(airline_id),
 	foreign key (fl_source) references dbo.SOURCE(src_id),
@@ -62,26 +63,22 @@ create table TICKET
 	ticket_gender bit not null,
 	ticket_mobile nvarchar(20) not null,
 	ticket_address nvarchar(20) not null,
-	seat_number int not null,
-	price_id int not null,
 
 	foreign key (fl_id) references dbo.FLIGHT(fl_id),
-	foreign key (us_username) references dbo.USERS(us_username),
-	foreign key (price_id) references dbo.PRICE(id)
+	foreign key (us_username) references dbo.USERS(us_username)
 )
 GO
 
 CREATE TABLE BILL_KH
 (
 	bill_id int primary key identity not null,
-	DateOne date ,
-	DateTwo date ,
-	us_username nvarchar (20) not null
-
+	DateOne datetime ,
+	DateTwo datetime ,
+	us_username nvarchar (20) not null,
+	totalprice float 
 	foreign key (us_username) references dbo.USERS(us_username)
 )
 
-alter table dbo.BILL_KH add totalprice float
 
 CREATE TABLE FEEDBACK
 (
@@ -100,8 +97,8 @@ alter table dbo.BILL_KH add totalprice float
 CREATE TABLE BILL_FL
 (
 	bill_id_fl int primary key identity not null,
-	DateOne_fl date,
-	DateTwo_fl date,
+	DateOne_fl datetime,
+	DateTwo_fl datetime,
 	fl_id nvarchar(20) 
 
 	foreign key (fl_id) references dbo.FLIGHT(fl_id)
@@ -168,53 +165,38 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_InsertBill
-@us_username INT
+CREATE PROC InsertBill
+@us_username nvarchar(20),
+@totalprice float
 AS
 BEGIN
 	INSERT INTO dbo.BILL_KH 
 	        ( DateOne ,
 	          DateTwo ,
-	          us_username
+	          us_username,
+			  totalprice
   
 	        )
 	VALUES  ( GETDATE() , 
-	          NULL , 
-	          @us_username 
+	          GETDATE() , 
+	          @us_username ,
+			  @totalprice
 	        )
 END
 GO
 
-CREATE PROC USP_GetListBillByDate
-@checkIn date, @checkOut date
+
+CREATE PROC GetList_BillByDate
+@checkIn datetime, @checkOut datetime
 AS 
 BEGIN
-	SELECT u.us_name AS [Tên khách hàng], b.totalPrice AS [T?ng ti?n], DateOne AS [Ngày vào], DateTwo AS [Ngày ra]
+	SELECT u.us_name AS [Customer Name], u.us_email AS [Email], u.us_phone AS [Phone], b.totalprice AS [Total Price], b.DateOne AS [Date In], b.DateTwo AS [Date Out]
 	FROM dbo.BILL_KH AS b,dbo.USERS AS u
 	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
 	AND b.us_username = u.us_username
 END
-GO
+GO, 
 
---CREATE TRIGGER UTG_UpdateBillKH
---ON dbo.BILL_KH FOR UPDATE
---AS
---BEGIN
---	DECLARE @idBill INT
-	
---	SELECT @idBill = bill_id FROM Inserted	
-	
---	DECLARE @us_username INT
-	
---	SELECT @us_username = us_username FROM dbo.BILL_KH WHERE bill_id = @idBill
---	END
---
---GO
-SELECT us_name, us_email, content, dateFB FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username
-SELECT FEEDBACK.us_username, us_name  as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE FEEDBACK.us_username = 'huong'
-
-
-	-- UPDATE CSDL ĐỂ BOOKING GHẾ (TUẤN)
 alter table TICKET
 add seat_number int
 
@@ -227,10 +209,5 @@ add foreign key (price_id) references dbo.PRICE(id)
 alter table FLIGHT
 drop column fl_capacity
 
-
-
-
-
-
-
-
+SELECT TICKET.fl_id, COUNT(ticket_id) AS 'Number of Sold Tickets', SUM(price*airline_index) AS 'Totalprice', fl_takeoftime as 'Date'
+FROM FLIGHT INNER JOIN TICKET ON FLIGHT.fl_id = TICKET.fl_id INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN PRICE ON TICKET.price_id = PRICE.id
