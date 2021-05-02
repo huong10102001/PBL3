@@ -14,6 +14,8 @@ namespace PBL3
 {
     public partial class SeatsBooking : Form
     {
+        public delegate void Info_Ticket(TicketDTO ticket);
+        public Info_Ticket info_ticket;
         private int SEAT_NAME;
         private int PRICE_ID;
         private string USERNAME;
@@ -285,8 +287,12 @@ namespace PBL3
             }
             else
             {
-                TicketDTO ticket = new TicketDTO(ID_FLIGHT, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0)?true:false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
-                MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
+                // TicketDTO ticket = new TicketDTO(ID_FLIGHT, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0)?true:false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
+                List<TicketDTO> ticket = new List<TicketDTO>(); 
+                //MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
+                PaymentForm payment = new PaymentForm(ticket, USERNAME);
+                payment.ShowDialog();
+               // this.info_ticket += new Info_Ticket(payment.GetInfo);
             }
         }
         public void AddTicket(object o, EventArgs e) // for admin

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    class TicketDTO
+    public class TicketDTO
     {
         public int ticket_id { get; set; }
         public string fl_id { get; set; }

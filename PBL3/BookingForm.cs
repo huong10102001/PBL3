@@ -143,9 +143,9 @@ namespace PBL3
 
         private void btnBookTicket_Click(object sender, EventArgs e)
         {
-            FlightTicketForm f = new FlightTicketForm();
-            this.customerId += new CustomerId(f.setUserId);
-            customerId(user1);
+            FlightTicketForm f = new FlightTicketForm(user1);
+            //this.customerId += new CustomerId(f.setUserId);
+            //customerId(user1);
             f.ShowDialog();
         }
 

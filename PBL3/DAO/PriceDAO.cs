@@ -52,5 +52,20 @@ namespace PBL3.DAO
             }
             return list;
         }
+        public float GetPriceById(int id)
+        {
+            float price = 0;
+            string query = "select * from PRICE where id = " + id;
+
+            DataTable data = DataProvider.Instance.GetRecord(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                PriceDTO place = new PriceDTO(item);
+                price += place.price;
+            }
+
+            return price;
+        }
     }
 }

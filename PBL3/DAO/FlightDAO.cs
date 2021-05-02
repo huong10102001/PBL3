@@ -184,7 +184,7 @@ namespace PBL3.DAO
         public int Status(string fl_id)
         {
             int status = 0;
-            string query = "select * from FLIGHT where fl_id = " + fl_id;
+            string query = string.Format("select * from FLIGHT where fl_id = N'{0}'", fl_id);
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightDTO flight = new FlightDTO();
@@ -197,7 +197,6 @@ namespace PBL3.DAO
 
             return status;
         }
-
         public void Sort(List<FlightSearch> flights, Compare cmp)
         {
             for (int i = 0; i < flights.Count - 1; i++)

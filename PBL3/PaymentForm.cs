@@ -14,20 +14,26 @@ namespace PBL3
 {
     public partial class PaymentForm : Form
     {
-        public PaymentForm()
+        TicketDTO tickets = new TicketDTO();
+        public void GetInfo(TicketDTO info_ticket)
+        {
+            tickets = info_ticket;
+        }
+        public PaymentForm(List<TicketDTO> ticket, string username)
         {
             InitializeComponent();
+            LoadInformation(ticket);
+            setusername(username);
         }
         string username, ten;
         public void setusername(String _username)
         {
             username = _username;
+            AccountDTO a = AccountDAO.Instance.GetAccountByUserName(username);
+            ten = a.Name;
+            label9.Text = ten;
         }
-        
-        public void setname ( String _ten)
-        {
-            ten = _ten;
-        }
+
         private void btnPayment_Click(object sender, EventArgs e)
         {
             float totalprice = Convert.ToSingle(textBox4.Text);
@@ -50,30 +56,39 @@ namespace PBL3
             this.Hide();
             f.ShowDialog();
         }
-        public void LoadInformation()
+        public void LoadInformation(List<TicketDTO> ticket)
         {
-            List<PriceDTO> priceList = PriceDAO.Instance.PriceList;
-
-            List<FlightDTO> list = FlightDTO.Instance.GetAllFight();
-
-            Information[] information  = new Information[list.Count];
-
-            foreach (FlightDTO i in list)
+            FlightDTO flight = new FlightDTO();
+            float price = 0;
+            foreach (TicketDTO t in ticket)
             {
-                int s = 0;
-                for (int j = 0; j < information.Length; j++)
-                {
-
-                    information[j] = new ListFight();
-                    information[j].price = i;
-                    information[j].time = i.takeoff.ToString();
-                    information[j].places = i.fl_source.ToString();
-                    information[j].SetLabel();
-
-                }
-                flowLayoutPanel1.Controls.Add(information[s]);
-                s++;
+                flight = FlightDAO.Instance.GetFlightByID(t.fl_id);
+                price += PriceDAO.Instance.GetPriceById(t.price_id);
             }
+            price *= AirlineDAO.Instance.GetAirlineIndexbyID(flight.airline_id);
+
+            label10.Text = PlaceDAO.Instance.GetSource(flight.fl_source);
+            label11.Text = PlaceDAO.Instance.GetDes(flight.fl_destination);
+            label12.Text = flight.takeoff.ToString();
+            label13.Text = flight.landing.ToString();
+            textBox4.Text = price.ToString();
+
+            if (flight.triptype)
+            {
+                FlightDTO flight2 = FlightDAO.Instance.GetFlightByID(flight.id_roundtrip);
+                label14.Text = PlaceDAO.Instance.GetDes(flight2.fl_destination);
+                label15.Text = flight2.landing.ToString();
+                label16.Text = flight2.takeoff.ToString();
+            }
+            else
+            {
+                textBox3.Visible = false;
+                pictureBox2.Visible = false;
+                label14.Visible = false;
+                label15.Visible = false;
+                label16.Visible = false;
+            }
+                
         }
     }
 }

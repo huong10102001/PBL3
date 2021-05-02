@@ -13,7 +13,6 @@ namespace PBL3.DTO
         public int airline_id { get; set; }
         public int fl_source { get; set; }
         public int fl_destination { get; set; }
-        public DateTime time { get; set; }
         public DateTime takeoff { get; set; }
         public DateTime landing { get; set; }
         public int idprice { get; set; }
@@ -29,7 +28,6 @@ namespace PBL3.DTO
             airline_id = 1;
             fl_source = 1;
             fl_destination = 1;
-            time = DateTime.Now;
             takeoff = DateTime.Now;
             landing = DateTime.Now;
             idprice = 0;
@@ -43,13 +41,11 @@ namespace PBL3.DTO
             this.airline_id = (int)row["airline_id"];
             this.fl_source = (int)row["fl_source"];
             this.fl_destination = (int)row["fl_source"];
-            this.time = (DateTime)row["time"];
-            this.takeoff = (DateTime)row["takeoff"];
-            this.landing = (DateTime)row["landing"];
-            this.idprice = (int)row["idprice"];
-            this.triptype = Convert.ToBoolean(row["triptype"]);
-            this.description = row["description"].ToString();
-            this.status = (int)row["status"];
+            this.takeoff = (DateTime)row["fl_takeoftime"];
+            this.landing = (DateTime)row["fl_landingtime"];
+            this.triptype = Convert.ToBoolean(row["fl_triptype"]);
+            this.description = row["fl_description"].ToString();
+            this.status = (int)row["fl_status"];
         }
 
         public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status)
