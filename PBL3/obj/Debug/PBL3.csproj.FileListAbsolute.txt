@@ -39,3 +39,5 @@ D:\PBL3_1\PBL3\bin\Debug\PBL3.exe
 D:\PBL3_1\PBL3\bin\Debug\PBL3.pdb
 D:\PBL3_1\PBL3\obj\Debug\PBL3.Admin_FeedbackForm.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.Information.resources
+D:\PBL3_1\PBL3\obj\Debug\PBL3.Bill.resources
+D:\PBL3_1\PBL3\obj\Debug\PBL3.SeatsBooking.resources
