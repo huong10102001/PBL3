@@ -1,8 +1,3 @@
-
-select airline_name, fl_takeoftime, fl_price, fl_triptype, fl_description, PLACE.place_name, PLACE.place_name_to from FLIGHT, AIRLINE, PLACE where AIRLINE.airline_id = FLIGHT.airline_id and fl_triptype = 'circle trip' 
-
-use FlightManagement
-
 create table USERS
 (
 	us_username nvarchar(20) primary key not null,
@@ -195,7 +190,7 @@ BEGIN
 	WHERE DateOne >= @checkIn AND DateTwo <= @checkOut 
 	AND b.us_username = u.us_username
 END
-GO, 
+GO
 
 alter table TICKET
 add seat_number int
@@ -211,3 +206,5 @@ drop column fl_capacity
 
 SELECT TICKET.fl_id, COUNT(ticket_id) AS 'Number of Sold Tickets', SUM(price*airline_index) AS 'Totalprice', fl_takeoftime as 'Date'
 FROM FLIGHT INNER JOIN TICKET ON FLIGHT.fl_id = TICKET.fl_id INNER JOIN AIRLINE ON FLIGHT.airline_id = AIRLINE.airline_id INNER JOIN PRICE ON TICKET.price_id = PRICE.id
+
+INSERT INTO TICKET VALUES(N'{0}',N'{1}',N'{2}','{3}',N'{4}',N'{5}',{6},{7})

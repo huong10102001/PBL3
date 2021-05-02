@@ -20,6 +20,7 @@ namespace PBL3
             SetLabel();
         }
 
+        public BookingForm form;
         public string username;
         public string flightID;
         public string id;
@@ -29,8 +30,14 @@ namespace PBL3
         public float maincabin;
         public float detalcomfort;
         public float firstclass;
-        public string airlinename;
+        public string airlinename;  
         public string time;
+       
+        public BookingForm _form
+        {
+            get { return form; }
+            set { form = value; }
+        }
         public string _id
         {
             get { return id; }
@@ -121,8 +128,10 @@ namespace PBL3
 
         private void button4_Click(object sender, EventArgs e)
         {
+            this.form.Hide();
             SeatsBooking f = new SeatsBooking(flightID , username, "USER_ADD");
             f.ShowDialog();
+            this.form.Show();
         }
     }
 }

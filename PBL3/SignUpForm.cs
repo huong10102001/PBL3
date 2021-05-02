@@ -27,8 +27,10 @@ namespace PBL3
             string email = txtEmail.Text;
             string phone = txtPhone.Text;
             string address = txtAddress.Text;
-            if ((userName != "" || passWord != "" || passWord2 != "" || name != "" || email != "" || phone != "" || address != "") 
-                && (userName != "Username" || passWord != "Password" || passWord2 != "Password" || name != "Name" || email != "Email" || phone != "Phone" || address != "Address"))
+            if (txtUserName.Text == "" || passWord == "" || passWord2 == "" || name == "" || email == "" || phone == "" || address == "" // kiem tra neu cai textbox rong
+                || userName == "Username" || passWord == "Password" || passWord2 == "Password" || name == "Name" || email == "Email" || phone == "Phone" || address == "Address")// kiem tra tai khoan trung
+                MessageBox.Show("Please enter all information! / Hãy nhập đầy đủ thông tin!");
+            else
             {
 
                 if (passWord == passWord2)
@@ -59,7 +61,6 @@ namespace PBL3
                     MessageBox.Show("Password not match! / Mật khẩu chưa trùng khớp!");
                 }
             }
-            else MessageBox.Show("Please enter all information! / Hãy nhập đầy đủ thông tin!");
         }
 
         private void button2_Click(object sender, EventArgs e)

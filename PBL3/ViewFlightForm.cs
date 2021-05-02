@@ -30,10 +30,10 @@ namespace PBL3
         {
             listView1.Items.Clear();
             List<PriceDTO> PriceList = PriceDAO.Instance.PriceList;
-            int first = PriceList[0].id;
-            int delta = PriceList[1].id;
-            int main = PriceList[2].id;
-            int econo = PriceList[3].id;
+            int first = PriceList[3].id;
+            int delta = PriceList[2].id;
+            int main = PriceList[1].id;
+            int econo = PriceList[0].id;
             foreach (TicketDTO item in TicketDAO.Instance.GetListTicketPerFlight(FLIGHT_ID))
             {
                 ListViewItem lvsItem = new ListViewItem(item.ticket_id.ToString());

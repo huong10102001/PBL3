@@ -37,18 +37,17 @@ namespace PBL3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void OverviewForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Do you want to exit? / Bạn có thật sự muốn thoát chương trình?", "Announce / Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+           
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit? / Bạn có thật sự muốn thoát chương trình?", "Announce / Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                e.Cancel = true;
+                Application.Exit();
             }
-        }
-
-        
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+        }        
 
         private void btnSignup_Click(object sender, EventArgs e)
         {

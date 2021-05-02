@@ -182,6 +182,7 @@ namespace PBL3
                 {
 
                     listFights[j] = new ListFight();
+                    listFights[j].form = this;
                     listFights[j].id = i.id;
                     listFights[j].flightID = i.fl_id;
                     listFights[j].username = USERNAME;
@@ -230,6 +231,7 @@ namespace PBL3
                     {
                         
                         listFights[j] = new ListFight();
+                        listFights[j].form = this;
                         listFights[j].id = i.id;
                         listFights[j].username = USERNAME;
                         listFights[j].flightID = i.fl_id;
@@ -274,6 +276,7 @@ namespace PBL3
                 {
 
                     listFights[j] = new ListFight();
+                    listFights[j].form = this;
                     listFights[j].id = i.id;
                     listFights[j].timetakeoff = i.timetakeoff.ToShortTimeString();
                     listFights[j].timelanding = i.timelanding.ToShortTimeString();

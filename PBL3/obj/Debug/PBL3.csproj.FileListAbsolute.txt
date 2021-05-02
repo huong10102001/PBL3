@@ -41,3 +41,4 @@ D:\PBL3_1\PBL3\obj\Debug\PBL3.Admin_FeedbackForm.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.Information.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.Bill.resources
 D:\PBL3_1\PBL3\obj\Debug\PBL3.SeatsBooking.resources
+D:\PBL3_1\PBL3\obj\Debug\PBL3.ReportForm.resources

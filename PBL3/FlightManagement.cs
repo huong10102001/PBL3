@@ -159,6 +159,7 @@ namespace PBL3
                 string fl_id = listView1.FocusedItem.SubItems[0].Text;
                 ViewFlightForm f = new ViewFlightForm(fl_id , USERNAME);
                 f.ShowDialog();
+                ListViewLoad(FlightDAO.Instance.flightList);
             }
             else
             {

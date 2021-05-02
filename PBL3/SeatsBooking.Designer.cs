@@ -66,56 +66,56 @@ namespace PBL3
             this.lbText.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbText.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lbText.Location = new System.Drawing.Point(17, 11);
+            this.lbText.Location = new System.Drawing.Point(19, 14);
             this.lbText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(296, 46);
+            this.lbText.Size = new System.Drawing.Size(357, 55);
             this.lbText.TabIndex = 3;
             this.lbText.Text = "Choose Your Seat";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.Location = new System.Drawing.Point(25, 64);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(28, 80);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1565, 5);
+            this.panel4.Size = new System.Drawing.Size(1761, 6);
             this.panel4.TabIndex = 16;
             // 
             // flpFirst
             // 
             this.flpFirst.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpFirst.Location = new System.Drawing.Point(25, 89);
-            this.flpFirst.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.flpFirst.Location = new System.Drawing.Point(28, 111);
+            this.flpFirst.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flpFirst.Name = "flpFirst";
-            this.flpFirst.Size = new System.Drawing.Size(381, 55);
+            this.flpFirst.Size = new System.Drawing.Size(429, 69);
             this.flpFirst.TabIndex = 17;
             // 
             // flpDelta
             // 
             this.flpDelta.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpDelta.Location = new System.Drawing.Point(25, 156);
-            this.flpDelta.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.flpDelta.Location = new System.Drawing.Point(28, 195);
+            this.flpDelta.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flpDelta.Name = "flpDelta";
-            this.flpDelta.Size = new System.Drawing.Size(381, 111);
+            this.flpDelta.Size = new System.Drawing.Size(429, 139);
             this.flpDelta.TabIndex = 18;
             // 
             // flpMain
             // 
             this.flpMain.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpMain.Location = new System.Drawing.Point(25, 279);
-            this.flpMain.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.flpMain.Location = new System.Drawing.Point(28, 349);
+            this.flpMain.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flpMain.Name = "flpMain";
-            this.flpMain.Size = new System.Drawing.Size(381, 166);
+            this.flpMain.Size = new System.Drawing.Size(429, 208);
             this.flpMain.TabIndex = 19;
             // 
             // flpBase
             // 
             this.flpBase.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpBase.Location = new System.Drawing.Point(25, 458);
-            this.flpBase.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.flpBase.Location = new System.Drawing.Point(28, 572);
+            this.flpBase.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.flpBase.Name = "flpBase";
-            this.flpBase.Size = new System.Drawing.Size(381, 222);
+            this.flpBase.Size = new System.Drawing.Size(429, 278);
             this.flpBase.TabIndex = 20;
             // 
             // btnConfirm
@@ -125,10 +125,10 @@ namespace PBL3
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConfirm.Location = new System.Drawing.Point(123, 430);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirm.Location = new System.Drawing.Point(138, 538);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(235, 43);
+            this.btnConfirm.Size = new System.Drawing.Size(264, 54);
             this.btnConfirm.TabIndex = 26;
             this.btnConfirm.Text = "Confirm your seat";
             this.btnConfirm.UseVisualStyleBackColor = false;
@@ -140,10 +140,10 @@ namespace PBL3
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(123, 502);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(138, 628);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(235, 43);
+            this.btnCancel.Size = new System.Drawing.Size(264, 54);
             this.btnCancel.TabIndex = 27;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -166,10 +166,10 @@ namespace PBL3
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.panel.Location = new System.Drawing.Point(439, 89);
-            this.panel.Margin = new System.Windows.Forms.Padding(4);
+            this.panel.Location = new System.Drawing.Point(487, 111);
+            this.panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(461, 591);
+            this.panel.Size = new System.Drawing.Size(523, 739);
             this.panel.TabIndex = 28;
             // 
             // lblSeatName
@@ -177,10 +177,10 @@ namespace PBL3
             this.lblSeatName.AutoSize = true;
             this.lblSeatName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeatName.ForeColor = System.Drawing.Color.Blue;
-            this.lblSeatName.Location = new System.Drawing.Point(112, 78);
+            this.lblSeatName.Location = new System.Drawing.Point(126, 98);
             this.lblSeatName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeatName.Name = "lblSeatName";
-            this.lblSeatName.Size = new System.Drawing.Size(341, 37);
+            this.lblSeatName.Size = new System.Drawing.Size(395, 45);
             this.lblSeatName.TabIndex = 32;
             this.lblSeatName.Text = "Choose an available seat!";
             // 
@@ -189,10 +189,10 @@ namespace PBL3
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(49, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.label4.Location = new System.Drawing.Point(55, 102);
+            this.label4.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 32);
+            this.label4.Size = new System.Drawing.Size(73, 40);
             this.label4.TabIndex = 31;
             this.label4.Text = "Seat";
             // 
@@ -201,10 +201,10 @@ namespace PBL3
             this.cbbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbGender.FormattingEnabled = true;
-            this.cbbGender.Location = new System.Drawing.Point(123, 212);
-            this.cbbGender.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbGender.Location = new System.Drawing.Point(138, 265);
+            this.cbbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbGender.Name = "cbbGender";
-            this.cbbGender.Size = new System.Drawing.Size(313, 29);
+            this.cbbGender.Size = new System.Drawing.Size(352, 36);
             this.cbbGender.TabIndex = 29;
             // 
             // lblMode
@@ -212,29 +212,29 @@ namespace PBL3
             this.lblMode.AutoSize = true;
             this.lblMode.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMode.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblMode.Location = new System.Drawing.Point(71, 10);
-            this.lblMode.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.lblMode.Location = new System.Drawing.Point(80, 12);
+            this.lblMode.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(311, 46);
+            this.lblMode.Size = new System.Drawing.Size(372, 55);
             this.lblMode.TabIndex = 27;
             this.lblMode.Text = "Fill Up Your Ticket";
             // 
             // txbName
             // 
             this.txbName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbName.Location = new System.Drawing.Point(123, 145);
-            this.txbName.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.txbName.Location = new System.Drawing.Point(138, 181);
+            this.txbName.Margin = new System.Windows.Forms.Padding(4, 1, 4, 5);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(313, 30);
+            this.txbName.Size = new System.Drawing.Size(352, 35);
             this.txbName.TabIndex = 19;
             // 
             // txbAddress
             // 
             this.txbAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbAddress.Location = new System.Drawing.Point(123, 348);
-            this.txbAddress.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.txbAddress.Location = new System.Drawing.Point(138, 435);
+            this.txbAddress.Margin = new System.Windows.Forms.Padding(4, 1, 4, 5);
             this.txbAddress.Name = "txbAddress";
-            this.txbAddress.Size = new System.Drawing.Size(313, 30);
+            this.txbAddress.Size = new System.Drawing.Size(352, 35);
             this.txbAddress.TabIndex = 22;
             // 
             // label3
@@ -242,20 +242,20 @@ namespace PBL3
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(8, 346);
-            this.label3.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.label3.Location = new System.Drawing.Point(9, 432);
+            this.label3.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 32);
+            this.label3.Size = new System.Drawing.Size(122, 40);
             this.label3.TabIndex = 26;
             this.label3.Text = "Address";
             // 
             // txbPhone
             // 
             this.txbPhone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPhone.Location = new System.Drawing.Point(123, 279);
-            this.txbPhone.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.txbPhone.Location = new System.Drawing.Point(138, 349);
+            this.txbPhone.Margin = new System.Windows.Forms.Padding(4, 1, 4, 5);
             this.txbPhone.Name = "txbPhone";
-            this.txbPhone.Size = new System.Drawing.Size(313, 30);
+            this.txbPhone.Size = new System.Drawing.Size(352, 35);
             this.txbPhone.TabIndex = 21;
             // 
             // Username
@@ -263,10 +263,10 @@ namespace PBL3
             this.Username.AutoSize = true;
             this.Username.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Username.Location = new System.Drawing.Point(29, 144);
-            this.Username.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.Username.Location = new System.Drawing.Point(33, 180);
+            this.Username.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(80, 32);
+            this.Username.Size = new System.Drawing.Size(95, 40);
             this.Username.TabIndex = 23;
             this.Username.Text = "Name";
             // 
@@ -275,10 +275,10 @@ namespace PBL3
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(27, 277);
-            this.label2.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.label2.Location = new System.Drawing.Point(30, 346);
+            this.label2.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 32);
+            this.label2.Size = new System.Drawing.Size(100, 40);
             this.label2.TabIndex = 25;
             this.label2.Text = "Phone";
             // 
@@ -287,10 +287,10 @@ namespace PBL3
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(16, 208);
-            this.label1.Margin = new System.Windows.Forms.Padding(13, 30, 27, 12);
+            this.label1.Location = new System.Drawing.Point(18, 260);
+            this.label1.Margin = new System.Windows.Forms.Padding(15, 38, 30, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
+            this.label1.Size = new System.Drawing.Size(112, 40);
             this.label1.TabIndex = 24;
             this.label1.Text = "Gender";
             // 
@@ -307,9 +307,10 @@ namespace PBL3
             this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(924, 89);
+            this.listView1.Location = new System.Drawing.Point(1040, 111);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(666, 508);
+            this.listView1.Size = new System.Drawing.Size(749, 676);
             this.listView1.TabIndex = 33;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -346,10 +347,10 @@ namespace PBL3
             this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPayment.Location = new System.Drawing.Point(1270, 624);
-            this.btnPayment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPayment.Location = new System.Drawing.Point(1429, 796);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(320, 43);
+            this.btnPayment.Size = new System.Drawing.Size(360, 54);
             this.btnPayment.TabIndex = 33;
             this.btnPayment.Text = "Payment";
             this.btnPayment.UseVisualStyleBackColor = false;
@@ -362,10 +363,10 @@ namespace PBL3
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Location = new System.Drawing.Point(924, 624);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(1041, 796);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(338, 43);
+            this.btnDelete.Size = new System.Drawing.Size(380, 54);
             this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -373,10 +374,10 @@ namespace PBL3
             // 
             // SeatsBooking
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1618, 719);
+            this.ClientSize = new System.Drawing.Size(1820, 899);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnPayment);
             this.Controls.Add(this.listView1);
@@ -387,7 +388,7 @@ namespace PBL3
             this.Controls.Add(this.flpFirst);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lbText);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SeatsBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Seat Booking";
