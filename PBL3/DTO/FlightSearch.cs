@@ -12,6 +12,7 @@ namespace PBL3.DTO
         public DateTime timetakeoff { get; set; }
         public DateTime timelanding { get; set; }
         public TimeSpan time { get; set; }
+        public string fl_id { get; set; }
         public string id { get; set; }
         public float index { get; set; }
         public float basiceconmy { get; set; }
@@ -23,6 +24,7 @@ namespace PBL3.DTO
         public FlightSearch()
         {
             id = null;
+            fl_id = "";
             index = 0;
             timetakeoff = DateTime.Now;
             timelanding = DateTime.Now;
@@ -33,9 +35,10 @@ namespace PBL3.DTO
             firstclass = 0;
             airlinename = null;
         }
-        public FlightSearch(DataRow row, List<PriceDTO> prices = null)
+        public FlightSearch(DataRow row)
         {
             this.id = row["fl_id"].ToString();
+            this.fl_id = row["fl_id"].ToString();
             this.timetakeoff = (DateTime)row["fl_takeoftime"];
             this.timelanding = (DateTime)row["fl_landingtime"];
             this.time = timelanding - timetakeoff;

@@ -60,11 +60,8 @@ namespace PBL3
                         break;
                 }
 
-                foreach (PriceDTO i in PriceDAO.Instance.PriceList)
-                {
-                    string result = "" + i.price * AirlineDAO.Instance.GetAirlineIndexbyID(item.airline_id) +"$";
-                    lvsItem.SubItems.Add(result);
-                }
+                string soluong = TicketDAO.Instance.GetListTicketPerFlight(item.fl_id).Count + "/60";
+                lvsItem.SubItems.Add(soluong);
 
                 switch (Convert.ToInt32(item.triptype))
                 {
@@ -76,8 +73,11 @@ namespace PBL3
                         break;
                 }
 
-                lvsItem.SubItems.Add(item.capacity.ToString());
-
+                foreach (PriceDTO i in PriceDAO.Instance.PriceList)
+                {
+                    string result = "" + i.price * AirlineDAO.Instance.GetAirlineIndexbyID(item.airline_id) +"$";
+                    lvsItem.SubItems.Add(result);
+                }
                 lvsItem.UseItemStyleForSubItems = false;
                 lvsItem.SubItems[0].ForeColor = Color.MediumVioletRed;
                 lvsItem.SubItems[1].ForeColor = Color.DarkBlue;
@@ -256,6 +256,14 @@ namespace PBL3
         private void button2_Click(object sender, EventArgs e)
         {
             Admin_FeedbackForm f = new Admin_FeedbackForm();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bill f = new Bill();
             this.Hide();
             f.ShowDialog();
             this.Show();

@@ -30,13 +30,13 @@ namespace PBL3
         }
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            double totalPrice = Convert.ToDouble(textBox4.Text.Split(',')[0]);
-
-            string text = "Bạn có chắc chắn thanh toán \n Tổng tiền: " + totalPrice;
+            float totalprice = Convert.ToSingle(textBox4.Text);
+   
+            string text = "Bạn có chắc chắn thanh toán \n Tổng tiền: " + totalprice;
             DialogResult dialogResult = MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                BILL_KHDAO.Instance.Checkout(username);
+                BILL_KHDAO.Instance.Checkout(username, totalprice);
                 MessageBox.Show("Thanh toán thành công");
             }   
             else if (dialogResult == DialogResult.No)

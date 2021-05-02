@@ -51,14 +51,13 @@ namespace PBL3.DAO
             bool fl_triptype = Convert.ToBoolean(row["fl_triptype"]);
             string fl_description = row["fl_description"].ToString();
             int fl_status = Convert.ToInt32(row["fl_status"]);
-            int fl_capacity = Convert.ToInt32(row["fl_capacity"]);
 
-            return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status,fl_capacity);
+            return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status);
         }
         public List<FlightSearch> GetAllFight()
         {
             List<FlightSearch> list = new List<FlightSearch>();
-            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime, fl_id from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where fl_status = 0");
+            string query = string.Format("select FLIGHT.fl_id, airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where fl_status = 0");
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightSearch flight = new FlightSearch();
@@ -83,7 +82,7 @@ namespace PBL3.DAO
             List<Fight> list3 = new List<Fight>();
             
 
-            string query = string.Format("select airline_name, airline_index, fl_takeoftime, fl_landingtime, fl_id from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, tr, takeoff);
+            string query = string.Format("select FLIGHT.fl_id, airline_name, airline_index, fl_takeoftime, fl_landingtime from FLIGHT inner join AIRLINE on FLIGHT.airline_id = AIRLINE.airline_id inner join SOURCE on FLIGHT.fl_source = SOURCE.src_id inner join DESTINATION on FLIGHT.fl_destination = DESTINATION.des_id where src_name = N'{0}' and des_name = N'{1}' and fl_triptype = {2} and fl_status = 0 and CAST(fl_takeoftime AS DATE) = N'{3}'", from, to, tr, takeoff);
             DataTable data = DataProvider.Instance.GetRecord(query);
 
             FlightSearch flight = new FlightSearch();
@@ -228,13 +227,13 @@ namespace PBL3.DAO
         public void AddFlighttoDatabase(FlightDTO f)
         {
             flightList.Add(f);
-            string query = String.Format("insert into FLIGHT values(N'{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}', N'{7}', {8} ,{9})", f.fl_id, f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.capacity);
+            string query = String.Format("insert into FLIGHT values(N'{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}', N'{7}', {8})", f.fl_id, f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status);
             DataProvider.Instance.ExecuteDB(query);
         }
         public void EditFlighttoDatabase(FlightDTO f)
         {
             flightList[GetIndexbyFlightID(f.fl_id)] = f;
-            string query = String.Format("update FLIGHT set airline_id = {0}, fl_source = {1}, fl_destination = {2}, fl_takeoftime = '{3}', fl_landingtime = '{4}', fl_triptype = '{5}', fl_description = N'{6}', fl_status = {7}, fl_capacity = {8} where fl_id = N'{9}'", f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.capacity, f.fl_id);
+            string query = String.Format("update FLIGHT set airline_id = {0}, fl_source = {1}, fl_destination = {2}, fl_takeoftime = '{3}', fl_landingtime = '{4}', fl_triptype = '{5}', fl_description = N'{6}', fl_status = {7} where fl_id = N'{8}'", f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.fl_id);
             DataProvider.Instance.ExecuteDB(query);
         }
         public void DeleteFlightFromDatabase(string fl_id)
