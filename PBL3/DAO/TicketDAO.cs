@@ -49,6 +49,18 @@ namespace PBL3.DAO
             }
             return list;
         }
+        public List<TicketDTO> GetListTicketPerFlightbyIdPrice(List<TicketDTO> listTemp, int price_id)
+        {
+            List<TicketDTO> list = new List<TicketDTO>();
+            foreach (TicketDTO i in listTemp)
+            {
+                if (i.price_id == price_id)
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
+        }
         public List<TicketDTO> GetListTicketPerFlight(string fl_id)
         {
             List<TicketDTO> list = new List<TicketDTO>();

@@ -144,6 +144,12 @@
     <Compile Include="SeatsBooking.Designer.cs">
       <DependentUpon>SeatsBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeatsBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatsBooking.Designer.cs">
+      <DependentUpon>SeatsBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SeatsBooking.resx">
       <DependentUpon>SeatsBooking.cs</DependentUpon>

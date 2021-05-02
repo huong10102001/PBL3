@@ -38,9 +38,9 @@ namespace PBL3.DAO
             return DataProvider.Instance.GetRecord(query);
             
         }
-        public DataTable GetFeedbackByName(String name)
+        public DataTable GetFeedbackByName(String username)
         {
-            string query = string.Format("SELECT us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE us_name= '"+name+"'");
+            string query = string.Format("SELECT FEEDBACK.us_username as [Username], us_name as [Customer Name], us_email as [Customer Email], content as [Feedback], dateFB as [Feedback Day] FROM FEEDBACK INNER JOIN USERS ON FEEDBACK.us_username = USERS.us_username WHERE FEEDBACK.us_username= '" + username+"'");
             return DataProvider.Instance.GetRecord(query);
 
         }
