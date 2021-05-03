@@ -20,13 +20,18 @@ namespace PBL3
         private int PRICE_ID;
         private string USERNAME;
         private string ID_FLIGHT;
+        private string ID_FLIGHT1;
         private int TICKET_ID;
         private int BTN_WIDTH = 40;
         private int BTN_HEIGHT = 40;
         private int COUNT = 0;
         private string TYPE;
+        private bool IsRoundTrip = false;
+        private bool IsBackTrip = false;
         private List<TicketDTO> PassList;
         private List<TicketDTO> TempList;
+        private List<TicketDTO> PassList1;
+        private List<TicketDTO> TempList1;
         Color color1 = Color.FromArgb(34, 228, 172);
         Color color2 = Color.FromArgb(27, 215, 187);
         Color color3 = Color.FromArgb(20, 201, 203);
@@ -35,21 +40,40 @@ namespace PBL3
         {
             ID_FLIGHT = fl_id;
             USERNAME = username;
+            PassList1 = new List<TicketDTO>();
+            TempList1 = new List<TicketDTO>();
             PassList = new List<TicketDTO>();
             TempList = new List<TicketDTO>();
             //COUNT = TicketDAO.Instance.GetListTicketPerFlight(fl_id).Count;
+            FlightDTO fl = FlightDAO.Instance.GetFlightByID(fl_id);
+
             foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlight(fl_id))
             {
                 TempList.Add(i);
             }
 
+            if(fl.id_roundtrip != "")
+            {
+                IsRoundTrip = true;
+                ID_FLIGHT1 = fl.id_roundtrip;
+                foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlight(fl.id_roundtrip))
+                {
+                    TempList1.Add(i);
+                }
+            }
 
+            
+            
             InitializeComponent();
-            LoadSeats(ticket_id);
-            LoadListView();
+
+
+            LoadSeats(TempList, ticket_id);
+            LoadListView(PassList);
+
             LoadCBB();
 
-           
+            
+
             switch (type)
             {
                 case "ADMIN_ADD":
@@ -74,6 +98,11 @@ namespace PBL3
                     break;
             }
             lbText.Text = fl_id + "'S SEATS";
+            if (IsRoundTrip)
+            {
+                btnPayment.Text = "Next to back-trip";
+                lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
+            }
         }
         public void FormInit(int ticket_id)
         {
@@ -110,12 +139,13 @@ namespace PBL3
             txbAddress.Text = ticket.ticket_address;
             cbbGender.SelectedIndex = (ticket.ticket_gender) ? 0 : 1;
         }
-        public void LoadSeats(int ticket_id = -1)
+        public void LoadSeats(List<TicketDTO> ticketList, int ticket_id = -1)
         {
             flpFirst.Controls.Clear();
             flpDelta.Controls.Clear();
             flpMain.Controls.Clear();
             flpBase.Controls.Clear();
+
             for (int i = 1; i <= 6; i++)
             {
                 Button btn = new Button();
@@ -129,7 +159,7 @@ namespace PBL3
                 btn.Click += new EventHandler(FirstButton);
                 btn.GotFocus += new EventHandler(BtnFocus);
                 btn.LostFocus += new EventHandler(LostFirst);
-                if (isFirstAvalaible(i))
+                if (isFirstAvalaible(ticketList, i))
                 {
                     btn.BackColor = Color.Pink;
                     btn.Enabled = false;
@@ -159,7 +189,7 @@ namespace PBL3
                 btn.GotFocus += new EventHandler(BtnFocus);
                 btn.LostFocus += new EventHandler(LostDelta);
 
-                if (isDeltaAvalaible(i))
+                if (isDeltaAvalaible(ticketList, i))
                 {
                     btn.BackColor = Color.Pink;
                     btn.Enabled = false;
@@ -190,7 +220,7 @@ namespace PBL3
                 btn.GotFocus += new EventHandler(BtnFocus);
                 btn.LostFocus += new EventHandler(LostMain);
 
-                if (isMainAvalaible(i))
+                if (isMainAvalaible(ticketList, i))
                 {
                     btn.BackColor = Color.Pink;
                     btn.Enabled = false;
@@ -221,7 +251,7 @@ namespace PBL3
                 btn.GotFocus += new EventHandler(BtnFocus);
                 btn.LostFocus += new EventHandler(LostBase);
 
-                if (isBaseAvalaible(i))
+                if (isBaseAvalaible(ticketList, i))
                 {
                     btn.BackColor = Color.Pink;
                     btn.Enabled = false;
@@ -297,9 +327,9 @@ namespace PBL3
             Button btn = (Button)o;
             btn.BackColor = color4;
         }
-        public bool isFirstAvalaible(int seat_number)
+        public bool isFirstAvalaible(List<TicketDTO> list,  int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[3].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(list, PriceDAO.Instance.PriceList[3].id))
             {
                 if(i.seat_number == seat_number)
                 {
@@ -308,9 +338,9 @@ namespace PBL3
             }
             return false;
         }
-        public bool isDeltaAvalaible(int seat_number)
+        public bool isDeltaAvalaible(List<TicketDTO> list, int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList,  PriceDAO.Instance.PriceList[2].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(list,  PriceDAO.Instance.PriceList[2].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -319,9 +349,9 @@ namespace PBL3
             }
             return false;
         }
-        public bool isMainAvalaible(int seat_number)
+        public bool isMainAvalaible(List<TicketDTO> list, int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[1].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(list, PriceDAO.Instance.PriceList[1].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -330,9 +360,9 @@ namespace PBL3
             }
             return false;
         }
-        public bool isBaseAvalaible(int seat_number)
+        public bool isBaseAvalaible(List<TicketDTO> list, int seat_number)
         {
-            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(TempList, PriceDAO.Instance.PriceList[0].id))
+            foreach (TicketDTO i in TicketDAO.Instance.GetListTicketPerFlightbyIdPrice(list, PriceDAO.Instance.PriceList[0].id))
             {
                 if (i.seat_number == seat_number)
                 {
@@ -350,12 +380,28 @@ namespace PBL3
             }
             else
             {
-                TicketDTO ticket = new TicketDTO(ID_FLIGHT, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0)?true:false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
+                
                 //MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
 
-                PassList.Add(ticket);
-                TempList.Add(ticket);
+                if (IsBackTrip)
+                {
+                    TicketDTO ticket = new TicketDTO(ID_FLIGHT1, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0) ? true : false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
 
+                    PassList1.Add(ticket);
+                    TempList1.Add(ticket);
+                    LoadSeats(TempList1);
+                    LoadListView(PassList1);
+                }
+                else
+                {
+                    TicketDTO ticket = new TicketDTO(ID_FLIGHT, USERNAME, txbName.Text, (cbbGender.SelectedIndex == 0) ? true : false, txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
+
+                    PassList.Add(ticket);
+                    TempList.Add(ticket);
+                    LoadSeats(TempList);
+                    LoadListView(PassList);
+                }
+                
                 txbAddress.Text = "";
                 txbName.Text = "";
                 txbPhone.Text = "";
@@ -364,32 +410,7 @@ namespace PBL3
                 SEAT_NAME = 0;
                 PRICE_ID = 0;
 
-                LoadSeats();
-                LoadListView();
             }
-        }
-        public void AddTicket(object o, EventArgs e) // for admin
-        {
-            //if (txbName.Text == "" || txbAddress.Text == "" || txbPhone.Text == "" || cbbGender.SelectedItem == null || PRICE_ID == 0 || SEAT_NAME == 0)
-            //{
-            //    MessageBox.Show("Vui lòng nhập đủ thông tin");
-            //}
-            //else
-            //{
-            //    DialogResult dialogResult = MessageBox.Show("Xác nhận cập nhập dữ liệu hệ thống", "Thông báo", MessageBoxButtons.YesNo);
-            //    if (dialogResult == DialogResult.Yes)
-            //    {
-            //        TicketDAO.Instance.AddTicketToDataBase(ID_FLIGHT, USERNAME, txbName.Text, Convert.ToBoolean(((CBBItem)cbbGender.SelectedItem).Value), txbPhone.Text, txbAddress.Text, SEAT_NAME, PRICE_ID);
-            //        this.Dispose();
-            //    }
-            //    else if (dialogResult == DialogResult.No)
-            //    {
-            //        //do nothing
-            //    }
-
-            //}
-            
-            
         }
         public void EditTicket(object o, EventArgs e)
         {
@@ -419,10 +440,10 @@ namespace PBL3
             cbbGender.DisplayMember = "Text";
         }
 
-        public void LoadListView()
+        public void LoadListView(List<TicketDTO> list)
         {
             listView1.Items.Clear();
-            foreach (TicketDTO i in PassList)
+            foreach (TicketDTO i in list)
             {
                 ListViewItem lvsItem = new ListViewItem(i.ticket_name);
                 lvsItem.SubItems.Add((i.ticket_gender)?"Male":"Female");
@@ -472,7 +493,24 @@ namespace PBL3
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (IsBackTrip)
+            {
+                LoadSeats(TempList);
+                LoadListView(PassList);
+                IsBackTrip = false;
+                IsRoundTrip = true;
+                btnPayment.Text = "Next to back-trip";
+                lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
+
+                SEAT_NAME = 0;
+                PRICE_ID = 0;
+                lblSeatName.Text = "Choose an available seat!";
+            }
+            else
+            {
+                this.Dispose();
+            }
+            
         }
         private void DisposeForm()
         {
@@ -483,13 +521,37 @@ namespace PBL3
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                COUNT = TicketDAO.Instance.GetListTicketPerFlight(ID_FLIGHT).Count;
                 int index = listView1.Items.IndexOf(listView1.SelectedItems[0]);
-                PassList.RemoveAt(index);
-                TempList.RemoveAt(COUNT + index);
 
-                LoadListView();
-                LoadSeats();
+                if (IsBackTrip)
+                {
+                    COUNT = TicketDAO.Instance.GetListTicketPerFlight(ID_FLIGHT1).Count;
+
+                    PassList1.RemoveAt(index);
+                    TempList1.RemoveAt(COUNT + index);
+
+                    SEAT_NAME = 0;
+                    PRICE_ID = 0;
+                    lblSeatName.Text = "Choose an available seat!";
+
+                    LoadListView(PassList1);
+                    LoadSeats(TempList1);
+                }
+                else
+                {
+                    COUNT = TicketDAO.Instance.GetListTicketPerFlight(ID_FLIGHT).Count;
+
+                    PassList.RemoveAt(index);
+                    TempList.RemoveAt(COUNT + index);
+
+                    SEAT_NAME = 0;
+                    PRICE_ID = 0;
+                    lblSeatName.Text = "Choose an available seat!";
+
+                    LoadListView(PassList);
+                    LoadSeats(TempList);
+                }
+                
             }
             else
             {
@@ -498,8 +560,13 @@ namespace PBL3
         }
         public void RemoveList()
         {
+            IsRoundTrip = true;
+            IsBackTrip = false;
+            PassList1.Clear();
             PassList.Clear();
-            LoadListView();
+            LoadListView(PassList);
+            LoadSeats(TempList);
+            lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -508,28 +575,85 @@ namespace PBL3
             {
                 if(TYPE == "ADMIN_ADD")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Xác nhận cập nhập dữ liệu hệ thống", "Thông báo", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    if (IsRoundTrip)
                     {
-                        foreach (TicketDTO i in PassList)
+                        lbText.Text = ID_FLIGHT1 + "'S SEATS --- RETURN TRIP";
+                        btnPayment.Text = "Payment";
+                        IsRoundTrip = false;
+                        IsBackTrip = true;
+
+                        SEAT_NAME = 0;
+                        PRICE_ID = 0;
+                        lblSeatName.Text = "Choose an available seat!";
+
+                        LoadListView(PassList1);
+                        LoadSeats(TempList1);
+                    }
+                    else
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Xác nhận cập nhập dữ liệu hệ thống", "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
                         {
-                            TicketDAO.Instance.AddTicketToDataBase(i.fl_id, i.us_username, i.ticket_name, i.ticket_gender, i.ticket_mobile, i.ticket_address, i.seat_number, i.price_id);
+                            if (IsBackTrip)
+                            {
+                                foreach (TicketDTO i in PassList1)
+                                {
+                                    TicketDAO.Instance.AddTicketToDataBase(i.fl_id, i.us_username, i.ticket_name, i.ticket_gender, i.ticket_mobile, i.ticket_address, i.seat_number, i.price_id);
+                                }
+                                PassList1.Clear();
+                                //LoadListView(PassList1);
+                            }
+                            foreach (TicketDTO i in PassList)
+                            {
+                                TicketDAO.Instance.AddTicketToDataBase(i.fl_id, i.us_username, i.ticket_name, i.ticket_gender, i.ticket_mobile, i.ticket_address, i.seat_number, i.price_id);
+                            }
+                            IsBackTrip = false;
+                            IsRoundTrip = true;
+                            lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
+                            btnPayment.Text = "Next to back-trip";
+                            SEAT_NAME = 0;
+                            PRICE_ID = 0;
+                            lblSeatName.Text = "Choose an available seat!";
+
+                            PassList.Clear();
+                            LoadListView(PassList);
+                            LoadSeats(TempList);
                         }
-                        PassList.Clear();
-                        LoadListView();
+                        else if (dialogResult == DialogResult.No)
+                        {
+                            //do nothing
+                        }
                     }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        //do nothing
-                    }
+                    
                 }
                 else if(TYPE == "USER_ADD")
                 {
-                    PaymentForm f = new PaymentForm(PassList, USERNAME);
-                    f.remove += new PaymentForm.RemoveListCallback(RemoveList);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
+                    if (IsRoundTrip)
+                    {
+                        lbText.Text = ID_FLIGHT1 + "'S SEATS --- RETURN TRIP";
+                        btnPayment.Text = "Payment";
+                        IsRoundTrip = false;
+                        IsBackTrip = true;
+
+                        SEAT_NAME = 0;
+                        PRICE_ID = 0;
+                        lblSeatName.Text = "Choose an available seat!";
+
+                        LoadListView(PassList1);
+                        LoadSeats(TempList1);
+                    }
+                    else
+                    {
+                        SEAT_NAME = 0;
+                        PRICE_ID = 0;
+                        lblSeatName.Text = "Choose an available seat!";
+
+                        PaymentForm f = new PaymentForm(PassList, USERNAME, PassList1);
+                        f.remove += new PaymentForm.RemoveListCallback(RemoveList);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
                 }    
             }
             else

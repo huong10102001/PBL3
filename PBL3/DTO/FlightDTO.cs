@@ -48,7 +48,7 @@ namespace PBL3.DTO
             this.status = (int)row["fl_status"];
         }
 
-        public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status)
+        public FlightDTO(string fl_id, int airline_id, int fl_source, int fl_destination, DateTime takeoff, DateTime landing, bool triptype, string description, int status, string id_roundtrip)
         {
             this.fl_id = fl_id;
             this.airline_id = airline_id;
@@ -59,6 +59,7 @@ namespace PBL3.DTO
             this.triptype = triptype;
             this.description = description;
             this.status = status;
+            this.id_roundtrip = id_roundtrip;
         }
     }
 }

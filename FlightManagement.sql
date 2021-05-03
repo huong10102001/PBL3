@@ -43,12 +43,18 @@ create table FLIGHT
 	fl_triptype bit not null,
 	fl_description nvarchar(50) not null,
 	fl_status int default 0 not null,
-	fl_capacity int not null,
+	id_roundtrip nvarchar(20) not null,
 
+	foreign key (id_roundtrip) references FLIGHT(fl_id)
 	foreign key (airline_id) references dbo.AIRLINE(airline_id),
 	foreign key (fl_source) references dbo.SOURCE(src_id),
 	foreign key (fl_destination) references dbo.DESTINATION(des_id)
 )
+alter table FLIGHT
+add id_roundtrip nvarchar(20)
+
+alter table FLIGHT
+add foreign key (id_roundtrip) references FLIGHT(fl_id)
 create table TICKET
 (
 	ticket_id int primary key identity not null,
