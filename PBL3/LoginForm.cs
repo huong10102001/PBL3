@@ -104,9 +104,9 @@ namespace PBL3
         private void btnSignup_Click_1(object sender, EventArgs e)
         {
             SignUpForm f = new SignUpForm();
-           
             this.Hide();
             f.ShowDialog();
+            this.Show();
         }
     }
 }

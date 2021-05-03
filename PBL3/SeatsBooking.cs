@@ -500,6 +500,7 @@ namespace PBL3
                 IsBackTrip = false;
                 IsRoundTrip = true;
                 btnPayment.Text = "Next to back-trip";
+                btnCancel.Text = "Cancel";
                 lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
 
                 SEAT_NAME = 0;
@@ -566,6 +567,8 @@ namespace PBL3
             PassList.Clear();
             LoadListView(PassList);
             LoadSeats(TempList);
+            btnPayment.Text = "Next to back-trip";
+            btnCancel.Text = "Cancel";
             lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
         }
 
@@ -579,6 +582,7 @@ namespace PBL3
                     {
                         lbText.Text = ID_FLIGHT1 + "'S SEATS --- RETURN TRIP";
                         btnPayment.Text = "Payment";
+                        btnCancel.Text = "Back";
                         IsRoundTrip = false;
                         IsBackTrip = true;
 
@@ -596,11 +600,19 @@ namespace PBL3
                         {
                             if (IsBackTrip)
                             {
-                                foreach (TicketDTO i in PassList1)
+                                if(PassList1.Count > 0)
                                 {
-                                    TicketDAO.Instance.AddTicketToDataBase(i.fl_id, i.us_username, i.ticket_name, i.ticket_gender, i.ticket_mobile, i.ticket_address, i.seat_number, i.price_id);
+                                    foreach (TicketDTO i in PassList1)
+                                    {
+                                        TicketDAO.Instance.AddTicketToDataBase(i.fl_id, i.us_username, i.ticket_name, i.ticket_gender, i.ticket_mobile, i.ticket_address, i.seat_number, i.price_id);
+                                    }
+                                    PassList1.Clear();
                                 }
-                                PassList1.Clear();
+                                else
+                                {
+                                    MessageBox.Show("Vui lòng thêm hành khách!");
+                                }
+                                
                                 //LoadListView(PassList1);
                             }
                             foreach (TicketDTO i in PassList)
@@ -611,6 +623,7 @@ namespace PBL3
                             IsRoundTrip = true;
                             lbText.Text = ID_FLIGHT + "'S SEATS --- FIRST TRIP";
                             btnPayment.Text = "Next to back-trip";
+                            btnCancel.Text = "Cancel";
                             SEAT_NAME = 0;
                             PRICE_ID = 0;
                             lblSeatName.Text = "Choose an available seat!";
@@ -632,6 +645,7 @@ namespace PBL3
                     {
                         lbText.Text = ID_FLIGHT1 + "'S SEATS --- RETURN TRIP";
                         btnPayment.Text = "Payment";
+                        btnCancel.Text = "Back";
                         IsRoundTrip = false;
                         IsBackTrip = true;
 
@@ -644,21 +658,44 @@ namespace PBL3
                     }
                     else
                     {
-                        SEAT_NAME = 0;
-                        PRICE_ID = 0;
-                        lblSeatName.Text = "Choose an available seat!";
+                        if (IsBackTrip)
+                        {
+                            if(PassList1.Count > 0)
+                            {
+                                SEAT_NAME = 0;
+                                PRICE_ID = 0;
+                                lblSeatName.Text = "Choose an available seat!";
 
-                        PaymentForm f = new PaymentForm(PassList, USERNAME, PassList1);
-                        f.remove += new PaymentForm.RemoveListCallback(RemoveList);
-                        this.Hide();
-                        f.ShowDialog();
-                        this.Show();
+                                PaymentForm f = new PaymentForm(PassList, USERNAME, PassList1);
+                                f.remove += new PaymentForm.RemoveListCallback(RemoveList);
+                                this.Hide();
+                                f.ShowDialog();
+                                this.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Vui lòng thêm hành khách!");
+                            }
+                        }
+                        else
+                        {
+                            SEAT_NAME = 0;
+                            PRICE_ID = 0;
+                            lblSeatName.Text = "Choose an available seat!";
+
+                            PaymentForm f = new PaymentForm(PassList, USERNAME, PassList1);
+                            f.remove += new PaymentForm.RemoveListCallback(RemoveList);
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+                        }
+                        
                     }
                 }    
             }
             else
             {
-                MessageBox.Show("Chưa hết dỗi");
+                MessageBox.Show("Vui lòng thêm hành khách!");
             }
         }
     }

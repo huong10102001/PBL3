@@ -83,7 +83,7 @@ namespace PBL3
                 lvsItem.SubItems[1].ForeColor = Color.DarkBlue;
                 listView1.Items.Add(lvsItem);
             }
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
         }
         public void LoadComboBox()

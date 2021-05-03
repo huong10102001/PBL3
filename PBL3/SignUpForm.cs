@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,8 +28,23 @@ namespace PBL3
             string email = txtEmail.Text;
             string phone = txtPhone.Text;
             string address = txtAddress.Text;
-            if (txtUserName.Text == "" || passWord == "" || passWord2 == "" || name == "" || email == "" || phone == "" || address == "" // kiem tra neu cai textbox rong
-                || userName == "Username" || passWord == "Password" || passWord2 == "Password" || name == "Name" || email == "Email" || phone == "Phone" || address == "Address")// kiem tra tai khoan trung
+            userName = userName.Trim();
+            passWord = passWord.Trim();
+            passWord2 = passWord2.Trim();
+            name = name.Trim();
+            email = email.Trim();
+            phone = phone.Trim();
+            address = address.Trim();
+            Regex trimmer = new Regex(@"\s\s+");
+            passWord = trimmer.Replace(passWord, " ");
+            userName = trimmer.Replace(userName, " ");
+            passWord2 = trimmer.Replace(passWord2, " ");
+            name = trimmer.Replace(name, " ");
+            email = email.Replace(email, " ");
+            phone = phone.Replace(phone, " ");
+            address = address.Replace(address, " ");
+            if (userName == "" || passWord == "" || passWord2 == "" || name == "" || email == "" || phone == "" || address == "" // kiem tra neu cai textbox rong
+                || userName == "Username" || passWord == "Password" || passWord2 == "Password" || name == "Name" || email == "Email" || phone == "Phone" || address == "Address" || userName.Contains(" "))// kiem tra tai khoan trung
                 MessageBox.Show("Please enter all information! / Hãy nhập đầy đủ thông tin!");
             else
             {
@@ -41,7 +57,6 @@ namespace PBL3
                         { 
                             AccountDAO.Instance.Signup(userName, passWord, name, email, phone, address);
                             MessageBox.Show("Sign Up Success! / Đăng kí thành công!");
-                            LoginForm lm = new LoginForm();
                             this.Hide();
                         }
                         catch (Exception)
