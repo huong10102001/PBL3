@@ -239,8 +239,11 @@ namespace PBL3.DAO
         public void DeleteFlightFromDatabase(string fl_id)
         {
             flightList.RemoveAt(GetIndexbyFlightID(fl_id));
+            string query1 = String.Format("delete from TICKET where fl_id = N'{0}'", fl_id);
             string query = String.Format("delete from FLIGHT where fl_id = N'{0}'", fl_id);
+            DataProvider.Instance.ExecuteDB(query1);
             DataProvider.Instance.ExecuteDB(query);
+
         }
     }
 }

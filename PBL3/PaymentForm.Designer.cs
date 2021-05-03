@@ -44,6 +44,7 @@ namespace PBL3
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
@@ -63,10 +64,6 @@ namespace PBL3
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radiobMoMo = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -269,6 +266,16 @@ namespace PBL3
             this.panel2.Size = new System.Drawing.Size(392, 143);
             this.panel2.TabIndex = 0;
             // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(16, 39);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(359, 54);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "label17";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -312,9 +319,6 @@ namespace PBL3
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.pictureBox3);
@@ -398,8 +402,9 @@ namespace PBL3
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(113, 45);
             this.textBox7.TabIndex = 8;
+            this.textBox7.Text = "4436";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseUp);
             // 
             // label7
             // 
@@ -422,7 +427,8 @@ namespace PBL3
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(463, 45);
             this.textBox6.TabIndex = 6;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.Text = "123456789 / 0905044326";
+            this.textBox6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseUp);
             // 
             // label6
             // 
@@ -439,13 +445,14 @@ namespace PBL3
             // 
             this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(29, 224);
+            this.textBox5.Location = new System.Drawing.Point(29, 212);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(702, 45);
             this.textBox5.TabIndex = 4;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textBox5.Text = "Nguyen Van A";
+            this.textBox5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseUp);
             // 
             // label5
             // 
@@ -510,49 +517,6 @@ namespace PBL3
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label17
-            // 
-            this.label17.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(16, 39);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(359, 54);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "label17";
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Calibri", 13F);
-            this.label18.ForeColor = System.Drawing.Color.Silver;
-            this.label18.Location = new System.Drawing.Point(32, 228);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(223, 35);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Le Thi Thu Huong";
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.Font = new System.Drawing.Font("Calibri", 13F);
-            this.label19.ForeColor = System.Drawing.Color.Silver;
-            this.label19.Location = new System.Drawing.Point(32, 383);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(249, 42);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "08438 48348 438484";
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.White;
-            this.label20.Font = new System.Drawing.Font("Calibri", 13F);
-            this.label20.ForeColor = System.Drawing.Color.Silver;
-            this.label20.Location = new System.Drawing.Point(622, 383);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 40);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "4436";
             // 
             // PaymentForm
             // 
@@ -621,8 +585,5 @@ namespace PBL3
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
     }
 }

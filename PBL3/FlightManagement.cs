@@ -140,6 +140,7 @@ namespace PBL3
                 {
                     FlightDAO.Instance.DeleteFlightFromDatabase(fl_id);
 
+
                     ListViewLoad(FlightDAO.Instance.flightList);
                 }
                 else if (dialogResult == DialogResult.No)

@@ -83,18 +83,22 @@ namespace PBL3
             Dispose();
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            label18.Visible = false;
-        }
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-            label19.Visible = false;
-        }
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            label20.Visible = false;
+       
 
+        private void textBox5_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (sender == textBox5)
+            {
+                textBox5.Text = "";
+            }
+            if (sender == textBox6)
+            {
+                textBox6.Text = "";
+            }
+            if (sender == textBox7)
+            {
+                textBox7.Text = "";
+            }
         }
 
         public void LoadInformation(List<TicketDTO> ticket1, List<TicketDTO> ticket2)
