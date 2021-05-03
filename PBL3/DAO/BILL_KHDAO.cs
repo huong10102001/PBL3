@@ -16,6 +16,7 @@ namespace PBL3.DAO
         {
             get { if (instance == null) instance = new BILL_KHDAO(); return instance; }
             private set { instance = value; }
+
         }
 
         private BILL_KHDAO() { }

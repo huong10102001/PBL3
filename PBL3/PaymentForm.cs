@@ -24,11 +24,11 @@ namespace PBL3
         {
             tickets = info_ticket;
         }
-        public PaymentForm(List<TicketDTO> ticket, string username)
+        public PaymentForm(List<TicketDTO> ticket1, string username , List<TicketDTO> ticket2)
         {
-            listTicket = ticket;
+            listTicket = ticket1;
             InitializeComponent();
-            LoadInformation(ticket);
+            LoadInformation(ticket1);
             setusername(username);
         }
         string username, ten;

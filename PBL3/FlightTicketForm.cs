@@ -46,15 +46,15 @@ namespace PBL3
             foreach (TicketDTO i in TicketDAO.Instance.GetTicketByUserName(user, 0))
             {
                 ListViewItem lvsItem = new ListViewItem(AirlineDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id));
-                lvsItem.SubItems.Add(SourceDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_destination));
+                lvsItem.SubItems.Add(SourceDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_source));
                 lvsItem.SubItems.Add(DestinationDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_destination));
                 lvsItem.SubItems.Add(i.ticket_name);
 
                 List<PriceDTO> PriceList = PriceDAO.Instance.PriceList;
-                int first = PriceList[0].id;
-                int delta = PriceList[1].id;
-                int main = PriceList[2].id;
-                int econo = PriceList[3].id;
+                int first = PriceList[3].id;
+                int delta = PriceList[2].id;
+                int main = PriceList[1].id;
+                int econo = PriceList[0].id;
 
                 if (i.price_id == first)
                 {
@@ -99,15 +99,15 @@ namespace PBL3
             foreach (TicketDTO i in TicketDAO.Instance.GetTicketByUserName(user, 1))
             {
                 ListViewItem lvsItem = new ListViewItem(AirlineDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).airline_id));
-                lvsItem.SubItems.Add(SourceDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_destination));
+                lvsItem.SubItems.Add(SourceDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_source));
                 lvsItem.SubItems.Add(DestinationDAO.Instance.GetNameByID(FlightDAO.Instance.GetFlightByID(i.fl_id).fl_destination));
                 lvsItem.SubItems.Add(i.ticket_name);
 
                 List<PriceDTO> PriceList = PriceDAO.Instance.PriceList;
-                int first = PriceList[0].id;
-                int delta = PriceList[1].id;
-                int main = PriceList[2].id;
-                int econo = PriceList[3].id;
+                int first = PriceList[3].id;
+                int delta = PriceList[2].id;
+                int main = PriceList[1].id;
+                int econo = PriceList[0].id;
 
                 if (i.price_id == first)
                 {

@@ -51,8 +51,9 @@ namespace PBL3.DAO
             bool fl_triptype = Convert.ToBoolean(row["fl_triptype"]);
             string fl_description = row["fl_description"].ToString();
             int fl_status = Convert.ToInt32(row["fl_status"]);
+            string id_roundtrip = row["id_roundtrip"].ToString();
 
-            return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status);
+            return new FlightDTO(fl_id, airline_id, fl_source, fl_destination, fl_takeoff,fl_landing,fl_triptype,fl_description,fl_status, id_roundtrip);
         }
         public List<FlightSearch> GetAllFight()
         {
