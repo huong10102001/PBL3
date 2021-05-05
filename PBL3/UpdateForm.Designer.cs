@@ -57,6 +57,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbbRoundtrip = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numLandingMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTakeoffMin)).BeginInit();
@@ -86,6 +88,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.cbbRoundtrip);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.dpkLanding);
             this.panel2.Controls.Add(this.numLandingMin);
@@ -202,6 +206,7 @@
             this.cbbTriptype.Name = "cbbTriptype";
             this.cbbTriptype.Size = new System.Drawing.Size(248, 28);
             this.cbbTriptype.TabIndex = 34;
+            this.cbbTriptype.SelectedIndexChanged += new System.EventHandler(this.cbbTriptype_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -246,7 +251,7 @@
             // 
             this.txbDescrip.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txbDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDescrip.Location = new System.Drawing.Point(159, 260);
+            this.txbDescrip.Location = new System.Drawing.Point(159, 299);
             this.txbDescrip.Margin = new System.Windows.Forms.Padding(2);
             this.txbDescrip.Multiline = true;
             this.txbDescrip.Name = "txbDescrip";
@@ -258,7 +263,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(32, 260);
+            this.label11.Location = new System.Drawing.Point(34, 288);
             this.label11.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 25);
@@ -436,6 +441,29 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Flight ID";
             // 
+            // cbbRoundtrip
+            // 
+            this.cbbRoundtrip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRoundtrip.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbRoundtrip.FormattingEnabled = true;
+            this.cbbRoundtrip.Location = new System.Drawing.Point(159, 244);
+            this.cbbRoundtrip.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbRoundtrip.Name = "cbbRoundtrip";
+            this.cbbRoundtrip.Size = new System.Drawing.Size(248, 28);
+            this.cbbRoundtrip.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label9.Location = new System.Drawing.Point(24, 243);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 10, 20, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 25);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Roundtrip ID";
+            // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,5 +519,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dpkLanding;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbbRoundtrip;
     }
 }

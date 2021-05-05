@@ -227,23 +227,46 @@ namespace PBL3.DAO
         public void AddFlighttoDatabase(FlightDTO f)
         {
             flightList.Add(f);
-            string query = String.Format("insert into FLIGHT values(N'{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}', N'{7}', {8})", f.fl_id, f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status);
-            DataProvider.Instance.ExecuteDB(query);
+            string querynull = String.Format("insert into FLIGHT values(N'{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}', N'{7}', {8}, null)", f.fl_id, f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status);
+            string query = String.Format("insert into FLIGHT values(N'{0}', {1}, {2}, {3}, '{4}', '{5}', '{6}', N'{7}', {8}, N'{9}')", f.fl_id, f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.id_roundtrip);
+            if (f.triptype)
+            {
+                DataProvider.Instance.ExecuteDB(query);
+            }
+            else
+            {
+                DataProvider.Instance.ExecuteDB(querynull);
+            }
         }
         public void EditFlighttoDatabase(FlightDTO f)
         {
             flightList[GetIndexbyFlightID(f.fl_id)] = f;
-            string query = String.Format("update FLIGHT set airline_id = {0}, fl_source = {1}, fl_destination = {2}, fl_takeoftime = '{3}', fl_landingtime = '{4}', fl_triptype = '{5}', fl_description = N'{6}', fl_status = {7} where fl_id = N'{8}'", f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.fl_id);
-            DataProvider.Instance.ExecuteDB(query);
+            string query = String.Format("update FLIGHT set airline_id = {0}, fl_source = {1}, fl_destination = {2}, fl_takeoftime = '{3}', fl_landingtime = '{4}', fl_triptype = '{5}', fl_description = N'{6}', fl_status = {7}, id_roundtrip = N'{8}' where fl_id = N'{9}'", f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.id_roundtrip, f.fl_id);
+            string querynull = String.Format("update FLIGHT set airline_id = {0}, fl_source = {1}, fl_destination = {2}, fl_takeoftime = '{3}', fl_landingtime = '{4}', fl_triptype = '{5}', fl_description = N'{6}', fl_status = {7}, id_roundtrip = null where fl_id = N'{8}'", f.airline_id, f.fl_source, f.fl_destination, f.takeoff.ToString(), f.landing.ToString(), f.triptype.ToString(), f.description, f.status, f.fl_id);
+            if (f.triptype)
+            {
+                DataProvider.Instance.ExecuteDB(query);
+            }
+            else
+            {
+                DataProvider.Instance.ExecuteDB(querynull);
+            }
         }
         public void DeleteFlightFromDatabase(string fl_id)
         {
+            for(int i = 0; i < flightList.Count; i++)
+            {
+                if (flightList[i].id_roundtrip == fl_id)
+                {
+                    flightList[i].triptype = false;
+                    EditFlighttoDatabase(flightList[i]);
+                }
+            }
             flightList.RemoveAt(GetIndexbyFlightID(fl_id));
             string query1 = String.Format("delete from TICKET where fl_id = N'{0}'", fl_id);
             string query = String.Format("delete from FLIGHT where fl_id = N'{0}'", fl_id);
             DataProvider.Instance.ExecuteDB(query1);
             DataProvider.Instance.ExecuteDB(query);
-
         }
     }
 }

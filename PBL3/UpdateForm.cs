@@ -50,6 +50,11 @@ namespace PBL3
                 txbDescrip.Text = flight.description;
                 cbbStatus.SelectedIndex = flight.status;
                 cbbTriptype.SelectedIndex = Convert.ToInt32(flight.triptype);
+
+                if (flight.triptype)
+                {
+                    cbbRoundtrip.SelectedIndex = FlightDAO.Instance.GetIndexbyFlightID(flight.id_roundtrip);
+                }
             }
         }
         public void LoadComboBox()
@@ -57,6 +62,12 @@ namespace PBL3
             foreach (AirlineDTO i in AirlineDAO.Instance.AirlineList)
             {
                 cbbAirline.Items.Add(new CBBItem(i.airline_id, i.airline_name));
+            }
+            foreach(FlightDTO i in FlightDAO.Instance.flightList)
+            {
+                cbbRoundtrip.Items.Add(i);
+
+                cbbRoundtrip.DisplayMember = "fl_id";
             }
 
             foreach (SourceDTO i in SourceDAO.Instance.SourceList)
@@ -137,12 +148,26 @@ namespace PBL3
                 triptype = Convert.ToBoolean(((CBBItem)cbbTriptype.SelectedItem).Value),
                 description = txbDescrip.Text,
                 status = ((CBBItem)cbbStatus.SelectedItem).Value,
+                id_roundtrip = (Convert.ToBoolean(((CBBItem)cbbTriptype.SelectedItem).Value)) ? (((FlightDTO)cbbRoundtrip.SelectedItem).fl_id) : "",
             };
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void cbbTriptype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToBoolean(((CBBItem)cbbTriptype.SelectedItem).Value))
+            {
+                cbbRoundtrip.Enabled = true;
+                cbbRoundtrip.SelectedIndex = 0;
+            }
+            else
+            {
+                cbbRoundtrip.Enabled = false;
+            }
         }
     }
 }
