@@ -80,5 +80,15 @@ namespace PBL3
                 }
             }  
         }
+
+        private void InfoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

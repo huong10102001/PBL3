@@ -21,7 +21,7 @@ namespace PBL3
         }
         public void setUserId(string CUSTOMER_ID)
         {
-            USERNAME = CUSTOMER_ID;
+            //USERNAME = CUSTOMER_ID;
             this.label7.Text = CUSTOMER_ID;
 
             AccountDTO acc = AccountDAO.Instance.GetAccountByUserName(USERNAME);

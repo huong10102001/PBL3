@@ -74,6 +74,7 @@ namespace PBL3
                 listView1.Items.Add(lvsItem);
             }
             listView1.Columns[0].Width = 0;
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void pictureBoxAdd_Click(object sender, EventArgs e) //add
@@ -127,6 +128,11 @@ namespace PBL3
         private void ShowFlightForm_Load(object sender, EventArgs e)
         {
             lbText.Text = FLIGHT_ID + "'s Passengers";
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

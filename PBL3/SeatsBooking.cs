@@ -374,13 +374,13 @@ namespace PBL3
 
         private void btnConfirm_Click(object sender, EventArgs e) // for user
         {
-            if(txbName.Text == "" || txbAddress.Text == ""|| txbPhone.Text == "" || cbbGender.SelectedItem == null || PRICE_ID == 0 || SEAT_NAME == 0)
+            if(txbName.Text == "" || txbName.Text.Contains("'") || txbAddress.Text == ""|| txbAddress.Text.Contains("'") || txbPhone.Text == "" || txbPhone.Text.Contains("'") || cbbGender.SelectedItem == null || PRICE_ID == 0 || SEAT_NAME == 0)
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                MessageBox.Show("Vui lòng nhập đủ thông tin!/ Thông tin nhập không hợp lệ");
             }
             else
             {
-                
+
                 //MessageBox.Show(",ID FLight: "+ID_FLIGHT + ",username: " + USERNAME + ",name: " + txbName.Text + ",address: " + txbAddress.Text + ",phone: " + txbPhone.Text + ",gender: " + ((CBBItem)cbbGender.SelectedItem).Text + ",seat number: " + SEAT_NAME + ",price id: " + PRICE_ID);
 
                 if (IsBackTrip)

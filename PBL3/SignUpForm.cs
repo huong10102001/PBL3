@@ -44,7 +44,7 @@ namespace PBL3
             phone = phone.Replace(phone, " ");
             address = address.Replace(address, " ");
             if (userName == "" || passWord == "" || passWord2 == "" || name == "" || email == "" || phone == "" || address == "" // kiem tra neu cai textbox rong
-                || userName == "Username" || passWord == "Password" || passWord2 == "Password" || name == "Name" || email == "Email" || phone == "Phone" || address == "Address" || userName.Contains(" "))// kiem tra tai khoan trung
+                || userName == "Username" || passWord == "Password" || passWord2 == "Confirm Password" || name == "Name" || email == "Email" || phone == "Phone" || address == "Address" || userName.Contains(" "))// kiem tra tai khoan trung
                 MessageBox.Show("Please enter all information! / Hãy nhập đầy đủ thông tin!");
             else
             {
@@ -120,6 +120,22 @@ namespace PBL3
                 txtAddress.Text = "";
         }
 
-        
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Phone must be a number! / Số điện thoại phải là kí tự số", "Thông báo");
+            }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Name must be string! / Họ tên phải là kí chữ", "Thông báo");
+            }
+        }
     }
 }

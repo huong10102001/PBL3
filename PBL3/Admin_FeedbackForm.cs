@@ -23,17 +23,20 @@ namespace PBL3
         {
 
             dataGridView1.DataSource = FeedbackDAO.Instance.GetFeedback();
+            this.dataGridView1.Columns["Username"].Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
             dataGridView1.DataSource = FeedbackDAO.Instance.GetFeedbackByName(name);
+            this.dataGridView1.Columns["Username"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = FeedbackDAO.Instance.GetFeedback();
+            this.dataGridView1.Columns["Username"].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

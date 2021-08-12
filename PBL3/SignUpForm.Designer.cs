@@ -91,6 +91,7 @@ namespace PBL3
             this.txtPhone.Size = new System.Drawing.Size(425, 29);
             this.txtPhone.TabIndex = 13;
             this.txtPhone.Text = "Phone";
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             this.txtPhone.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtPhone_MouseUp);
             // 
             // txtAddress
@@ -119,6 +120,7 @@ namespace PBL3
             this.txtName.Size = new System.Drawing.Size(425, 29);
             this.txtName.TabIndex = 11;
             this.txtName.Text = "Name";
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             this.txtName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtName_MouseUp);
             // 
             // txtEmail
